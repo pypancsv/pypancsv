@@ -10,9 +10,7 @@ A quick dump of Python & Pandas "operations" that come in handy for CSV processi
 ---
 
 * **Q:**  What are "operations," for the purposes of this documentation?<br/>
-* **A:**  They're the other part of code, besides "expressions," that goes into writing "expressions" and "statements."</p>
-
-&nbsp;
+* **A:**  They're the other part of code, besides "expressions," that goes into writing "expressions" and "statements."
 
 * **Q:**  Okay, great, so what are those?<br/>
 * **A:**  Well, for our purposes here...
