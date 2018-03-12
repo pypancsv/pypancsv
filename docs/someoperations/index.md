@@ -20,5 +20,5 @@ Key:
 {% assign expops=site.data.expressionoperations %}
 
 {% for row in expops %}
-### {{ row.Expression }}{% unless row.URL != '' %}[(documentation link)]({{ %%row.URL%% }}){:target="_blank"}{% endunless %}
+### {{ row.Expression }}
 {% endfor %}
