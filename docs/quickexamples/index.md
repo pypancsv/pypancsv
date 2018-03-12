@@ -25,7 +25,7 @@ Below are examples you may have seen in a presentation and want to review at you
     {% endfor %}
     </thead>
     <tbody>
-    {% for row in mydata %}
+    {% for row in sampleone %}
         <tr>
         {% for cell in row %}
             <td>{{ cell[1] }}</td>
