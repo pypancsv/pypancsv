@@ -22,7 +22,7 @@ Key:
 
 ### {{ row.Expression }}
 
-{% unless {{row.URL}} == '' %}_[(official documentation link)]_({{ row.URL }}){:target="_blank"}{% endunless %}
+{% unless {{row.URL}} == '' %}<a href="{{ row.URL }}" target="_blank"><i>(official documentation link)</i></a>{% endunless %}
 
 ---
 
