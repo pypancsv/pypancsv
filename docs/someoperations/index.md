@@ -30,10 +30,10 @@ Key:
 {% unless row.DataTypes == '' or row.DataTypes == blank or row.DataTypes == nil or row.DataTypes == undefined or row.DataTypes == empty %}**Allowable input value "data types:"**
 {{ row.DataTypes }}{% endunless %}
 
-{% unless row.OutType == '' or row.OutType == blank or row.OutType == nil or row.OutType == undefined or row.OutType == empty %}**Data type of output value**
+{% unless row.OutType == '' or row.OutType == blank or row.OutType == nil or row.OutType == undefined or row.OutType == empty %}**Data type of output value:**
 {{ row.OutType }}{% endunless %}
 
-{% unless row.OutputNote == '' or row.OutputNote == blank or row.OutputNote == nil or row.OutputNote == undefined or row.OutputNote == empty %}**Note about the output value**
+{% unless row.OutputNote == '' or row.OutputNote == blank or row.OutputNote == nil or row.OutputNote == undefined or row.OutputNote == empty %}**Note about the output value:**
 {{ row.OutputNote }}{% endunless %}
 
 ---
