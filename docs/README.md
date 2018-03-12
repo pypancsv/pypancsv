@@ -1,3 +1,7 @@
+---
+title: This will be used as the title-tag of the page head
+---
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/pypancsv/pypancsvtest1/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
