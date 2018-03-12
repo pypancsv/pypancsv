@@ -22,7 +22,7 @@ Key:
 
 ### {{ row.Expression }}
 
-{% unless {{row.URL}} == '' or not set or blank or nil %}<a href="{{ row.URL }}" target="_blank"><i>(official documentation link)</i></a>{% endunless %}
+{% unless {{row.URL}} == '' or {{row.URL}} == blank or {{row.URL}} == nil or {{row.URL}} == undefined or {{row.URL}} == empty %}<a href="{{ row.URL }}" target="_blank"><i>(official documentation link)</i></a>{% endunless %}
 
 ---
 
