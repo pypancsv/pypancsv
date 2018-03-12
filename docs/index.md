@@ -10,9 +10,7 @@ I am learning how to host content with GitHub.
 ## Sample CSV #1
 
 {% assign mydata=site.data.sample1 %}
-
 <table>
-    <caption>Table caption</caption>
     <thead>
     {% for column in mydata[0] %}
         <th>{{ column[0] }}</th>
