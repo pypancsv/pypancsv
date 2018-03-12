@@ -24,16 +24,16 @@ Key:
 
 {% unless row.URL == '' or row.URL == blank or row.URL == nil or row.URL == undefined or row.URL == empty %}<a href="{{ row.URL }}" target="_blank"><i>(official documentation link)</i></a>{% endunless %}
 
-{% unless row.InNum == '' or row.InNum == blank or row.InNum == nil or row.InNum == undefined or row.InNum == empty %}**Number of input values:**
+{% unless row.InNum == '' or row.InNum == blank or row.InNum == nil or row.InNum == undefined or row.InNum == empty %}**Number of input values:**<br/>
 {{ row.InNum }}{% endunless %}
 
-{% unless row.DataTypes == '' or row.DataTypes == blank or row.DataTypes == nil or row.DataTypes == undefined or row.DataTypes == empty %}**Allowable input value "data types:"**
+{% unless row.DataTypes == '' or row.DataTypes == blank or row.DataTypes == nil or row.DataTypes == undefined or row.DataTypes == empty %}**Allowable input value "data types:"**<br/>
 {{ row.DataTypes }}{% endunless %}
 
-{% unless row.OutType == '' or row.OutType == blank or row.OutType == nil or row.OutType == undefined or row.OutType == empty %}**Data type of output value:**
+{% unless row.OutType == '' or row.OutType == blank or row.OutType == nil or row.OutType == undefined or row.OutType == empty %}**Data type of output value:**<br/>
 {{ row.OutType }}{% endunless %}
 
-{% unless row.OutputNote == '' or row.OutputNote == blank or row.OutputNote == nil or row.OutputNote == undefined or row.OutputNote == empty %}**Note about the output value:**
+{% unless row.OutputNote == '' or row.OutputNote == blank or row.OutputNote == nil or row.OutputNote == undefined or row.OutputNote == empty %}**Note about the output value:**<br/>
 {{ row.OutputNote }}{% endunless %}
 
 ---
