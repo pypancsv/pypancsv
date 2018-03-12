@@ -122,6 +122,16 @@ Key:
 {% unless row.OutputNote == '' or row.OutputNote == blank or row.OutputNote == nil or row.OutputNote == undefined or row.OutputNote == empty %}**Note about the output value:**<br/>
 {{ row.OutputNote }}{% endunless %}
 
+{% unless row.ExampleURL == '' or row.ExampleURL == blank or row.ExampleURL == nil or row.ExampleURL == undefined or row.ExampleURL == empty %}<a href="{{ row.ExampleURL }}" target="_blank"><i>(runnable example here -- 1st run may take a minute)</i></a>{% endunless %}
+
+{% unless row.ExampleIn == '' or row.ExampleIn == blank or row.ExampleIn == nil or row.ExampleIn == undefined or row.ExampleIn == empty %}**Example Code:**<br/>
+```python{{ row.ExampleIn }}```{% endunless %}
+
+{% unless row.ExampleOut == '' or row.ExampleOut == blank or row.ExampleOut == nil or row.ExampleOut == undefined or row.ExampleOut == empty %}**Number of input values:**<br/>
+`{{ row.ExampleOut }}`{% endunless %}
+
+
+
 ---
 
 {% endfor %}
