@@ -127,7 +127,7 @@ Key:
 {% unless row.ExampleIn == '' or row.ExampleIn == blank or row.ExampleIn == nil or row.ExampleIn == undefined or row.ExampleIn == empty %}**Example code:**<br/>
 ```{{ row.ExampleIn }}```{% endunless %}
 
-{% unless row.ExampleOut == '' or row.ExampleOut == blank or row.ExampleOut == nil or row.ExampleOut == undefined or row.ExampleOut == empty %}**Output of example code:**<br/>
+{% unless row.ExampleOut == '' or row.ExampleOut == blank or row.ExampleOut == nil or row.ExampleOut == undefined or row.ExampleOut == empty %}**Output of example code _(if it were inside a print() statement)_:**<br/>
 `{{ row.ExampleOut }}`{% endunless %}
 
 
