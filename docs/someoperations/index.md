@@ -19,6 +19,7 @@ A quick dump of Python & Pandas "operations" that come in handy for CSV processi
      An "expression" is made up of expressions/values & "operations" (expressions can be inside of other expressions.  A single value is just a really simple expression).<br/>
      Examples are:  <b>"1"</b> or <b>"1 + 1"</b> or <b>concatenate("h","e","l","l","o")</b>.<br/>
      If you're reading this, you're probably an Excel whiz -- basically, expressions are the kinds of things that can go inside of cells in Excel.<br/>
+     As in Excel, a great part of expressions' power & flexibility comes from "nesting" them inside each other almost infinitely <i>_(although Python makes reading heavily-nested expressions easier by letting you nickname expressions as "variables")_</i>.<br/>
      Note, though, that expressions don't "<i>do</i> things."  They "<i>are</i> things."<br/>
      Therefore, they <i>aren't programs</i>, any more than a cell in Excel would be a "program."<br/>
      When coding Python, it doesn't really make sense to put an "expression" by itself  in its own line of code, because that's like shouting at somebody, "Do <b>3</b>!"
