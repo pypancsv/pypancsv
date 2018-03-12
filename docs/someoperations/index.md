@@ -124,7 +124,3 @@ Key:
 ---
 
 {% endfor %}
-
----
-
-## Footer example
