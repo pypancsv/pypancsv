@@ -7,6 +7,28 @@ title: CSV Processing with Python and Pandas - Some Basic Instructions
 
 I am learning how to host content with GitHub.
 
+## Sample CSV #1
+
+{% assign mydata=site.data.sample1 %}
+
+<table>
+    <caption>Table caption</caption>
+    <thead>
+    {% for column in mydata[0] %}
+        <th>{{ column[0] }}</th>
+    {% endfor %}
+    </thead>
+    <tbody>
+    {% for row in mydata %}
+        <tr>
+        {% for cell in row %}
+            <td>{{ cell[1] }}</td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
 ## Example Code:  Import CSV -> Pandas.  Print.  Export to new CSV.
 
 [Click here](https://repl.it/@rplrpl/Python-for-Salesforce-Administrators-0002-Reading-In-A-C){:target="_blank"} to code like this.
