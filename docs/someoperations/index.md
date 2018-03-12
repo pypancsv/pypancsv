@@ -5,7 +5,7 @@ title: CSV Processing with Python and Pandas - Some "Operations"
 
 # CSV Processing with Python and Pandas - Some "Operations"
 
-A quick-reference of Python & Pandas "operations" that come in handy for CSV processing
+A quick-reference of Python & Pandas "operations" that come in handy for CSV processin.g
 
 ---
 
