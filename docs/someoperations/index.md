@@ -92,6 +92,9 @@ The name of a Python "package"
 
 These are used in stringing 0 or more "expressions" together into a new expression with a single output value.
 
+Remember because expression operations combine things into one new single expression, you can "nest" expressions inside each other, just like in Excel.<br/>
+Only don't forget that in Python, you can "checkpoint" your nesting work when things start to get too wordy by using the "assignment operator" "=" and saving expressions into variable names, resuming your mega-expression-building on another line with that variable name.
+
 Just as most of the richness of Excel is in its Formula Editor, most of the "operations" you'll use to process CSV files by writing Python & Pandas code are operations used to form "expressions."
 
 Key:
