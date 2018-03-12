@@ -11,7 +11,6 @@ Key:
 * "°°°" means, "put an input expression here"
 * "°°°1°°°" means, "put input expression #1 here" _(if the operation needs >1)_
 * "°°°2°°°" means, "put input expression #2 here" _(if the operation needs >1)_
-* "°°°3°°°" means, "put input expression #3 here" _(if the operation needs >1)_
 * and so on
 
 
@@ -20,6 +19,15 @@ Key:
 {% assign expops=site.data.expressionoperations %}
 
 {% for row in expops %}
+
 ### {{ row.Expression }}
-{% unless {{row.URL}} == '' %}{{ row.URL }}{% endunless %}
+
+{% unless {{row.URL}} == '' %}_[(official documentation link)]_({{ row.URL }}){:target="_blank"}{% endunless %}
+
+---
+
 {% endfor %}
+
+---
+
+## Footer example
