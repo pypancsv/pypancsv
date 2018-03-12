@@ -16,11 +16,11 @@ Below are examples you may have seen in a presentation and want to review at you
 * Has 7 rows, 5 columns
 * Meant to represent records from a "people"-typed table in "Data Source #1"
 
-{% assign sample1=site.data.sample1 %}
+{% assign sampleone=site.data.sample1 %}
 
 <table>
     <thead>
-    {% for column in sample1[0] %}
+    {% for column in sampleone[0] %}
         <th>{{ column[0] }}</th>
     {% endfor %}
     </thead>
