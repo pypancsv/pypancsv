@@ -47,6 +47,8 @@ Key:
 
 ### print(°°°)
 
+<a href="https://docs.python.org/3/library/functions.html#print" target="_blank"><i>(official documentation link)</i></a>
+
 This shows the value of the input you typed on your screen, presuming you have your Python program running in a context that gives you a text-based "output console."
 
 **Data type of input "thing:"**<br/>
@@ -74,22 +76,12 @@ Some sort of **expression**
 
 ### import(°°°)
 
+<a href="https://docs.python.org/3/reference/simple_stmts.html#import" target="_blank"><i>(official documentation link)</i></a>
+
 This says that you want to use a Python "package," like Pandas, when writing your code, and that you want to have access to "data types" and "operations" that normal-Python doesn't know about.
 
 **Data type of input "thing:"**<br/>
 The name of a Python "package"
-
----
-
-### °°°1°°°.drop(°°°2°°°)
-
-This throws away the columns indicated in °°°2°°° from the "Pandas DataFrame" indicated in °°°1°°°
-
-**Data type of "input thing #1":"**<br/>
-Some **expression** whose "data type" is **"Pandas DataFrame"**
-
-**Data type of input "thing #2:"**<br/>
-Some **expression** whose "data type" is a **"List"** of integers or plain-text values representing column position-numbers or column names
 
 ---
 
