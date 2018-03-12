@@ -29,7 +29,7 @@ I am learning how to host content with GitHub.
 
 ## Example Code:  Import CSV -> Pandas.  Print.  Export to new CSV.
 
-[Click here](https://repl.it/@rplrpl/Python-for-Salesforce-Administrators-0002-Reading-In-A-C){:target="_blank"} to run code like this, minus the "export to new CSV" functionality.<br/>_(Note:  first run, or first run after the first time you edit the code at the link if you choose to do so, takes a minute or so.)_
+[Click here](https://repl.it/@rplrpl/Python-for-Salesforce-Administrators-0002-Reading-In-A-C){:target="_blank"} to run code like this, minus the "export to new CSV" functionality.<br/>_(Note:  first run takes a minute or so.)_
 
 ```python
 import pandas
