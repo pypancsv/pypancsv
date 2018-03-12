@@ -1,2 +1,4 @@
 theme: jekyll-theme-cayman
 name: test hi
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title
