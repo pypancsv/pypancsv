@@ -17,4 +17,6 @@ Key:
 
 ---
 
-hi
+{% for row in site.data.expressionoperations %}
+### {{ row.Expression }}{% unless row.URL != '' %}[(documentation link)]({{ %%row.URL%% }}){:target="_blank"}{% endif %}
+{% endfor %}
