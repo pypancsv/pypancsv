@@ -14,7 +14,14 @@ A quick dump of Python & Pandas "operations" that come in handy for CSV processi
 
 * **Q:**  Okay, great, so what are those?<br/>
 * **A:**  Well, for our purposes here...
-  1. An "<b><u>expression</u></b>" is any code you type that produces <b>1 output value</b>.  It <i>is</i> some value, if you will.  An "expression" is made up of expressions/values & "operations" (expressions can be inside of other expressions.  A single value is just a really simple expression).  Examples are:  <b>"1"</b> or <b>"1 + 1"</b> or <b>concatenate("h","e","l","l","o")</b>.  If you're reading this, you're probably an Excel whiz -- basically, expressions are the kinds of things that can go inside of cells in Excel.  Note, though, that expressions don't "<i>do</i> things."  They "<i>are</i> things."  Therefore, they <i>aren't programs</i>, any more than a cell in Excel would be a "program."  When coding Python, it doesn't really make sense to put an "expression" by itself  in its own line of code, because that's like shouting at somebody, "Do <b>3</b>!"<br/>&nbsp;</li>
+  1. An "<b><u>expression</u></b>" is any code you type that produces <b>1 output value</b>.
+     It <i>is</i> some value, if you will.
+     An "expression" is made up of expressions/values & "operations" (expressions can be inside of other expressions.  A single value is just a really simple expression).
+     Examples are:  <b>"1"</b> or <b>"1 + 1"</b> or <b>concatenate("h","e","l","l","o")</b>.
+     If you're reading this, you're probably an Excel whiz -- basically, expressions are the kinds of things that can go inside of cells in Excel.
+     Note, though, that expressions don't "<i>do</i> things."  They "<i>are</i> things."
+     Therefore, they <i>aren't programs</i>, any more than a cell in Excel would be a "program."
+     When coding Python, it doesn't really make sense to put an "expression" by itself  in its own line of code, because that's like shouting at somebody, "Do <b>3</b>!"<br/>&nbsp;
   2. A "<b><u>statement</u></b>" is any code you type that <b>actually does something.</b>  They don't have values.  They <i>aren't</i> something -- they <i>do</i> something.  A "statement" is <b>the smallest runnable chunk of code possible in a program</b>.  It's the equivalent of a "sentence" in human languages.  <i>(And just as a 1-sentence "essay" is still, technically, an "essay," a 1-statement "program" is still, technically, a "program."  Statements are generally separated from each other by putting them on new lines of your code.)</i>  Examples are:  <b>"Show me the value of '1+1' on my screen"</b> or <b>"store the value of '1+1' under the nickname 'myMath'"</b> or <b>"Make the 'Pandas' package of operations available for me to write code with."</b>
 
 ---
