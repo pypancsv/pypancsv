@@ -38,6 +38,8 @@ A quick dump of Python & Pandas "operations" that come in handy for CSV processi
 
 These are used in stringing 0 or more "expressions" together a "statement" (code that _does_ something).
 
+I'm listing these first because there aren't a lot of them that you'll use, compared to "expression operations" _(which are more like Excel functions)_:  just "**print**," "**=**," and "**import**."
+
 Key:
 * "°°°" means, "put something here"
 * "°°°1°°°" means, "put thing #1 here" _(if the operation needs >1)_
