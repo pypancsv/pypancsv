@@ -367,6 +367,16 @@ Once you practice Python & Pandas enough to understand how the ["output values" 
 
 The best use cases are:
 
+* To process files so big that Excel freezes when you try to filter and delete rows
+
+* To process files with zip codes that contain "leading zeroes."<br/>
+
+  * Just be sure to write something along the lines of  "[pandas.read_csv('mydata.csv', dtype={'HomeZip' : object, 'BizZip' : object})](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html){:target="_blank"}" when importing your CSV file to indicate that the data in those columns should be interpreted as text, not numbers.
+
+* For features that are annoying in Excel _(e.g. multi-column VLOOKUP)_
+
+* To combine with other things Python is good at (such as inspecting every CSV file in a directory on your hard drive and repeating the same steps for all of them).
+
 * As a "Run button" for repetitive work _(that is, as an alternative to macros that would otherwise be difficult to record/write)_
 
   * Example:  I wrote a script that takes a 4-column CSV file that I have to deal with every day and need pivoted into a format with one row per person, one column per program that appears in the day's dataset _(its header name preceded by the word "Program")_, and the word "Registered" at the cell intersection if the person actually registered for that program.
@@ -417,8 +427,4 @@ That'd be a nightmare to repeat every day in Excel, if you ask me.
 
 Now all I have to do is make sure I save the input file to the right place on my hard drive before I run my Python script.
 
-* To process files so big that Excel freezes when you try to filter and delete rows
-
-* For features that are annoying in Excel _(e.g. multi-column VLOOKUP)_
-
-* To combine with other things Python is good at (such as inspecting every CSV file in a directory on your hard drive and repeating the same steps for all of them).
+* Tip:  Don't let your lack of ability to do an _entire_ CSV-handling transformation in Python stop you.  
