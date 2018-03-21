@@ -19,5 +19,5 @@ If you've worked your way through the examples and want to practice modifying th
 
 For example, maybe instead of filtering for rows whose "Last Name starts with capital S" you want to...
 
-* Learn what operation would "uppercase" the contents of cells in the Last Name column _(handy to do before checking if the output of that operation starts with capital S, so as to do a case-insensitive filter)_
-* Learn what operation would check whether numeric cell values in an "Id" column are "< 800"
+* Look up what operation would "uppercase" the contents of cells in the Last Name column _(handy to do before checking if the output of that operation starts with capital S, so as to do a case-insensitive filter)_
+* Look up what operation would check whether numeric cell values in an "Id" column are "< 800"
