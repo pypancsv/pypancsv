@@ -35,6 +35,54 @@ Below are examples you may have seen in a presentation and want to review at you
     </tbody>
 </table>
 
+### Sample CSV #2
+
+* Has 7 rows, 5 columns _(different ones than sample CSV #1)_
+* Meant to represent records from a "people"-typed table in "Data Source #2"
+
+{% assign sampletwo=site.data.sample2 %}
+
+<table>
+    <thead>
+    {% for column in sampletwo[0] %}
+        <th>{{ column[0] }}</th>
+    {% endfor %}
+    </thead>
+    <tbody>
+    {% for row in sampletwo %}
+        <tr>
+        {% for cell in row %}
+            <td>{{ cell[1] }}</td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+### Sample CSV #3
+
+* Has 9 rows, 5 columns
+* Meant to represent records from a "correspondence log"-typed table in "Data Source #3"
+
+{% assign samplethree=site.data.sample3 %}
+
+<table>
+    <thead>
+    {% for column in samplethree[0] %}
+        <th>{{ column[0] }}</th>
+    {% endfor %}
+    </thead>
+    <tbody>
+    {% for row in samplethree %}
+        <tr>
+        {% for cell in row %}
+            <td>{{ cell[1] }}</td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
 ---
 
 ## Example Code:  Import CSV -> Pandas.  Print.  Export to new CSV.
