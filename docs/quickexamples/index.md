@@ -198,7 +198,9 @@ pandas.set_option('expand_frame_repr', False)
 df = pandas.read_csv('c:\\yay\\sample1.csv')
 ```
 
-There's a lot of code in this example that you didn't see in the other examples, so poke at them and see what you can get to run!  Have fun and get creative.  Maybe throw in some other [common Python/Pandas operations](../commonoperations){:target="_blank"} once you're feeling confident.
+There's a lot of code in this example that you didn't see in the other examples, so poke at them and see what you can get to run!  Have fun and get creative.
+
+Bored?  Try throwing in some other [common Python/Pandas operations](../commonoperations){:target="_blank"} once you're feeling confident.
 
 * Hint #1:  Remember that you can "checkpoint" your work by storing the output of "expressions" into "variables" _(nicknames you can use later in your code)_.  4 examples from the code above are:
 
