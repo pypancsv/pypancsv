@@ -238,12 +238,14 @@ The output looks like this:
 
 [Click here](https://repl.it/@rplrpl/Filter-out-rows-last-name-not-C-or-S){:target="_blank"} and make something cool.
 
+_(Note:  first run takes a minute or so.)_
+
 Feel free to backspace over anything you want, except the first 3 lines, which import the CSV file:
 
 ```python
 import pandas
 pandas.set_option('expand_frame_repr', False)
-df = pandas.read_csv('c:\\yay\\sample1.csv')
+df = pandas.read_csv('sample1.csv')
 ```
 
 There's a lot of code in this example that you didn't see in the other examples, so poke at them and see what you can get to run!  Have fun and get creative.
@@ -272,7 +274,9 @@ Bored?  Try throwing in some other [common Python/Pandas operations](../commonop
 
 ## Example Code:  Merging 2 CSV files w/ a multi-column match
 
-[Click here](https://repl.it/@rplrpl/Merging-2-CSV-files-with-multi-column-matching){:target="_blank"} to run code like this.<br/>_(Note:  first run takes a minute or so.)_
+[Click here](https://repl.it/@rplrpl/Merging-2-CSV-files-with-multi-column-matching){:target="_blank"} to run code like this.
+
+_(Note:  first run takes a minute or so.)_
 
 ```python
 import pandas
@@ -309,45 +313,49 @@ Keep trying until your output looks like this -- be sure you have Donald Duck an
 
 ---
 
-## Example Code:  Import CSV -> Pandas.  Print.  Export to new CSV.
+## Example Code:  Filter rows based on aggregations
 
-[Click here](https://repl.it/@rplrpl/Import-a-CSV-into-Pandas-Print-the-resulting-DataFrame){:target="_blank"} to run code like this.<br/>_(Note:  first run takes a minute or so.)_
+[Click here](https://repl.it/@rplrpl/Filter-rows-based-on-aggregations){:target="_blank"} to run code like this.<br/>_(Note:  first run takes a minute or so.)_
 
 ```python
 import pandas
 pandas.set_option('expand_frame_repr', False)
-df = pandas.read_csv('c:\\yay\\sample1.csv')
-print('---Here are all 7 lines---')
-print(df)
-print('---Here are the first 5 lines---')
-print(df.head())
-fivelinedf = df.head()
-fivelinedf.to_csv('C:\\yay\\out_fiveline.csv', index=False, quoting=1)
+df = pandas.read_csv('C:\\yay\\sample3.csv', dtype=object, parse_dates=['Actv Date'])
+groupingByCompany = df.groupby('Company')
+groupedDataFrame = groupingByCompany.apply(lambda x: x[x['Actv Date'] == x['Actv Date'].max()])
+outputdf = groupedDataFrame.reset_index(drop=True)
+print(outputdf)
+outputdf.to_csv('C:\\yay\\out_most_recent_correspondence_per_company.csv', index=False, quoting=1)
 ```
 
-### Test yourself!
+### Enhance your skills!
 
+This example ... has a lot to unpack.
 
-[Click here](https://repl.it/@rplrpl/Import-a-CSV-into-Pandas-Print-the-resulting-DataFrame){:target="_blank"} and edit the code so that instead of saying "Here are the first 5 lines", it says, "Here are the last 2 lines", and edit the next line of code to do just that _(display the last 2 lines)_.
+If you just start playing around and hitting "run," you might not learn much.
+
+I recommend reading [this blog post](http://oracle2salesforce.blogspot.com/2016/12/filtering-rows-by-maximum-date-per-group.html){:target="_blank"} for a full explanation of what's going on in those 8 lines of code.
+
+THEN [Click here](https://repl.it/@rplrpl/Filter-rows-based-on-aggregations){:target="_blank"} to have some fun trying all sorts of fun with aggregations.
 
 _(Note:  first run takes a minute or so.)_
 
-* Hint:  it's the "[°°°1°°°.tail(°°°2°°°)](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.tail.html){:target="_blank"}" operation.<br/>
+Feel free to backspace over anything you want, except the first 3 lines, which import the CSV file:
 
-Keep trying until your output looks like this:
+```python
+import pandas
+pandas.set_option('expand_frame_repr', False)
+df = pandas.read_csv('sample3.csv')
+```
 
-    ---Here are all 7 lines---
-          Id    First      Last           Email                      Company
-    0   5829    Jimmy    Buffet  jb@example.com                          RCA
-    1   2894  Shirley  Chisholm  sc@example.com       United States Congress
-    2    294  Marilyn    Monroe  mm@example.com                          Fox
-    3  30829    Cesar    Chavez  cc@example.com          United Farm Workers
-    4    827  Vandana     Shiva  vs@example.com                     Navdanya
-    5   9284   Andrea     Smith  as@example.com     University of California
-    6    724   Albert    Howard  ah@example.com  Imperial College of Science
-    ---Here are the last 2 lines---
-         Id   First    Last           Email                      Company
-    5  9284  Andrea   Smith  as@example.com     University of California
-    6   724  Albert  Howard  ah@example.com  Imperial College of Science
+After reading [the blog post](http://oracle2salesforce.blogspot.com/2016/12/filtering-rows-by-maximum-date-per-group.html){:target="_blank"}, you might have noticed that some of the intermediate steps were practically an Excel PivotTable.
 
----
+Yes!  Good catch!
+
+You can do things like PivotTables with Python and Pandas!  This is one reason scientists and "data scientists" **love** Python and Pandas.  They're always summarizing data in one way or another.
+
+Getting the output to export to CSV the way you envision it can be a bit tricky, to be honest, as a lot of the commands pertaining to PivotTable-style aggregation aren't as intuitive as the other commands you've seen.
+
+But isn't it **neat** that there's a relatively simple programming language that lets you hop back and forth between row-modification, filtering, pivot-table-style-aggregations, and then treating that pivottable as a "normal table" in and of itself?
+
+That'd be **so much** copying and pasting into new tabs in Excel!
