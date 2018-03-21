@@ -330,9 +330,7 @@ outputdf.to_csv('C:\\yay\\out_most_recent_correspondence_per_company.csv', index
 
 ### Enhance your skills!
 
-This example ... has a lot to unpack.
-
-If you just start playing around and hitting "run," you might not learn much.
+This example ... has a lot to unpack.  So much that if you just start playing around and hitting "run," you might not learn much.
 
 I recommend reading [this blog post](http://oracle2salesforce.blogspot.com/2016/12/filtering-rows-by-maximum-date-per-group.html){:target="_blank"} for a full explanation of what's going on in those 8 lines of code.
 
@@ -352,10 +350,75 @@ After reading [the blog post](http://oracle2salesforce.blogspot.com/2016/12/filt
 
 Yes!  Good catch!
 
-You can do things like PivotTables with Python and Pandas!  This is one reason scientists and "data scientists" **love** Python and Pandas.  They're always summarizing data in one way or another.
+You can do things like PivotTables with Python and Pandas.  This is one reason scientists and "data scientists" **love** Python and Pandas.  They're always summarizing data in one way or another.
 
 Getting the output to export to CSV the way you envision it can be a bit tricky, to be honest, as a lot of the commands pertaining to PivotTable-style aggregation aren't as intuitive as the other commands you've seen.
 
-But isn't it **neat** that there's a relatively simple programming language that lets you hop back and forth between row-modification, filtering, pivot-table-style-aggregations, and then treating that pivottable as a "normal table" in and of itself?
+But isn't it **neat** that there's a relatively simple programming language powerful enough to let you hop back and forth between row-modification, filtering, pivot-table-style-aggregations, and then treating that PivotTable as if it were a "normal table?"
 
-That'd be **so much** copying and pasting into new tabs in Excel!
+Such a process would be **so much** copying and pasting into new tabs in Excel.
+
+
+---
+
+## Tips for learning more
+
+Once you practice Python & Pandas enough to understand how the ["output values" of "expressions"](../commonoperations){:target="_blank"} impact the way you can write code, and to have a sense for how easy it is to daisy-chain little CSV-file transformations into bigger ones, and once you save enough sample files of your "practice" work to have a personal quick-reference _(or bookmark this site)_, you will be well on your way to knowing how to write Python+Pandas programs that actually save you more time than opening up Excel and doing the job by hand.
+
+The best use cases are:
+
+* As a "Run button" for repetitive work _(that is, as an alternative to macros that would otherwise be difficult to record/write)_
+
+  * Example:  I wrote a script that takes a 4-column CSV file _(PersonId, FirstName, LastName, ProgramRegisteredFor)_ that I have to deal with every day and need pivoted into a format with one row per PersonId, one column per program that appears in the day's dataset, its header name preceded by the word "Program," with the word "Registered" at the cell intersection if the person actually registered for that program.  _(This is the format I need for uploading into my "People" table into a database I maintain.)_
+
+The input looks like this:
+
+{% assign tallyin=site.data.tallypivotinput %}
+
+<table>
+    <thead>
+    {% for column in tallyin[0] %}
+        <th>{{ column[0] }}</th>
+    {% endfor %}
+    </thead>
+    <tbody>
+    {% for row in tallyin %}
+        <tr>
+        {% for cell in row %}
+            <td>{{ cell[1] }}</td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+And the output looks like (with exactly as many program-related columns as there are people):
+
+{% assign tallyout=site.data.tallypivotoutput %}
+
+<table>
+    <thead>
+    {% for column in tallyout[0] %}
+        <th>{{ column[0] }}</th>
+    {% endfor %}
+    </thead>
+    <tbody>
+    {% for row in tallyout %}
+        <tr>
+        {% for cell in row %}
+            <td>{{ cell[1] }}</td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+That'd be a nightmare to repeat every day in Excel, if you ask me.
+
+Now all I have to do is make sure I save the input file to the right place on my hard drive before I run my Python script.
+
+* To process files so big that Excel freezes when you try to filter and delete rows
+
+* For features that are annoying in Excel _(e.g. multi-column VLOOKUP)_
+
+* To combine with other things Python is good at (such as inspecting every CSV file in a directory on your hard drive and repeating the same steps for all of them).
