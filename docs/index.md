@@ -24,4 +24,5 @@ If you've worked your way through the examples and want a further challenge, vis
 For example, maybe instead of filtering for rows whose "Last Name starts with capital S" you want to...
 
 * Look up what operation would "uppercase" the contents of cells in the "Last Name" column _(handy to do before checking if the output of that operation starts with capital S, so as to do a case-insensitive filter)_
+
 * Look up what operation would check whether numeric cell values in an "Age" column are "< 60"
