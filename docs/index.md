@@ -22,7 +22,8 @@ Python can be really handy for:
 * Scripting repetitive work that would be very difficult to record as an Excel macro.  e.g.:
 
   * You need to filter, then pivot, then treat that as a new table, then filter again, or
-  * Column positions are constantly moving around from day to day, or column names are constantly changing in a way that has a pattern, but is just enough to throw off the Excel macro
+  * Column positions are constantly moving around from day to day, or
+  * Column names are constantly changing in a way that has a pattern, but is just enough to confuse an Excel macro
 
 ## Presentation Slide Examples
 
