@@ -1,4 +1,4 @@
-Expression,URL,ExampleURL,ExampleIn,ExampleOut,Number of input values,"Allowable input value ""data types""",Data type of output value,Note about the output value
+Expression,URL,ExampleURL,ExampleIn,ExampleOut,InNum,DataTypes,OutType,OutputNote
 type(°°°),https://docs.python.org/3/library/functions.html#type,,type(5),<class 'int'>,1,,"Python ""type""","A note telling you the ""data type"" of the expression within its parentheses"
 len(°°°),https://docs.python.org/3/library/functions.html#len,,len('Hiya'),4,1,"plaintext, list, Pandas ""DataFrame"", Pandas ""Series"", etc.  (But not numbers, etc.)",integer,"The ""length"" of whatever is in the expression within its parentheses, in a way appropriate to the ""data type"" of that expression"
 °°°.abs(),https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.abs.html,,,,1,"Pandas ""Series""","Pandas ""Series""","The same Pandas ""Series,"" only with negative numbers in the ""Series"" turned into positive ones.  Will abort your program with an error if values in your Pandas ""Series"" are, say, text, instead of numbers."
