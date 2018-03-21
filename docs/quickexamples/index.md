@@ -171,6 +171,25 @@ print(lastCSdf)
 lastCSdf.to_csv('C:\\yay\\out_lastcs.csv', index=False, quoting=1)
 ```
 
+{% assign out_lastcs=site.data.out_lastcs %}
+
+<table>
+    <thead>
+    {% for column in out_lastcs[0] %}
+        <th>{{ column[0] }}</th>
+    {% endfor %}
+    </thead>
+    <tbody>
+    {% for row in out_lastcs %}
+        <tr>
+        {% for cell in row %}
+            <td>{{ cell[1] }}</td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
 ### Test yourself!
 
 [Click here](https://repl.it/@rplrpl/Filter-out-rows-last-name-not-C-or-S){:target="_blank"} and edit the code so that instead of saying 'Show all columns, but only rows where "Last" starts with capital "C" or "S"', it says, 'Show all columns, but only rows where "Company" case-insensitively ends with "a" or "Id" is less than 800', and edit the next line of code to do just that _(display only rows where "Company" ends with "A" or "a" or the "Id" is a number less than 800)_.
@@ -253,6 +272,25 @@ The output looks like this:
     5     Andrea       aaa             bbb  ccc  ddd  eee
     6     Albert    Howard             bbb  NaN  ddd  eee
 
+{% assign out_complexupdates=site.data.out_complexupdates %}
+
+<table>
+    <thead>
+    {% for column in out_complexupdates[0] %}
+        <th>{{ column[0] }}</th>
+    {% endfor %}
+    </thead>
+    <tbody>
+    {% for row in out_complexupdates %}
+        <tr>
+        {% for cell in row %}
+            <td>{{ cell[1] }}</td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
 ### Test yourself!
 
 [Click here](https://repl.it/@rplrpl/Filter-out-rows-last-name-not-C-or-S){:target="_blank"} and make something cool.
@@ -308,8 +346,26 @@ print(mergedf)
 mergedf.to_csv('C:\\yay\\out_outermerge.csv', index=False, quoting=1)
 ```
 
-### Test yourself!
+{% assign out_outermerge=site.data.out_outermerge %}
 
+<table>
+    <thead>
+    {% for column in out_outermerge[0] %}
+        <th>{{ column[0] }}</th>
+    {% endfor %}
+    </thead>
+    <tbody>
+    {% for row in out_outermerge %}
+        <tr>
+        {% for cell in row %}
+            <td>{{ cell[1] }}</td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+### Test yourself!
 
 [Click here](https://repl.it/@rplrpl/Merging-2-CSV-files-with-multi-column-matching){:target="_blank"} and edit the code so that instead of so that instead of displaying everybody in both files, we only display the people from "CSV #2," but we add in their _details_ from "CSV #1" if they happen to appear in that CSV file, but only consider them a match if Last Name, First Name, AND EMAIL all match _(meaning that we won't pull in any "CSV #1" data about Albert Howard, since he has a different email address in that file)_.
 
@@ -346,6 +402,25 @@ outputdf = groupedDataFrame.reset_index(drop=True)
 print(outputdf)
 outputdf.to_csv('C:\\yay\\out_most_recent_correspondence_per_company.csv', index=False, quoting=1)
 ```
+
+{% assign out_most_recent_correspondence_per_company=site.data.out_most_recent_correspondence_per_company %}
+
+<table>
+    <thead>
+    {% for column in out_most_recent_correspondence_per_company[0] %}
+        <th>{{ column[0] }}</th>
+    {% endfor %}
+    </thead>
+    <tbody>
+    {% for row in out_most_recent_correspondence_per_company %}
+        <tr>
+        {% for cell in row %}
+            <td>{{ cell[1] }}</td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
 
 ### Enhance your skills!
 
