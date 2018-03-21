@@ -267,3 +267,87 @@ Bored?  Try throwing in some other [common Python/Pandas operations](../commonop
     * And if the "Pandas DataFrame" stored in "df" doesn't yet have a "Last" column?  Add it, filling in only "aaa" in the appropriate rows, leaving the rest blank.<br/>&nbsp;
 
 * Hint #3:  If you want to get *really* geeky, knowing what *kind* of data is coming out of the "expressions" you're building (or what kind of "output" values you're storing into "variables") can be *really* handy if you want to consult online coding manuals.  Try putting a variable name you've already stored a value in, or any piece of code that outputs a value, inside the "°°°" of a line that says "[print(type(°°°))](https://docs.python.org/3/library/functions.html#type){:target="_blank"}" to see what "data type" that value is considered by Python, which influences how code around it behaves.
+
+---
+
+## Example Code:  Merging 2 CSV files w/ a multi-column match
+
+[Click here](https://repl.it/@rplrpl/Merging-2-CSV-files-with-multi-column-matching){:target="_blank"} to run code like this.<br/>_(Note:  first run takes a minute or so.)_
+
+```python
+import pandas
+pandas.set_option('expand_frame_repr', False)
+df1 = pandas.read_csv('C:\\yay\\sample1.csv', dtype=object)
+df2 = pandas.read_csv('C:\\yay\\sample2.csv', dtype=object)
+mergedf = df1.merge(df2.rename(columns = {'LastName':'Last', 'FirstName':'First', 'Em':'Email'}), how='outer', on=['Last', 'First'], suffixes=('_csv1', '_csv2'))
+print('---Contents of DataFrame "mergedf":---')
+print(mergedf)
+mergedf.to_csv('C:\\yay\\out_outermerge.csv', index=False, quoting=1)
+```
+
+### Test yourself!
+
+
+[Click here](https://repl.it/@rplrpl/Merging-2-CSV-files-with-multi-column-matching){:target="_blank"} and edit the code so that instead of so that instead of displaying everybody in both files, we only display the people from "CSV #2," but we add in their _details_ from "CSV #1" if they happen to appear in that CSV file, but only consider them a match if Last Name, First Name, AND EMAIL all match _(meaning that we won't pull in any "CSV #1" data about Albert Howard, since he has a different email address in that file)_.
+
+_(Note:  first run takes a minute or so.)_
+
+* Hint #1:  you're going to want to change what's in the "`on=°°°`" parameter of the "[°°°1°°°.merge(°°°2°°°, how='°°°3°°°', on=°°°3°°°, suffixes=°°°4°°°)](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.merge.html){:target="_blank"}" operation as well as the "`how='°°°'`" parameter of that same operation.<br/>Your options for "how" are "outer," "inner," "left," and "right."<br/>
+
+* Hint #2:  When you "[print(°°°)](https://docs.python.org/3/library/functions.html#print){:target="_blank"}" a "Pandas DataFrame," blank cells show up as NaN so you can tell them apart from blank-_looking_ values like a single space.  Don't worry -- if you run "[°°°1°°°.to_csv(°°°2°°°, index=False, quoting=1)](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.to_csv.html){:target="_blank"}" against it, the cells go back to being blank again!
+
+Keep trying until your output looks like this -- be sure you have Donald Duck and not Jimmy Buffet in your output!
+
+    ---Contents of DataFrame "mergedf":---
+         Id    First    Last                  Email                   Company PersonId FavoriteFood
+    0   294  Marilyn  Monroe         mm@example.com                       Fox     x934      Carrots
+    1   827  Vandana   Shiva         vs@example.com                  Navdanya      02e     Amaranth
+    2  9284   Andrea   Smith         as@example.com  University of California    9e84f         Kale
+    3   NaN  Shirley  Temple         st@example.com                       NaN    983mv    Lollipops
+    4   NaN   Donald    Duck         dd@example.com                       NaN    k28fo     Pancakes
+    5   NaN   Albert  Howard  ahotherem@example.com                       NaN      8xi     Potatoes
+
+---
+
+## Example Code:  Import CSV -> Pandas.  Print.  Export to new CSV.
+
+[Click here](https://repl.it/@rplrpl/Import-a-CSV-into-Pandas-Print-the-resulting-DataFrame){:target="_blank"} to run code like this.<br/>_(Note:  first run takes a minute or so.)_
+
+```python
+import pandas
+pandas.set_option('expand_frame_repr', False)
+df = pandas.read_csv('c:\\yay\\sample1.csv')
+print('---Here are all 7 lines---')
+print(df)
+print('---Here are the first 5 lines---')
+print(df.head())
+fivelinedf = df.head()
+fivelinedf.to_csv('C:\\yay\\out_fiveline.csv', index=False, quoting=1)
+```
+
+### Test yourself!
+
+
+[Click here](https://repl.it/@rplrpl/Import-a-CSV-into-Pandas-Print-the-resulting-DataFrame){:target="_blank"} and edit the code so that instead of saying "Here are the first 5 lines", it says, "Here are the last 2 lines", and edit the next line of code to do just that _(display the last 2 lines)_.
+
+_(Note:  first run takes a minute or so.)_
+
+* Hint:  it's the "[°°°1°°°.tail(°°°2°°°)](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.tail.html){:target="_blank"}" operation.<br/>
+
+Keep trying until your output looks like this:
+
+    ---Here are all 7 lines---
+          Id    First      Last           Email                      Company
+    0   5829    Jimmy    Buffet  jb@example.com                          RCA
+    1   2894  Shirley  Chisholm  sc@example.com       United States Congress
+    2    294  Marilyn    Monroe  mm@example.com                          Fox
+    3  30829    Cesar    Chavez  cc@example.com          United Farm Workers
+    4    827  Vandana     Shiva  vs@example.com                     Navdanya
+    5   9284   Andrea     Smith  as@example.com     University of California
+    6    724   Albert    Howard  ah@example.com  Imperial College of Science
+    ---Here are the last 2 lines---
+         Id   First    Last           Email                      Company
+    5  9284  Andrea   Smith  as@example.com     University of California
+    6   724  Albert  Howard  ah@example.com  Imperial College of Science
+
+---
