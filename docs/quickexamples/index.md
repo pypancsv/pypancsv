@@ -192,9 +192,14 @@ The output looks like this:
 
 There's a lot of code in this example that you didn't see in the other examples.  Poke around and guess what might be going on and see if it runs.  Have fun and get creative.
 
-Hint:  Remember that you can "checkpoint" your work by storing the output of "expressions" into "variables" _(nicknames you can use later in your code)_.  4 examples from the code above are:
+* Hint #1:  Remember that you can "checkpoint" your work by storing the output of "expressions" into "variables" _(nicknames you can use later in your code)_.  4 examples from the code above are:
 
-* `theseRowsLastNamesStartWithCapitalS = df['Last'].str.startswith('S')`, which saves a Pandas "Series" into a "variable" called "theseRowsLastNamesStartWithCapitalS"
-* `df = df.drop(['Id','Company'], axis=1)`:  what's going on here is that the right side of the "`=`" outputs a new "Pandas DataFrame" _(table)_ that is just like the one currently stored in the variable called "df" _(at the time that this line of code begins)_ ... and then it completely wipes out everything that was stored in "df" and overwrites its contents so that instead, the **new** output from the right side of the "`=`" becomes the value of the variable called "df" for all lines of code afterwards.
-* `df['New3'] = 'eee'`, which modifies the contents of the "Pandas DataFrame" _(table)_ saved in the variable called "df" so that every row of its column labeled "New3" will now contain the text "eee".
-* `df.loc[theseRowsHaveA4InTheirId,'Email'] = 'bbb'`, which modifies the contents of the "Pandas DataFrame" _(table)_ saved in the variable called "df" so that any rows of its column labeled "Email" that have the same row-number as the rows of the "Pandas Series" called "theseRowsHaveA4InTheirId" will now contain the text "bbb".
+  * `theseRowsLastNamesStartWithCapitalS = df['Last'].str.startswith('S')`, which saves a Pandas "Series" into a "variable" called "theseRowsLastNamesStartWithCapitalS"
+
+  * `df = df.drop(['Id','Company'], axis=1)`:  what's going on here is that the right side of the "`=`" outputs a new "Pandas DataFrame" _(table)_ that is just like the one currently stored in the variable called "df" _(at the time that this line of code begins)_ ... and then it completely wipes out everything that was stored in "df" and overwrites its contents so that instead, the **new** output from the right side of the "`=`" becomes the value of the variable called "df" for all lines of code afterwards.
+
+  * `df['New3'] = 'eee'`, which modifies the contents of the "Pandas DataFrame" _(table)_ saved in the variable called "df" so that every row of its column labeled "New3" will now contain the text "eee".
+
+  * `df.loc[theseRowsHaveA4InTheirId,'Email'] = 'bbb'`, which modifies the contents of the "Pandas DataFrame" _(table)_ saved in the variable called "df" so that any rows of its column labeled "Email" that have the same row-number as the rows of the "Pandas Series" called "theseRowsHaveA4InTheirId" will now contain the text "bbb".
+
+* Hint #2:  If you want to get *really* geeky, knowing what *kind* of data is coming out of the "expressions" you're building (or what kind of "output" values you're storing into "variables") can be *really* handy if you want to consult online coding manuals.  Try putting a variable name or other piece of code inside a line that says "[print(type(°°°))](https://docs.python.org/3/library/functions.html#type){:target="_blank"}" to see what "data type" it is, which influences how code around it behaves.
