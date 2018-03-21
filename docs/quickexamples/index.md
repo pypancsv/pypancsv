@@ -424,3 +424,19 @@ And the output looks like this _(with exactly as many program-related columns as
     {% endfor %}
     </tbody>
 </table>
+
+And, for the nerdy, the code to do that is:
+
+```python
+import pandas
+import numpy
+pandas.set_option('expand_frame_repr', False)
+df = pandas.read_csv('C:\\yay\\tallypivotinput.csv')
+df['Program Registered For'] = 'Program' + df['Program Registered For']
+non_program_columns = list(filter(lambda x: x!= 'Program Registered For', df.keys()))
+pivotdf = pandas.pivot_table(df, index=non_program_columns, columns='Program Registered For', aggfunc=numpy.size)
+pivotdf[pandas.notnull(pivotdf)] = 'Registered'
+pivotdf.reset_index(inplace=True)
+print(pivotdf)
+pivotdf.to_csv('C:\\yay\\tallypivotoutput.csv', index=False, quoting=1)
+```
