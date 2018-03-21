@@ -34,7 +34,7 @@ If you're here after watching a presentation, visit [Quick Examples](quickexampl
 
 ## Common "Operations"
 
-If you've worked your way through the examples and want a further challenge, visit my list of [operations commonly used for CSV processing](commonoperations){:target="_blank"} to learn more functions that you can put into your Python scripts.
+If you've worked your way through the examples and want a further challenge, visit my list of [operations commonly used for CSV processing](commonoperations){:target="_blank"} _(under construction)_ to learn more functions that you can put into your Python scripts.
 
 For example, maybe instead of filtering for rows whose "Last Name starts with capital S" you want to...
 
