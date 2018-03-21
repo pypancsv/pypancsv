@@ -120,16 +120,28 @@ _(Note:  first run after editing the code takes a minute or so.)_
 
 Keep trying until your output looks like this:
 
-    ---Here are all 7 lines---
-          Id    First      Last           Email                      Company
-    0   5829    Jimmy    Buffet  jb@example.com                          RCA
-    1   2894  Shirley  Chisholm  sc@example.com       United States Congress
-    2    294  Marilyn    Monroe  mm@example.com                          Fox
-    3  30829    Cesar    Chavez  cc@example.com          United Farm Workers
-    4    827  Vandana     Shiva  vs@example.com                     Navdanya
-    5   9284   Andrea     Smith  as@example.com     University of California
-    6    724   Albert    Howard  ah@example.com  Imperial College of Science
-    ---Here are the last 2 lines---
-         Id   First    Last           Email                      Company
-    5  9284  Andrea   Smith  as@example.com     University of California
-    6   724  Albert  Howard  ah@example.com  Imperial College of Science
+	---What is in "Last" for each row?---
+	0      Buffet
+	1    Chisholm
+	2      Monroe
+	3      Chavez
+	4       Shiva
+	5       Smith
+	6      Howard
+	Name: Last, dtype: object
+	---For each row, does "Last" start with capital "C" or "S"?---
+	0     True
+	1    False
+	2     True
+	3    False
+	4     True
+	5     True
+	6     True
+	dtype: bool
+	---Show all columns, but only rows where "Company" case-insensitively ends with "a" or "Id" is less than 800---
+		 Id    First    Last           Email                      Company
+	0  5829    Jimmy  Buffet  jb@example.com                          RCA
+	2   294  Marilyn  Monroe  mm@example.com                          Fox
+	4   827  Vandana   Shiva  vs@example.com                     Navdanya
+	5  9284   Andrea   Smith  as@example.com     University of California
+	6   724   Albert  Howard  ah@example.com  Imperial College of Science
