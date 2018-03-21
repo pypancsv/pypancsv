@@ -112,7 +112,7 @@ lastCSdf.to_csv('C:\\yay\\out_lastcs.csv', index=False, quoting=1)
 
 Hint #1:  I recommend experimenting with using the "[°°°.str.lower()](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.str.lower.html){:target="_blank"}" or "[°°°.str.upper()](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.str.upper.html){:target="_blank"}" operation against "Company," which you can slip in right before the "[°°°.str.endswith()](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.str.endswith.html){:target="_blank"}"  operation _(which in turn will then operate against the all-uppercased/lowercased copy of the contents of "Company" instead of against the original contents of "Company")_, for the case-insensitive "a" test.'
 
-Hint #2:  You can compare a "Pandas Series" _(e.g. "`df[Last]`")_ directly with a single value.  For example, "`df[Last] < 'Ferret'`" outputs a single column indicating "True or False:  Do the contents of 'Last' in this row come earlier in the alphabet than the word 'Ferret'?"
+Hint #2:  You can compare a "Pandas Series" (e.g. "`df[Last]`") directly with a single value.  For example, "`df[Last] < 'Ferret'`" outputs a single column indicating "True or False:  Do the contents of 'Last' in this row come earlier in the alphabet than the word 'Ferret'?"
 
 Hint #3:  If, for some reason, your code is displaying _every_ row, try surrounding the pieces inside your outermost "df\[°°°\]" on either side of the "or" (the "`|`") with parentheses.<br/>If "`df[°°°1°°° | °°°2°°°]`" doesn't work for filtering the rows, try "`df[(°°°1°°°) | (°°°2°°°)]`".
 
