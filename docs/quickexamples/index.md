@@ -101,6 +101,25 @@ fivelinedf = df.head()
 fivelinedf.to_csv('C:\\yay\\out_fiveline.csv', index=False, quoting=1)
 ```
 
+{% assign out_fiveline=site.data.out_fiveline %}
+
+<table>
+    <thead>
+    {% for column in out_fiveline[0] %}
+        <th>{{ column[0] }}</th>
+    {% endfor %}
+    </thead>
+    <tbody>
+    {% for row in out_fiveline %}
+        <tr>
+        {% for cell in row %}
+            <td>{{ cell[1] }}</td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
 ### Test yourself!
 
 
