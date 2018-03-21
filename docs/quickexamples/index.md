@@ -365,7 +365,9 @@ Such a process would be **so much** copying and pasting into new tabs in Excel.
 
 Once you practice Python & Pandas enough to understand how the ["output values" of "expressions"](../commonoperations){:target="_blank"} impact the way you can write code, and to have a sense for how easy it is to daisy-chain little CSV-file transformations into bigger ones, and once you save enough sample files of your "practice" work to have a personal quick-reference _(or bookmark this site)_, you will be well on your way to knowing how to write Python+Pandas programs that actually save you more time than opening up Excel and doing the job by hand.
 
-The best use cases are:
+Don't let your lack of ability to do an _entire_ CSV-handling transformation in Python stop you.  I often heed [Randall Munroe's advice from XKCD cartoon #1319](https://xkcd.com/1319/){:target="_blank"} and do things in Excel until they become annoying, do the annoying part in Python, then switch back to Excel.
+
+In my opinion, you'll get a lot of "bang for your buck" out of Python:
 
 * To process files so big that Excel freezes when you try to filter and delete rows
 
@@ -379,7 +381,7 @@ The best use cases are:
 
 * As a "Run button" for repetitive work _(that is, as an alternative to macros that would otherwise be difficult to record/write)_
 
-  * Example:  I wrote a script that takes a 4-column CSV file that I have to deal with every day and need pivoted into a format with one row per person, one column per program that appears in the day's dataset _(its header name preceded by the word "Program")_, and the word "Registered" at the cell intersection if the person actually registered for that program.
+  * Example:  I wrote a script that takes a 4-column CSV file that I have to deal with every day and need pivoted into a format with one row per person, one column per program that appears in the day's dataset _(its header name preceded by the word "Program")_, and the word "Registered" at the cell intersection if the person actually registered for that program.<br/>&nbsp;<br/>That'd be a nightmare to repeat every day in Excel, if you ask me.<br/>&nbsp;<br/>But now all I have to do is make sure I save the input file to the right place on my hard drive before I run my Python script.
 
 The input looks like this:
 
@@ -422,9 +424,3 @@ And the output looks like this _(with exactly as many program-related columns as
     {% endfor %}
     </tbody>
 </table>
-
-That'd be a nightmare to repeat every day in Excel, if you ask me.
-
-Now all I have to do is make sure I save the input file to the right place on my hard drive before I run my Python script.
-
-* Tip:  Don't let your lack of ability to do an _entire_ CSV-handling transformation in Python stop you.  
