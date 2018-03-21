@@ -61,3 +61,19 @@ fivelinedf.to_csv('C:\\yay\\out_fiveline.csv', index=False, quoting=1)
 Hint:  it's the "[°°°1°°°.tail(°°°2°°°)](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.tail.html){:target="_blank"}" operation).<br/>
 
 _(Note:  first run after editing the code takes a minute or so.)_
+
+Keep trying until your output looks like this:
+
+    ---Here are all 7 lines---
+          Id    First      Last           Email                      Company
+    0   5829    Jimmy    Buffet  jb@example.com                          RCA
+    1   2894  Shirley  Chisholm  sc@example.com       United States Congress
+    2    294  Marilyn    Monroe  mm@example.com                          Fox
+    3  30829    Cesar    Chavez  cc@example.com          United Farm Workers
+    4    827  Vandana     Shiva  vs@example.com                     Navdanya
+    5   9284   Andrea     Smith  as@example.com     University of California
+    6    724   Albert    Howard  ah@example.com  Imperial College of Science
+    ---Here are the last 2 lines---
+         Id   First    Last           Email                      Company
+    5  9284  Andrea   Smith  as@example.com     University of California
+    6   724  Albert  Howard  ah@example.com  Imperial College of Science
