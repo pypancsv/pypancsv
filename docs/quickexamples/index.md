@@ -58,7 +58,7 @@ fivelinedf.to_csv('C:\\yay\\out_fiveline.csv', index=False, quoting=1)
 
 [Click here](https://repl.it/@rplrpl/Import-a-CSV-into-Pandas-Print-the-resulting-DataFrame){:target="_blank"} and edit the code so that instead of saying "Here are the first 5 lines", it says, "Here are the last 2 lines", and edit the next line of code to do just that _(display the last 2 lines)_.
 
-_(Note:  first run after editing the code takes a minute or so.)_
+_(Note:  first run takes a minute or so.)_
 
 * Hint:  it's the "[°°°1°°°.tail(°°°2°°°)](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.tail.html){:target="_blank"}" operation.<br/>
 
@@ -106,10 +106,9 @@ lastCSdf.to_csv('C:\\yay\\out_lastcs.csv', index=False, quoting=1)
 
 ### Test yourself!
 
-
 [Click here](https://repl.it/@rplrpl/Filter-out-rows-last-name-not-C-or-S){:target="_blank"} and edit the code so that instead of saying 'Show all columns, but only rows where "Last" starts with capital "C" or "S"', it says, 'Show all columns, but only rows where "Company" case-insensitively ends with "a" or "Id" is less than 800', and edit the next line of code to do just that _(display only rows where "Company" ends with "A" or "a" or the "Id" is a number less than 800)_.
 
-_(Note:  first run after editing the code takes a minute or so.)_
+_(Note:  first run takes a minute or so.)_
 
 * Hint #1:  For the case-insensitive comparison, try experimenting with the "[°°°.str.lower()](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.str.lower.html){:target="_blank"}" or "[°°°.str.upper()](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.str.upper.html){:target="_blank"}" operations.  You can slip it in right before the "[°°°.str.endswith()](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.str.endswith.html){:target="_blank"}"  operation to force "[°°°.str.endswith()](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.str.endswith.html){:target="_blank"}" to operate against the all-uppercased/lowercased text instead of the original text.
 
@@ -180,3 +179,16 @@ The output looks like this:
     4    Vandana       aaa  vs@example.com  ccc  NaN  eee
     5     Andrea       aaa             bbb  ccc  ddd  eee
     6     Albert    Howard             bbb  NaN  ddd  eee
+
+### Test yourself!
+
+[Click here](https://repl.it/@rplrpl/Filter-out-rows-last-name-not-C-or-S){:target="_blank"} and make something cool.
+
+There's a lot of code in this example that you didn't see in the other examples.  Poke around and guess what might be going on and see if it runs.  Have fun and get creative.
+
+Hint:  Remember that you can "checkpoint" your work by storing the output of "expressions" into "variables" _(nicknames you can use later in your code)_.  4 examples from the code above are:
+
+* `theseRowsLastNamesStartWithCapitalS = df['Last'].str.startswith('S')`, which saves a Pandas "Series" into a "variable" called "theseRowsLastNamesStartWithCapitalS"
+* `df = df.drop(['Id','Company'], axis=1)`:  what's going on here is that the right side of the "`=`" outputs a new "Pandas DataFrame" _(table)_ that is just like the one currently stored in the variable called "df" _(at the time that this line of code begins)_ ... and then it completely wipes out everything that was stored in "df" and overwrites its contents so that instead, the **new** output from the right side of the "`=`" becomes the value of the variable called "df" for all lines of code afterwards.
+* `df['New3'] = 'eee'`, which modifies the contents of the "Pandas DataFrame" _(table)_ saved in the variable called "df" so that every row of its column labeled "New3" will now contain the text "eee".
+* `df.loc[theseRowsHaveA4InTheirId,'Email'] = 'bbb'`, which modifies the contents of the "Pandas DataFrame" _(table)_ saved in the variable called "df" so that any rows of its column labeled "Email" that have the same row-number as the rows of the "Pandas Series" called "theseRowsHaveA4InTheirId" will now contain the text "bbb".
