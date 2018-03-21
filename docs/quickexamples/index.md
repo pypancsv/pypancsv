@@ -52,3 +52,12 @@ print(df.head())
 fivelinedf = df.head()
 fivelinedf.to_csv('C:\\yay\\out_fiveline.csv', index=False, quoting=1)
 ```
+
+### Test yourself!
+
+
+[Click here](https://repl.it/@rplrpl/Import-a-CSV-into-Pandas-Print-the-resulting-DataFrame){:target="_blank"} and edit the code so that instead of saying "Here are the first 5 lines," it says, "Here are the last 2 lines," and edit the next line of code to do just that _(display the last 2 lines)_.
+
+Hint:  it's the "[°°°1°°°.tail(°°°2°°°)](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.tail.html){:target="_blank"}" operation).<br/>
+
+_(Note:  first run after editing the code takes a minute or so.)_
