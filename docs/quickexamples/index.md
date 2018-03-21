@@ -156,6 +156,8 @@ pandas.set_option('expand_frame_repr', False)
 df = pandas.read_csv('c:\\yay\\sample1.csv')
 theseRowsLastNamesStartWithCapitalS = df['Last'].str.startswith('S')
 theseRowsHaveA4InTheirId = df['Id'].astype(str).str.contains('4')
+print('---Let\'s see what kind of output "df.loc[]" generates---')
+print(df.loc[theseRowsLastNamesStartWithCapitalS,'Last'])
 df.loc[theseRowsLastNamesStartWithCapitalS,'Last'] = 'aaa'
 df.loc[theseRowsHaveA4InTheirId,'Email'] = 'bbb'
 df.loc[theseRowsLastNamesStartWithCapitalS,'New1'] = 'ccc'
@@ -170,8 +172,12 @@ df.to_csv('C:\\yay\\out_complexupdates.csv', index=False, quoting=1)
 
 The output looks like this:
 
+    ---Let's see what kind of output "df.loc[]" generates---
+    4    Shiva
+    5    Smith
+    Name: Last, dtype: object
     ---We have modified the Python variable "df" to have 3 new rows, plus changes in the "Last" and "Email" columns on specific rows only, and we dropped the "Id" and "Company" rows, and finally, we renamed the "First," "Last," and "Email" columns.---
-    First Name Last Name   Email Address New1 New2 New3
+      First Name Last Name   Email Address New1 New2 New3
     0      Jimmy    Buffet  jb@example.com  NaN  NaN  eee
     1    Shirley  Chisholm             bbb  NaN  ddd  eee
     2    Marilyn    Monroe             bbb  NaN  ddd  eee
