@@ -260,10 +260,10 @@ Bored?  Try throwing in some other [common Python/Pandas operations](../commonop
 
   * `df['New3'] = 'eee'` modifies the contents of the "Pandas DataFrame" _(table)_ saved in the variable called "df" so that every row of its column labeled "New3" will now contain the text "eee".
 
-    * And if the "Pandas DataFrame" stored in "df" doesn't yet have a "New3" column?  Add it, filling in all the values with "eee."<br/>
+    * And if the "Pandas DataFrame" stored in "df" doesn't yet have a "New3" column?  Add it, filling in all the values with "eee."<br/>&nbsp;
 
   * `df.loc[theseRowsLastNamesStartWithCapitalS,'Last'] = 'aaa'`, modifies the contents of the "Pandas DataFrame" _(table)_ saved in the variable called "df" so that any rows of its column labeled "Last" that have the same row-number as the rows of the "Pandas Series" called "theseRowsLastNamesStartWithCapitalS" will now contain the text "aaa".
 
-    * And if the "Pandas DataFrame" stored in "df" doesn't yet have a "Last" column?  Add it, filling in only "aaa" in the appropriate rows, leaving the rest blank.<br/>
+    * And if the "Pandas DataFrame" stored in "df" doesn't yet have a "Last" column?  Add it, filling in only "aaa" in the appropriate rows, leaving the rest blank.<br/>&nbsp;
 
 * Hint #3:  If you want to get *really* geeky, knowing what *kind* of data is coming out of the "expressions" you're building (or what kind of "output" values you're storing into "variables") can be *really* handy if you want to consult online coding manuals.  Try putting a variable name you've already stored a value in, or any piece of code that outputs a value, inside the "°°°" of a line that says "[print(type(°°°))](https://docs.python.org/3/library/functions.html#type){:target="_blank"}" to see what "data type" that value is considered by Python, which influences how code around it behaves.
