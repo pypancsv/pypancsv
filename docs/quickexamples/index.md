@@ -116,7 +116,7 @@ _(Note:  first run after editing the code takes a minute or so.)_
 
 * Hint #2:  You can compare a "Pandas Series" (e.g. "`df[Last]`") directly with a single value.  For example, "`df[Last] < 'Ferret'`" outputs a single column indicating "True or False:  Do the contents of 'Last' in this row come earlier in the alphabet than the word 'Ferret'?"
 
-* Hint #3:  If, for some reason, your code is displaying _every_ row, try surrounding the pieces inside your outermost "df\[°°°\]" on either side of the "or" (the "`|`") with parentheses.<br/>In other words, if "`df[°°°1°°° | °°°2°°°]`" doesn't work for filtering the rows, try "`df[(°°°1°°°) | (°°°2°°°)]`".<br/>Sometimes the code gets finicky and extra parentheses help.
+* Hint #3:  If, for some reason, your code is displaying _every_ row, try surrounding the code on either side of the "or" ("`|`") with parentheses.<br/>In other words, if "`df[°°°1°°° | °°°2°°°]`" doesn't work for filtering the rows, try "`df[(°°°1°°°) | (°°°2°°°)]`".<br/>Sometimes the code gets finicky and extra parentheses help un-confuse it.
 
 Keep trying until your output looks like this:
 
