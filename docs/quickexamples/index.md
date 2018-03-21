@@ -336,7 +336,7 @@ If you just start playing around and hitting "run," you might not learn much.
 
 I recommend reading [this blog post](http://oracle2salesforce.blogspot.com/2016/12/filtering-rows-by-maximum-date-per-group.html){:target="_blank"} for a full explanation of what's going on in those 8 lines of code.
 
-THEN [Click here](https://repl.it/@rplrpl/Filter-rows-based-on-aggregations){:target="_blank"} to have some fun trying all sorts of fun with aggregations.
+THEN [click here](https://repl.it/@rplrpl/Filter-rows-based-on-aggregations){:target="_blank"} to have some fun trying all sorts of fun with aggregations.
 
 _(Note:  first run takes a minute or so.)_
 
