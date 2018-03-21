@@ -78,7 +78,6 @@ Keep trying until your output looks like this:
     5  9284  Andrea   Smith  as@example.com     University of California
     6   724  Albert  Howard  ah@example.com  Imperial College of Science
 
-
 ---
 
 ## Example Code:  Filter out rows whose last names don't start with a capital C or capital S
@@ -120,28 +119,64 @@ _(Note:  first run after editing the code takes a minute or so.)_
 
 Keep trying until your output looks like this:
 
-	---What is in "Last" for each row?---
-	0      Buffet
-	1    Chisholm
-	2      Monroe
-	3      Chavez
-	4       Shiva
-	5       Smith
-	6      Howard
-	Name: Last, dtype: object
-	---For each row, does "Last" start with capital "C" or "S"?---
-	0     True
-	1    False
-	2     True
-	3    False
-	4     True
-	5     True
-	6     True
-	dtype: bool
-	---Show all columns, but only rows where "Company" case-insensitively ends with "a" or "Id" is less than 800---
-		 Id    First    Last           Email                      Company
-	0  5829    Jimmy  Buffet  jb@example.com                          RCA
-	2   294  Marilyn  Monroe  mm@example.com                          Fox
-	4   827  Vandana   Shiva  vs@example.com                     Navdanya
-	5  9284   Andrea   Smith  as@example.com     University of California
-	6   724   Albert  Howard  ah@example.com  Imperial College of Science
+    ---What is in "Last" for each row?---
+    0      Buffet
+    1    Chisholm
+    2      Monroe
+    3      Chavez
+    4       Shiva
+    5       Smith
+    6      Howard
+    Name: Last, dtype: object
+    ---For each row, does "Last" start with capital "C" or "S"?---
+    0     True
+    1    False
+    2     True
+    3    False
+    4     True
+    5     True
+    6     True
+    dtype: bool
+    ---Show all columns, but only rows where "Company" case-insensitively ends with "a" or "Id" is less than 800---
+    	 Id    First    Last           Email                      Company
+    0  5829    Jimmy  Buffet  jb@example.com                          RCA
+    2   294  Marilyn  Monroe  mm@example.com                          Fox
+    4   827  Vandana   Shiva  vs@example.com                     Navdanya
+    5  9284   Andrea   Smith  as@example.com     University of California
+    6   724   Albert  Howard  ah@example.com  Imperial College of Science
+
+---
+
+## Example Code:  Complex Cell Updates and Adding, Removing, and Renaming Columns
+
+[Click here](https://repl.it/@rplrpl/Complex-Cell-Updates-and-Adding-Removing-and-Renaming-Colu){:target="_blank"} to run code like this.<br/>_(Note:  first run takes a minute or so.)_
+
+```python
+import pandas
+pandas.set_option('expand_frame_repr', False)
+df = pandas.read_csv('c:\\yay\\sample1.csv')
+theseRowsLastNamesStartWithCapitalS = df['Last'].str.startswith('S')
+theseRowsHaveA4InTheirId = df['Id'].astype(str).str.contains('4')
+df.loc[theseRowsLastNamesStartWithCapitalS,'Last'] = 'aaa'
+df.loc[theseRowsHaveA4InTheirId,'Email'] = 'bbb'
+df.loc[theseRowsLastNamesStartWithCapitalS,'New1'] = 'ccc'
+df.loc[theseRowsHaveA4InTheirId,'New2'] = 'ddd'
+df['New3'] = 'eee'
+df = df.drop(['Id','Company'], axis=1)
+df = df.rename(columns = {'First':'First Name', 'Last':'Last Name', 'Email':'Email Address'})
+print('---We have modified the Python variable "df" to have 3 new rows, plus changes in the "Last" and "Email" columns on specific rows only, and we dropped the "Id" and "Company" rows, and finally, we renamed the "First," "Last," and "Email" columns.---')
+print(df)
+df.to_csv('C:\\yay\\out_complexupdates.csv', index=False, quoting=1)
+```
+
+The output looks like this:
+
+    ---We have modified the Python variable "df" to have 3 new rows, plus changes in the "Last" and "Email" columns on specific rows only, and we dropped the "Id" and "Company" rows, and finally, we renamed the "First," "Last," and "Email" columns.---
+    First Name Last Name   Email Address New1 New2 New3
+    0      Jimmy    Buffet  jb@example.com  NaN  NaN  eee
+    1    Shirley  Chisholm             bbb  NaN  ddd  eee
+    2    Marilyn    Monroe             bbb  NaN  ddd  eee
+    3      Cesar    Chavez  cc@example.com  NaN  NaN  eee
+    4    Vandana       aaa  vs@example.com  ccc  NaN  eee
+    5     Andrea       aaa             bbb  ccc  ddd  eee
+    6     Albert    Howard             bbb  NaN  ddd  eee
