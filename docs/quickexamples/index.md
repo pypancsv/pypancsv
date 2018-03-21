@@ -358,14 +358,17 @@ But isn't it **neat** that there's a relatively simple programming language powe
 
 Such a process would be **so much** copying and pasting into new tabs in Excel.
 
-
 ---
 
 ## Tips for learning more
 
+**IMPORTANT**:  Never, ever, ever use your company's actual data in an online code editor.  You have no idea who's collecting what on the other side.  Always [install a proper "IDE" on your hard drive](http://oracle2salesforce.blogspot.com/2016/12/installing-python-3-on-windows.html){:target="_blank"} before playing with sensitive data in Python.
+
 Once you practice Python & Pandas enough to understand how the ["output values" of "expressions"](../commonoperations){:target="_blank"} impact the way you can write code, and to have a sense for how easy it is to daisy-chain little CSV-file transformations into bigger ones, and once you save enough sample files of your "practice" work to have a personal quick-reference _(or bookmark this site)_, you will be well on your way to knowing how to write Python+Pandas programs that actually save you more time than opening up Excel and doing the job by hand.
 
 Don't let your lack of ability to do an _entire_ CSV-handling transformation in Python stop you.  I often heed [Randall Munroe's advice from XKCD cartoon #1319](https://xkcd.com/1319/){:target="_blank"} and do things in Excel until they become annoying, do the annoying part in Python, then switch back to Excel.
+
+Believe in yourself, and how much saved-time-in-Excel you're worth!
 
 In my opinion, you'll get a lot of "bang for your buck" out of Python:
 
@@ -425,7 +428,7 @@ And the output looks like this _(with exactly as many program-related columns as
     </tbody>
 </table>
 
-And, for the nerdy, the code to do that is:
+In case you're curious, the code to do that is:
 
 ```python
 import pandas
@@ -440,3 +443,6 @@ pivotdf.reset_index(inplace=True)
 print(pivotdf)
 pivotdf.to_csv('C:\\yay\\tallypivotoutput.csv', index=False, quoting=1)
 ```
+
+[Click here](
+https://repl.it/@rplrpl/Pivot-1-Row-To-Column-Headers-With-Semi-Fixed-Text){:target="_blank"} to run code like this.<br/>_(Note:  first run takes a minute or so.)_
