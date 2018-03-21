@@ -369,7 +369,7 @@ The best use cases are:
 
 * As a "Run button" for repetitive work _(that is, as an alternative to macros that would otherwise be difficult to record/write)_
 
-  * Example:  I wrote a script that takes a 4-column CSV file _(PersonId, FirstName, LastName, ProgramRegisteredFor)_ that I have to deal with every day and need pivoted into a format with one row per PersonId, one column per program that appears in the day's dataset, its header name preceded by the word "Program," with the word "Registered" at the cell intersection if the person actually registered for that program.  _(This is the format I need for uploading into my "People" table into a database I maintain.)_
+  * Example:  I wrote a script that takes a 4-column CSV file that I have to deal with every day and need pivoted into a format with one row per person, one column per program that appears in the day's dataset _(its header name preceded by the word "Program")_, and the word "Registered" at the cell intersection if the person actually registered for that program.
 
 The input looks like this:
 
@@ -392,7 +392,7 @@ The input looks like this:
     </tbody>
 </table>
 
-And the output looks like (with exactly as many program-related columns as there are people):
+And the output looks like this _(with exactly as many program-related columns as there are programs in the day's "Program Registered For" column)_:
 
 {% assign tallyout=site.data.tallypivotoutput %}
 
