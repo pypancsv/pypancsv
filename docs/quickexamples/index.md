@@ -56,7 +56,7 @@ fivelinedf.to_csv('C:\\yay\\out_fiveline.csv', index=False, quoting=1)
 ### Test yourself!
 
 
-[Click here](https://repl.it/@rplrpl/Import-a-CSV-into-Pandas-Print-the-resulting-DataFrame){:target="_blank"} and edit the code so that instead of saying "---Here are the first 5 lines---", it says, "---Here are the last 2 lines---", and edit the next line of code to do just that _(display the last 2 lines)_.
+[Click here](https://repl.it/@rplrpl/Import-a-CSV-into-Pandas-Print-the-resulting-DataFrame){:target="_blank"} and edit the code so that instead of saying "Here are the first 5 lines", it says, "Here are the last 2 lines", and edit the next line of code to do just that _(display the last 2 lines)_.
 
 Hint:  it's the "[°°°1°°°.tail(°°°2°°°)](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.tail.html){:target="_blank"}" operation).<br/>
 
@@ -108,7 +108,7 @@ lastCSdf.to_csv('C:\\yay\\out_lastcs.csv', index=False, quoting=1)
 ### Test yourself!
 
 
-[Click here](https://repl.it/@rplrpl/Filter-out-rows-last-name-not-C-or-S){:target="_blank"} and edit the code so that instead of saying '---Show all columns, but only rows where "Last" starts with capital "C" or "S"---', it says, '---Show all columns, but only rows where "Company" case-insensitively ends with "a" or "Id" is less than 800---', and edit the next line of code to do just that _(only rows where "Company" ends with "A" or "a" or the "Id" is a number less than 800)_.
+[Click here](https://repl.it/@rplrpl/Filter-out-rows-last-name-not-C-or-S){:target="_blank"} and edit the code so that instead of saying 'Show all columns, but only rows where "Last" starts with capital "C" or "S"', it says, 'Show all columns, but only rows where "Company" case-insensitively ends with "a" or "Id" is less than 800', and edit the next line of code to do just that _(display only rows where "Company" ends with "A" or "a" or the "Id" is a number less than 800)_.
 
 Hint #1:  I recommend experimenting with using the "[°°°.str.lower()](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.str.lower.html){:target="_blank"}" or "[°°°.str.upper()](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.str.upper.html){:target="_blank"}" operation against "Company," which you can slip in right before the "[°°°.str.endswith()](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.str.endswith.html){:target="_blank"}"  operation _(which in turn will then operate against the all-uppercased/lowercased copy of the contents of "Company" instead of against the original contents of "Company")_, for the case-insensitive "a" test.'
 
