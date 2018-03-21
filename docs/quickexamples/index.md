@@ -208,8 +208,14 @@ Bored?  Try throwing in some other [common Python/Pandas operations](../commonop
 
   * `df = df.drop(['Id','Company'], axis=1)`:  what's going on here is that the right side of the "`=`" outputs a new "Pandas DataFrame" _(table)_ that is just like the one currently stored in the variable called "df" _(at the time that this line of code begins)_ ... and then it completely wipes out everything that was stored in "df" and overwrites its contents so that instead, the **new** output from the right side of the "`=`" becomes the value of the variable called "df" for all lines of code afterwards.
 
-  * `df['New3'] = 'eee'`, which modifies the contents of the "Pandas DataFrame" _(table)_ saved in the variable called "df" so that every row of its column labeled "New3" will now contain the text "eee".
+* Hint #2:  Certain "Pandas"-specific operations make use of "`=`" in a weird way.  The value to the left of the "`=`" isn't actually a "variable" in and of itself -- it's an "expression that knows what to do if you try to '`=`' to it" _(for lack of a better phrase)_.  Easiest to explain by example:
 
-  * `df.loc[theseRowsHaveA4InTheirId,'Email'] = 'bbb'`, which modifies the contents of the "Pandas DataFrame" _(table)_ saved in the variable called "df" so that any rows of its column labeled "Email" that have the same row-number as the rows of the "Pandas Series" called "theseRowsHaveA4InTheirId" will now contain the text "bbb".
+  * `df['New3'] = 'eee'` modifies the contents of the "Pandas DataFrame" _(table)_ saved in the variable called "df" so that every row of its column labeled "New3" will now contain the text "eee".
 
-* Hint #2:  If you want to get *really* geeky, knowing what *kind* of data is coming out of the "expressions" you're building (or what kind of "output" values you're storing into "variables") can be *really* handy if you want to consult online coding manuals.  Try putting a variable name you've already stored a value in, or any piece of code that outputs a value, inside the "°°°" of a line that says "[print(type(°°°))](https://docs.python.org/3/library/functions.html#type){:target="_blank"}" to see what "data type" that value is considered by Python, which influences how code around it behaves.
+    * And if the "Pandas DataFrame" stored in "df" doesn't yet have a "New3" column?  Add it, filling in all the values with "eee."
+
+  * `df.loc[theseRowsLastNamesStartWithCapitalS,'Last'] = 'aaa'`, modifies the contents of the "Pandas DataFrame" _(table)_ saved in the variable called "df" so that any rows of its column labeled "Last" that have the same row-number as the rows of the "Pandas Series" called "theseRowsLastNamesStartWithCapitalS" will now contain the text "aaa".
+
+    * And if the "Pandas DataFrame" stored in "df" doesn't yet have a "Last" column?  Add it, filling in only "aaa" in the appropriate rows, leaving the rest blank.
+
+* Hint #3:  If you want to get *really* geeky, knowing what *kind* of data is coming out of the "expressions" you're building (or what kind of "output" values you're storing into "variables") can be *really* handy if you want to consult online coding manuals.  Try putting a variable name you've already stored a value in, or any piece of code that outputs a value, inside the "°°°" of a line that says "[print(type(°°°))](https://docs.python.org/3/library/functions.html#type){:target="_blank"}" to see what "data type" that value is considered by Python, which influences how code around it behaves.
