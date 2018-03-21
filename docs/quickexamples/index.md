@@ -208,7 +208,7 @@ Bored?  Try throwing in some other [common Python/Pandas operations](../commonop
 
   * `df = df.drop(['Id','Company'], axis=1)`:  what's going on here is that the right side of the "`=`" outputs a new "Pandas DataFrame" _(table)_ that is just like the one currently stored in the variable called "df" _(at the time that this line of code begins)_ ... and then it completely wipes out everything that was stored in "df" and overwrites its contents so that instead, the **new** output from the right side of the "`=`" becomes the value of the variable called "df" for all lines of code afterwards.
 
-* Hint #2:  Certain "Pandas"-specific operations make use of "`=`" in a weird way.  The value to the left of the "`=`" isn't actually a "variable" in and of itself -- it's an "expression that knows what to do if you try to '`=`' to it" _(for lack of a better phrase)_.  Easiest to explain by example:
+* Hint #2:  Certain code fragments aren't "variables" but are nevertheless comfortable sitting on the left side of an "`=`", and they behave in special ways when put there.  Easiest to explain by example:
 
   * `df['New3'] = 'eee'` modifies the contents of the "Pandas DataFrame" _(table)_ saved in the variable called "df" so that every row of its column labeled "New3" will now contain the text "eee".
 
