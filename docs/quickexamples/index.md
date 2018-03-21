@@ -39,7 +39,7 @@ Below are examples you may have seen in a presentation and want to review at you
 
 ## Example Code:  Import CSV -> Pandas.  Print.  Export to new CSV.
 
-[Click here](https://repl.it/@rplrpl/Python-for-Salesforce-Administrators-0002-Reading-In-A-C){:target="_blank"} to run code like this, minus the "export to new CSV" functionality.<br/>_(Note:  first run takes a minute or so.)_
+[Click here](https://repl.it/@rplrpl/Import-a-CSV-into-Pandas-Print-the-resulting-DataFrame){:target="_blank"} to run code like this, minus the "export to new CSV" functionality.<br/>_(Note:  first run takes a minute or so.)_
 
 ```python
 import pandas
