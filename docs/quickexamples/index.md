@@ -422,6 +422,8 @@ outputdf.to_csv('C:\\yay\\out_oldest_person_per_address.csv', index=False, quoti
     </tbody>
 </table>
 
+_There seem to be twins at one of the addresses!_
+
 ### Enhance your skills!
 
 This example ... has a lot to unpack.  So much that if you just start playing around and hitting "run," you might not learn much.
