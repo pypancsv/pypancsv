@@ -109,6 +109,14 @@ Below are examples you may have seen in a presentation and want to review at you
 
 ---
 
+## Secondly, a note on "°°°"
+
+* °°°, when I'm talking about "operations" you can use in code, means "something goes here"
+
+* When there are lots of "somethings," I'll use °°°1°°°, °°°2°°°, etc.
+
+---
+
 ## Example Code:  Import CSV -> Pandas.  Print.  Export to new CSV.
 
 [Click here](https://repl.it/@rplrpl/Import-a-CSV-into-Pandas-Print-the-resulting-DataFrame){:target="_blank"} to run code like this.<br/>_(Note:  first run takes a minute or so.)_
