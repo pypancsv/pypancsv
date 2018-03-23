@@ -14,7 +14,7 @@ Below are examples you may have seen in a presentation and want to review at you
 1. [CSV files used](#first-the-csv-files-within-the-examples)
 2. [Example: Import CSV -> Pandas. Print. Export to new CSV.](#example-code--import-csv---pandas--print--export-to-new-csv)
 3. [Example: Filter out rows by last name](#example-code--filter-out-rows-whose-last-names-dont-start-with-a-capital-c-or-capital-s)
-4. [Example: Fancy cell edits + Adding, Removing, and Renaming columns](#example-code--complex-cell-updates-and-adding-removing-and-renaming-columns)
+4. [Example: Fancy cell edits.  Adding, removing, and renaming columns.](#example-code--complex-cell-updates-and-adding-removing-and-renaming-columns)
 5. [Example: Merging 2 CSV files on a multi-column match](#example-code--merging-2-csv-files-w-a-multi-column-match)
 6. [Example: Filter rows based on aggregations ("keep oldest person per address")](#example-code--filter-rows-based-on-aggregations)
 7. [Example: Add data based on aggregation ("flag oldest person per address")](#example-code--add-new-data-based-on-aggregation)
