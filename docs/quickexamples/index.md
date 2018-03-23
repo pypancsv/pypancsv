@@ -62,7 +62,7 @@ Below are examples you may have seen in a presentation and want to review at you
 ### Sample CSV #3
 
 * Has 9 rows, 5 columns
-* Meant to represent records from a "correspondence log"-typed table in "Data Source #3"
+* Meant to represent records from a "people"-typed table in "Data Source #3"
 
 {% assign samplethree=site.data.sample3 %}
 
@@ -396,23 +396,23 @@ Keep trying until your output looks like this -- be sure you have Donald Duck an
 import pandas
 pandas.set_option('expand_frame_repr', False)
 df = pandas.read_csv('C:\\yay\\sample3.csv', dtype=object, parse_dates=['Actv Date'])
-groupingByCompany = df.groupby('Company')
-groupedDataFrame = groupingByCompany.apply(lambda x: x[x['Actv Date'] == x['Actv Date'].max()])
+groupingByAddress = df.groupby('Address')
+groupedDataFrame = groupingByAddress.apply(lambda x: x[x['D.O.B.'] == x['D.O.B.'].max()])
 outputdf = groupedDataFrame.reset_index(drop=True)
 print(outputdf)
-outputdf.to_csv('C:\\yay\\out_most_recent_correspondence_per_company.csv', index=False, quoting=1)
+outputdf.to_csv('C:\\yay\\out_oldest_person_per_address.csv', index=False, quoting=1)
 ```
 
-{% assign out_most_recent_correspondence_per_company=site.data.out_most_recent_correspondence_per_company %}
+{% assign out_oldest_person_per_address=site.data.out_oldest_person_per_address %}
 
 <table>
     <thead>
-    {% for column in out_most_recent_correspondence_per_company[0] %}
+    {% for column in out_oldest_person_per_address[0] %}
         <th>{{ column[0] }}</th>
     {% endfor %}
     </thead>
     <tbody>
-    {% for row in out_most_recent_correspondence_per_company %}
+    {% for row in out_oldest_person_per_address %}
         <tr>
         {% for cell in row %}
             <td>{{ cell[1] }}</td>
@@ -427,6 +427,8 @@ outputdf.to_csv('C:\\yay\\out_most_recent_correspondence_per_company.csv', index
 This example ... has a lot to unpack.  So much that if you just start playing around and hitting "run," you might not learn much.
 
 I recommend reading [this blog post](http://oracle2salesforce.blogspot.com/2016/12/filtering-rows-by-maximum-date-per-group.html){:target="_blank"} for a full explanation of what's going on in those 8 lines of code.
+
+Note that the blog post uses an equivalent problem on different data:  it's going for "most recent correspondence per company" instead of "oldest person per address."
 
 THEN [click here](https://repl.it/@rplrpl/Filter-rows-based-on-aggregations){:target="_blank"} to have some fun trying all sorts of fun with aggregations.
 
