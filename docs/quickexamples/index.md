@@ -590,6 +590,61 @@ _(This could be useful for updating a simple "people" table, like a mailing list
 
 ---
 
+## Example Code:  Concatenate unique first+last names from every CSV in a folder, if the file has them
+
+```python
+import pandas
+pandas.set_option('expand_frame_repr', False)
+inputfolder = 'C:\\yay\\folder\\'
+listOfDFsToConcatenate = []
+for file in [f for f in os.listdir(inputfolder) if f.endswith('.csv')]:
+    df = pandas.read_csv(os.path.join(root, file))
+    df = df.rename(columns = {'First Name':'First', 'FirstName':'First', 'Last Name':'Last', 'LastName':'Last'})
+    if 'First' in df.columns and 'Last' in df.columns:
+        df = df[['First','Last']]
+        df['SourceFile'] = file
+        listOfDFsToConcatenate.append(df)
+concatdf = pandas.concat(listOfDFsToConcatenate, ignore_index=True)
+concatdf = concatdf.drop_duplicates(subset=['First','Last'])
+print(concatdf)
+concatdf.to_csv('C:\\yay\\out_concatenated_unique_names.csv', index=False, quoting=1)
+```
+
+{% assign out_concatenated_unique_names=site.data.out_concatenated_unique_names %}
+
+<table>
+    <thead>
+    {% for column in out_concatenated_unique_names[0] %}
+        <th>{{ column[0] }}</th>
+    {% endfor %}
+    </thead>
+    <tbody>
+    {% for row in out_concatenated_unique_names %}
+        <tr>
+        {% for cell in row %}
+            <td>{{ cell[1] }}</td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+In this example, presume our 4 sample CSV files are all stored at `C:\yay\folder\`.
+
+We loop through every file ending in ".csv" in it.
+
+If the file has a "First" and a "Last" column, it's a candidate for concatenation.
+
+We pre-process a bit to also accept "FirstName," "First Name," "LastName," and "Last Name."  _(Note that the pre-processing shown isn't terribly robust in case of a file that has both "First Name" and "First.")_
+
+If the CSV file is a candidate for concatenation, we strip it down to just its "First" and "Last" columns, then add a third "SourceFile" column.
+
+Then, after we've set aside all such CSV files into a Python "list" of "Pandas DataFrames," we concatenate them all ("`ignore_index=True"`" indicating that we want to continue our line-numbering system, not start over at 0, when the concatenated file starts from the next CSV file).
+
+Finally, in this case, we decide that we only want to keep the first time we encountered a given First+Last name combination, so we "drop the duplicates."
+
+---
+
 ## Tips for learning more
 
 **IMPORTANT**:  Never, ever, ever use your company's actual data in an online code editor.  You have no idea who's collecting what on the other side.  Always [install a proper "IDE" on your hard drive](http://oracle2salesforce.blogspot.com/2016/12/installing-python-3-on-windows.html){:target="_blank"} before playing with sensitive data in Python.
