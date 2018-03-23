@@ -638,7 +638,7 @@ We loop through every file ending in ".csv" in it.
 
 If the file has a "First" and a "Last" column, it's a candidate for concatenation.
 
-We pre-process a bit to also accept "FirstName," "First Name," "LastName," and "Last Name."  _(Note that the pre-processing shown isn't terribly robust in case of a file that has both "First Name" and "First.")_
+* We pre-process a bit to also accept "FirstName," "First Name," "LastName," and "Last Name."<br/>_(Note that the pre-processing shown isn't terribly robust in case of a file that has both "First Name" and "First.")_
 
 If the CSV file is a candidate for concatenation, we strip it down to just its "First" and "Last" columns, then add a third "SourceFile" column.
 
