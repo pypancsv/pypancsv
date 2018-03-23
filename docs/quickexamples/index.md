@@ -494,6 +494,8 @@ Such a process would be **so much** copying and pasting into new tabs in Excel.
 
 Instead of eliminating rows that aren't the oldest person at an address, you can merely add a new column noting who is.  The code still starts out by saving data to a variable called "groupingByAddress," but from there on out, it's different.
 
+[Click here](https://repl.it/@rplrpl/Add-new-data-based-on-aggregation){:target="_blank"} to run code like this.<br/>_(Note:  first run takes a minute or so.)_
+
 ```python
 import pandas
 pandas.set_option('expand_frame_repr', False)
