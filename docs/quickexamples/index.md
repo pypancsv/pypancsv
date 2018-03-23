@@ -86,7 +86,7 @@ Below are examples you may have seen in a presentation and want to review at you
 ### Sample CSV #4
 
 * Has 6 rows, 4 columns
-* Meant to represent records from a "course registration transactions"-typed table in "Data Source #4"
+* Meant to represent records from a "transactions"-typed table in "Data Source #4"
 
 {% assign tallyin=site.data.tallypivotinput %}
 
