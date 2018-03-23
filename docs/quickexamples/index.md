@@ -19,7 +19,8 @@ Below are examples you may have seen in a presentation and want to review at you
 6. [Example: Filter rows based on aggregations ("keep oldest person per address")](#example-code--filter-rows-based-on-aggregations)
 7. [Example: Add data based on aggregation ("flag oldest person per address")](#example-code--add-new-data-based-on-aggregation)
 8. [Example: Pivot a transaction log into a "people and what they did" summary](#example-code--pivot-a-course-registration-log-to-a-people-and-what-they-registered-for-summary)
-9. [Tips](#tips-for-learning-more)
+9. [Example: Concatenate unique first+last names from every CSV in a folder](#example-code--concatenate-unique-firstlast-names-from-every-csv-in-a-folder-if-the-file-has-them)
+10. [Tips](#tips-for-learning-more)
 
 ---
 
