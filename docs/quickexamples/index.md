@@ -9,6 +9,16 @@ Below are examples you may have seen in a presentation and want to review at you
 
 ---
 
+## Contents
+
+* [CSV files used](#first-the-csv-files-within-the-examples)
+
+* [Example: Import CSV -> Pandas. Print. Export to new CSV.](#example-code--import-csv---pandas--print--export-to-new-csv)
+* [Example: Filter out rows by last name](#example-code--filter-out-rows-whose-last-names-dont-start-with-a-capital-c-or-capital-s)
+* [Example: Complex Cell Updates and Adding, Removing, and Renaming Columns](#example-code--complex-cell-updates-and-adding-removing-and-renaming-columns)
+
+---
+
 ## First, the CSV files within the examples:
 
 ### Sample CSV #1
@@ -599,11 +609,3 @@ In my opinion, you'll get a lot of "bang for your buck" out of Python:
 Don't let your lack of ability to do an _entire_ CSV-handling transformation in Python stop you.  I often heed [Randall Munroe's advice from XKCD cartoon #1319](https://xkcd.com/1319/){:target="_blank"} and do things in Excel until they become annoying, do the annoying part in Python, then switch back to Excel.
 
 Believe in yourself, and how much saved-time-in-Excel you're worth!
-
----
-
-## Contents
-
-* [CSV files used](#first-the-csv-files-within-the-examples)
-
-* [Example Import CSV -> Pandas. Print. Export to new CSV.](#example-code--import-csv---pandas--print--export-to-new-csv)
