@@ -109,7 +109,7 @@ Below are examples you may have seen in a presentation and want to review at you
 
 ---
 
-## Secondly, a note on "°°°"
+## Second, a note on "°°°"
 
 * °°°, when I'm talking about "operations" you can use in code, means "something goes here"
 
@@ -487,6 +487,49 @@ Getting the output to export to CSV the way you envision it can be a bit tricky,
 But isn't it **neat** that there's a relatively simple programming language powerful enough to let you hop back and forth between row-modification, filtering, pivot-table-style-aggregations, and then treating that PivotTable as if it were a "normal table?"
 
 Such a process would be **so much** copying and pasting into new tabs in Excel.
+
+---
+
+## Example Code:  Add new data based on aggregation
+
+Instead of eliminating rows that aren't the oldest person at an address, you can merely add a new column noting who is.  The code still starts out by saving data to a variable called "groupingByAddress," but from there on out, it's different.
+
+```python
+import pandas
+pandas.set_option('expand_frame_repr', False)
+df = pandas.read_csv('C:\\yay\\sample3.csv', dtype=object, parse_dates=['D.O.B.'])
+groupingByAddress = df.groupby('Address')
+rowIsOldestPersonAtAddress = df['D.O.B.'] == groupingByAddress['D.O.B.'].transform('max')
+df['IsOldestAtAddr'] = False
+df.loc[rowIsOldestPersonAtAddress, 'IsOldestAtAddr'] = True
+print(df)
+df.to_csv('C:\\yay\\out_noted_if_is_oldest_per_address.csv', index=False, quoting=1)
+```
+
+{% assign out_noted_if_is_oldest_per_address=site.data.out_noted_if_is_oldest_per_address %}
+
+<table>
+    <thead>
+    {% for column in out_noted_if_is_oldest_per_address[0] %}
+        <th>{{ column[0] }}</th>
+    {% endfor %}
+    </thead>
+    <tbody>
+    {% for row in out_noted_if_is_oldest_per_address %}
+        <tr>
+        {% for cell in row %}
+            <td>{{ cell[1] }}</td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+Note that we add a column "IsOldestAtAddr" and set the whole thing to "False" before adding a conditional "True" to some of its cells with our command on the next line.
+
+If we hadn't included the first "False" line, our new "IsOldestAtAddr" would have still been created, but there would have been blank spaces instead of "False."
+
+In some cases, that may be exactly what you'd like to do.
 
 ---
 
