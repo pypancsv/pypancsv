@@ -430,7 +430,7 @@ This example ... has a lot to unpack.  So much that if you just start playing ar
 
 I recommend reading [this blog post](http://oracle2salesforce.blogspot.com/2016/12/filtering-rows-by-maximum-date-per-group.html){:target="_blank"} for a full explanation of what's going on in those 8 lines of code.
 
-Note that the blog post uses an equivalent problem on different data:  it's going for "most recent correspondence per company" instead of "oldest person per address."
+* Note that the blog post uses an equivalent problem on different data:  it's going for "most recent correspondence per company" instead of "oldest person per address."
 
 THEN [click here](https://repl.it/@rplrpl/Filter-rows-based-on-aggregations){:target="_blank"} to have some fun trying all sorts of fun with aggregations.
 
