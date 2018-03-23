@@ -593,6 +593,8 @@ _(This could be useful for updating a simple "people" table, like a mailing list
 
 ## Example Code:  Concatenate unique first+last names from every CSV in a folder, if the file has them
 
+[Click here](https://repl.it/@rplrpl/Concatenate-unique-firstlast-names-from-every-folder-CSV){:target="_blank"} to run code like this.<br/>_(Note:  first run takes a minute or so.)_
+
 ```python
 import pandas
 pandas.set_option('expand_frame_repr', False)
