@@ -642,7 +642,7 @@ We pre-process a bit to also accept "FirstName," "First Name," "LastName," and "
 
 If the CSV file is a candidate for concatenation, we strip it down to just its "First" and "Last" columns, then add a third "SourceFile" column.
 
-Then, after we've set aside all such CSV files into a Python "list" of "Pandas DataFrames," we concatenate them all ("`ignore_index=True"`" indicating that we want to continue our line-numbering system, not start over at 0, when the concatenated file starts from the next CSV file).
+Then, after we've set aside all such CSV files into a Python "list" of "Pandas DataFrames," we concatenate them all ("`ignore_index=True`" indicating that we want to continue our line-numbering system, not start over at 0, when the concatenated file starts from the next CSV file).
 
 Finally, in this case, we decide that we only want to keep the first time we encountered a given First+Last name combination, so we "drop the duplicates."
 
