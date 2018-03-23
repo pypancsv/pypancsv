@@ -83,6 +83,30 @@ Below are examples you may have seen in a presentation and want to review at you
     </tbody>
 </table>
 
+### Sample CSV #4
+
+* Has 6 rows, 4 columns
+* Meant to represent records from a "course registration transactions"-typed table in "Data Source #4"
+
+{% assign tallyin=site.data.tallypivotinput %}
+
+<table>
+    <thead>
+    {% for column in tallyin[0] %}
+        <th>{{ column[0] }}</th>
+    {% endfor %}
+    </thead>
+    <tbody>
+    {% for row in tallyin %}
+        <tr>
+        {% for cell in row %}
+            <td>{{ cell[1] }}</td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
 ---
 
 ## Example Code:  Import CSV -> Pandas.  Print.  Export to new CSV.
@@ -458,54 +482,23 @@ Such a process would be **so much** copying and pasting into new tabs in Excel.
 
 ---
 
-## Tips for learning more
+## Example Code:  Pivot a course-registration log to a "people and what they registered for" summary
 
-**IMPORTANT**:  Never, ever, ever use your company's actual data in an online code editor.  You have no idea who's collecting what on the other side.  Always [install a proper "IDE" on your hard drive](http://oracle2salesforce.blogspot.com/2016/12/installing-python-3-on-windows.html){:target="_blank"} before playing with sensitive data in Python.
+[Click here](https://repl.it/@rplrpl/Pivoting-transaction-rows-to-one-row-per-person){:target="_blank"} to run code like this.<br/>_(Note:  first run takes a minute or so.)_
 
-Once you practice Python & Pandas enough to understand how the ["output values" of "expressions"](../commonoperations){:target="_blank"} impact the way you can write code, and to have a sense for how easy it is to daisy-chain little CSV-file transformations into bigger ones, and once you save enough sample files of your "practice" work to have a personal quick-reference _(or bookmark this site)_, you will be well on your way to knowing how to write Python+Pandas programs that actually save you more time than opening up Excel and doing the job by hand.
-
-Don't let your lack of ability to do an _entire_ CSV-handling transformation in Python stop you.  I often heed [Randall Munroe's advice from XKCD cartoon #1319](https://xkcd.com/1319/){:target="_blank"} and do things in Excel until they become annoying, do the annoying part in Python, then switch back to Excel.
-
-Believe in yourself, and how much saved-time-in-Excel you're worth!
-
-In my opinion, you'll get a lot of "bang for your buck" out of Python:
-
-* To process files so big that Excel freezes when you try to filter and delete rows
-
-* To process files with zip codes that contain "leading zeroes."<br/>
-
-  * Just be sure to write something along the lines of  "[pandas.read_csv('mydata.csv', dtype={'HomeZip' : object, 'BizZip' : object})](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html){:target="_blank"}" when importing your CSV file to indicate that the data in those columns should be interpreted as text, not numbers.<br/>&nbsp;<br/>
-
-* For features that are annoying in Excel _(e.g. multi-column VLOOKUP)_
-
-* To combine with other things Python is good at (such as inspecting every CSV file in a directory on your hard drive and repeating the same steps for all of them).
-
-* As a "Run button" for repetitive work _(that is, as an alternative to macros that would otherwise be difficult to record/write)_
-
-  * Example:  I wrote a script that takes a 4-column CSV file that I have to deal with every day and need pivoted into a format with one row per person, one column per program that appears in the day's dataset _(its header name preceded by the word "Program")_, and the word "Registered" at the cell intersection if the person actually registered for that program.<br/>&nbsp;<br/>That'd be a nightmare to repeat every day in Excel, if you ask me.<br/>&nbsp;<br/>But now all I have to do is make sure I save the input file to the right place on my hard drive before I run my Python script.
-
-The input looks like this:
-
-{% assign tallyin=site.data.tallypivotinput %}
-
-<table>
-    <thead>
-    {% for column in tallyin[0] %}
-        <th>{{ column[0] }}</th>
-    {% endfor %}
-    </thead>
-    <tbody>
-    {% for row in tallyin %}
-        <tr>
-        {% for cell in row %}
-            <td>{{ cell[1] }}</td>
-        {% endfor %}
-        </tr>
-    {% endfor %}
-    </tbody>
-</table>
-
-And the output looks like this _(with exactly as many program-related columns as there are programs in the day's "Program Registered For" column)_:
+```python
+import pandas
+import numpy
+pandas.set_option('expand_frame_repr', False)
+df = pandas.read_csv('C:\\yay\\sample4.csv')
+df['Program Registered For'] = 'Program' + df['Program Registered For']
+non_program_columns = list(filter(lambda x: x!= 'Program Registered For', df.keys()))
+pivotdf = pandas.pivot_table(df, index=non_program_columns, columns='Program Registered For', aggfunc=numpy.size)
+pivotdf[pandas.notnull(pivotdf)] = 'Registered'
+pivotdf.reset_index(inplace=True)
+print(pivotdf)
+pivotdf.to_csv('C:\\yay\\out_pivoted_program_registrations.csv', index=False, quoting=1)
+```
 
 {% assign tallyout=site.data.tallypivotoutput %}
 
@@ -526,21 +519,30 @@ And the output looks like this _(with exactly as many program-related columns as
     </tbody>
 </table>
 
-In case you're curious, the code to do that is:
+_(This could be useful for updating a simple "people" table, like a mailing list, with a summary of who already took which courses, so you don't spam them asking them to take the course again.)_
 
-```python
-import pandas
-import numpy
-pandas.set_option('expand_frame_repr', False)
-df = pandas.read_csv('C:\\yay\\tallypivotinput.csv')
-df['Program Registered For'] = 'Program' + df['Program Registered For']
-non_program_columns = list(filter(lambda x: x!= 'Program Registered For', df.keys()))
-pivotdf = pandas.pivot_table(df, index=non_program_columns, columns='Program Registered For', aggfunc=numpy.size)
-pivotdf[pandas.notnull(pivotdf)] = 'Registered'
-pivotdf.reset_index(inplace=True)
-print(pivotdf)
-pivotdf.to_csv('C:\\yay\\tallypivotoutput.csv', index=False, quoting=1)
-```
+---
 
-[Click here](
-https://repl.it/@rplrpl/Pivot-1-Row-To-Column-Headers-With-Semi-Fixed-Text){:target="_blank"} to run code like this.<br/>_(Note:  first run takes a minute or so.)_
+## Tips for learning more
+
+**IMPORTANT**:  Never, ever, ever use your company's actual data in an online code editor.  You have no idea who's collecting what on the other side.  Always [install a proper "IDE" on your hard drive](http://oracle2salesforce.blogspot.com/2016/12/installing-python-3-on-windows.html){:target="_blank"} before playing with sensitive data in Python.
+
+Once you practice Python & Pandas enough to understand how the ["output values" of "expressions"](../commonoperations){:target="_blank"} impact the way you can write code, and to have a sense for how easy it is to daisy-chain little CSV-file transformations into bigger ones, and once you save enough sample files of your "practice" work to have a personal quick-reference _(or bookmark this site)_, you will be well on your way to knowing how to write Python+Pandas programs that actually save you more time than opening up Excel and doing the job by hand.
+
+In my opinion, you'll get a lot of "bang for your buck" out of Python:
+
+* To process files so big that Excel freezes when you try to filter and delete rows
+
+* To process files with zip codes that contain "leading zeroes."<br/>
+
+  * Just be sure to write something along the lines of  "[pandas.read_csv('mydata.csv', dtype={'HomeZip' : object, 'BizZip' : object})](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html){:target="_blank"}" when importing your CSV file to indicate that the data in those columns should be interpreted as text, not numbers.<br/>&nbsp;<br/>
+
+* For features that are annoying in Excel _(e.g. multi-column VLOOKUP)_
+
+* To combine with other things Python is good at (such as inspecting every CSV file in a directory on your hard drive and repeating the same steps for all of them).
+
+* As a "Run button" for repetitive work _(that is, as an alternative to macros that would otherwise be difficult to record/write)_
+
+Don't let your lack of ability to do an _entire_ CSV-handling transformation in Python stop you.  I often heed [Randall Munroe's advice from XKCD cartoon #1319](https://xkcd.com/1319/){:target="_blank"} and do things in Excel until they become annoying, do the annoying part in Python, then switch back to Excel.
+
+Believe in yourself, and how much saved-time-in-Excel you're worth!
