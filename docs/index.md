@@ -21,11 +21,11 @@ If you're here after watching a presentation, visit [Quick Examples](quickexampl
 
 If you've worked your way through the examples and want a further challenge, visit my list of [operations commonly used for CSV processing](commonoperations){:target="_blank"} _(under construction)_ to learn more functions that you can put into your Python scripts.
 
-For example, maybe instead of filtering for rows whose "Last Name starts with capital S" you want to...
+For example, once you can filter for rows whose "Last Name starts with capital S" you may want to...
 
-* Look up what operation would "uppercase" the contents of cells in the "Last Name" column _(handy to do before checking if the output of that operation starts with capital S, so as to do a case-insensitive filter)_
+* Know what operation would "uppercase" the contents of cells in the "Last Name" column _(handy to do **before** the "capital S" filter for case-insensitivity)_
 
-* Look up what operation would check whether numeric cell values in an "Age" column are "< 60"
+* Know what operation would check whether numeric cell values in an "Age" column are "< 60"
 
 ## Why Learn Python
 
