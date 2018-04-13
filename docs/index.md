@@ -17,6 +17,8 @@ If you're here after watching a presentation, visit [Quick Examples](quickexampl
 * Run it yourself
 * Test your ability to edit the examples to do something else
 
+[April 2018 slides PDF here](Presentation201804.pdf){:target="_blank"}
+
 ## Common "Operations"
 
 If you've worked your way through the examples and want a further challenge, visit my list of [operations commonly used for CSV processing](commonoperations){:target="_blank"} _(under construction)_ to learn more functions that you can put into your Python scripts.
