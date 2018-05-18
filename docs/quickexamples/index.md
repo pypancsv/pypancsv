@@ -442,9 +442,9 @@ Keep trying until your output looks like this -- be sure you have Donald Duck an
 ```python
 import pandas
 pandas.set_option('expand_frame_repr', False)
-df = pandas.read_csv('C:\\yay\\sample3.csv', dtype=object, parse_dates=['Actv Date'])
+df = pandas.read_csv('C:\\yay\\sample3.csv', dtype=object, parse_dates=['D.O.B.'])
 groupingByAddress = df.groupby('Address')
-groupedDataFrame = groupingByAddress.apply(lambda x: x[x['D.O.B.'] == x['D.O.B.'].max()])
+groupedDataFrame = groupingByAddress.apply(lambda x: x[x['D.O.B.'] == x['D.O.B.'].min()])
 outputdf = groupedDataFrame.reset_index(drop=True)
 print(outputdf)
 outputdf.to_csv('C:\\yay\\out_oldest_person_per_address.csv', index=False, quoting=1)
@@ -516,7 +516,7 @@ import pandas
 pandas.set_option('expand_frame_repr', False)
 df = pandas.read_csv('C:\\yay\\sample3.csv', dtype=object, parse_dates=['D.O.B.'])
 groupingByAddress = df.groupby('Address')
-rowIsOldestPersonAtAddress = df['D.O.B.'] == groupingByAddress['D.O.B.'].transform('max')
+rowIsOldestPersonAtAddress = df['D.O.B.'] == groupingByAddress['D.O.B.'].transform('min')
 df['IsOldestAtAddr'] = False
 df.loc[rowIsOldestPersonAtAddress, 'IsOldestAtAddr'] = True
 print(df)
