@@ -1,4 +1,12 @@
-https://link.stthomas.edu/sfpyhello
+<h1>Meeting link:</h1>
+
+<h1><a href="https://link.stthomas.edu/sfpypres1rd1meeting" target="_blank">https://link.stthomas.edu/sfpypres1rd1meeting</a></h1>
+
+<h1>Ignore all these instructions until I get to them.</h1>
+
+These are you to copy/paste from if the screen is grainy from my PowerPoint or I've navigated away from it.  You can also hand-type the code from the PowerPoint if you can type fast enough, for better retention, although watch your typos. :-)
+
+[https://link.stthomas.edu/sfpyhello](https://link.stthomas.edu/sfpyhello)
 
 - Exercise 1:  Get it running
 
