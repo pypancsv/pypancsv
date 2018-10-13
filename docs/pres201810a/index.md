@@ -14,13 +14,12 @@
 
 ## Contents
 
-1. [Starter Code:  "hello"](#id-hello)
+1. [Starter Code:  "hello"](#1-starter-code--hello)
   * hi
-2. [Starter Code:  "readcsv"](#id-readcsv)
+2. [Starter Code:  "readcsv"](#1-starter-code--readcsv)
 
 ---
 
-<div id='hello'/>
 ## 1. [Starter Code:  "hello"](https://link.stthomas.edu/sfpyhello){:target="_blank"}
 [https://link.stthomas.edu/sfpyhello](https://link.stthomas.edu/sfpyhello){:target="_blank"}
 
@@ -74,14 +73,33 @@ print('Bye!')
 
 ---
 
-<div id='readcsv'/>
 ## 2. [Starter Code:  "readcsv"](https://link.stthomas.edu/sfpyreadcsv){:target="_blank"}
 [https://link.stthomas.edu/sfpyreadcsv](https://link.stthomas.edu/sfpyreadcsv){:target="_blank"}
 
 ## Exercise 2A:  Running the "readcsv" starter code
 
-* For this exercise, we're just making sure we can run the starter code.  Remember all the "fork" stuff.
+* For this exercise, we're just:
+  * making sure we can run the starter code and
+  * looking at the output
+* _(Remember all the "fork" stuff when you first load the starter code!)_
 
-## Exercise 2B:  Changing `df1` to `df2` in all of the `print()` statements and re-running the code
+## Exercise 2B:  Changing `df1` to `df2` and seeing the new output
 
 * Be sure not to change `df1` to `df2` in the line at the top where we read the first CSV file into `df1`.  Leave that alone.
+* Change `df1` to `df2` in all of the `print()` statements and re-run the code and look at the differences in the output.
+
+## Exercise 2C:  Changing `df2` to `df3` in all of the `print()` statements and re-running the code
+
+* Be sure not to change `df2` to `df3` in the line at the top where we read the second CSV file into `df2`.  Leave that alone.
+
+## --Break--
+
+* Leave your code up -- we'll pick up where we left off.
+
+## Exercise 2D:  Inspecting "unique addresses" in `df3`
+
+* "Comment out" _(render unrunnable)_ all of our previous `print()` statements by putting `'''` before the first line of `print()` statements and `'''` after the last line of `print()` statements
+* At the end of the code, add the following new line and run your program:
+```python
+print(df3['Address'].unique())
+```
