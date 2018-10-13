@@ -3,4 +3,5 @@
 
 ---
 
-# Instructions / other links you should know:**  (Coming soon)
+# Instructions / other links you should know:
+(Coming soon)
