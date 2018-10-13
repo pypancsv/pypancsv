@@ -12,7 +12,17 @@
 
 ---
 
-## 1. [Starter Code:  "hello" (https://link.stthomas.edu/sfpyhello)](https://link.stthomas.edu/sfpyhello){:target="_blank"}
+## Contents
+
+1. [Starter Code:  "hello"](#starter-code-hello)
+  a. hi
+2. [Starter Code:  "readcsv"](#start-code-readcsv)
+
+---
+
+
+
+## 1. [Starter Code:  "hello"](https://link.stthomas.edu/sfpyhello){:target="_blank"}
 [https://link.stthomas.edu/sfpyhello](https://link.stthomas.edu/sfpyhello){:target="_blank"}
 
 ## Exercise 1A:  Running the "hello" starter code
@@ -62,3 +72,14 @@ print(myFirstVariable < 1)
 print(type(myFirstVariable < 1))
 print('Bye!')
 ```
+
+---
+
+## 2. [Starter Code:  "readcsv"](https://link.stthomas.edu/sfpyreadcsv){:target="_blank"}
+[https://link.stthomas.edu/sfpyreadcsv](https://link.stthomas.edu/sfpyreadcsv){:target="_blank"}
+
+## Exercise 2A:  Running the "readcsv" starter code
+
+* For this exercise, we're just making sure we can run the starter code.  Remember all the "fork" stuff.
+
+
