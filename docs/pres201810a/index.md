@@ -12,11 +12,10 @@
 
 ---
 
-## Contents
+## Quick Links To Sections Of These Instructions
 
 1. [Starter Code:  "hello"](#1-starter-code--hello)
-  * hi
-2. [Starter Code:  "readcsv"](#1-starter-code--readcsv)
+2. [Starter Code:  "readcsv"](#2-starter-code--readcsv)
 
 ---
 
@@ -98,8 +97,51 @@ print('Bye!')
 
 ## Exercise 2D:  Inspecting "unique addresses" in `df3`
 
+* Note that in the slideshow page header, I labeled this exercise "df3-A."
 * "Comment out" _(render unrunnable)_ all of our previous `print()` statements by putting `'''` before the first line of `print()` statements and `'''` after the last line of `print()` statements
 * At the end of the code, add the following new line and run your program:
 ```python
 print(df3['Address'].unique())
 ```
+* You should see the following output:
+```
+['305 Grover Lane, Sunny, AK' '800 Golden Leaf Street, Snowy, NM' '87834 Lyons Terrace, Rainy, OR' '98 Paget Trail, Cloudy, WY']
+```
+
+## Exercise 2E:  Counting "unique addresses" in `df3`
+
+* Note that in the slideshow page header, I labeled this exercise "df3-B."
+* At the end of the code, add the following new line and run your program:
+```python
+print(len(df3['Address'].unique()))
+```
+* You should see the following output _(note the number "4" on the 2nd line)_:
+```
+['305 Grover Lane, Sunny, AK' '800 Golden Leaf Street, Snowy, NM' '87834 Lyons Terrace, Rainy, OR' '98 Paget Trail, Cloudy, WY']
+4
+```
+
+## Exercise 2F:  Playing with `.drop_duplicates()` against `df3`
+
+* Note that in the slideshow page header, I labeled this exercise "df3-C."
+* "Comment out" _(render unrunnable)_ your two lines of code from exercises "2D" and "2E" by prefixing them with a `#`
+* At the end of the code, add the following new lines of code and run your program:
+```python
+print(df3.drop_duplicates(['Address'], keep=False)) 
+print(len(df3.drop_duplicates(['Address'], keep=False))) 
+print(len(df3.drop_duplicates(['Address','D.O.B.'], keep=False)))
+```
+* You should see the following output:
+```
+      Id First    Last     D.O.B.                     Address                   
+8  67526  Kata  Windus  10/4/1991  98 Paget Trail, Cloudy, WY                   
+1                                                                               
+7                                                           
+```
+  * The first two lines of output are a list of people who "live alone" (people who have a unique address) -- our `keep=False` setting in the `.drop_duplicates()` command meant that we didn't want anyone in our output who shared an address with someone else in the data set.
+    * The number "8" at the beginning of the 2nd line of output is **just a "row ID"** indicating that Kata Windus was "row #8" of the data set _(starting counting with "0," so conceptually, really more "row #9" -- and in Excel, where headers take up the first row and you start counting with "2," she'd be "row #10")_
+  * The third line of output, the number "1," is a count of the number of rows in our previous output -- as we could see, there was just 1.
+  * The fourth line of output, the number "7," is a different count:  it's the count of "people who don't live with a twin."
+    * As you can see, we added a 2nd parameter to the list of columns indicating our "duplication criteria."  Now we only "drop duplicate rows" from our output if they have the same address AND date of birth as someone else in the data set.
+    * It's a 9-row data set, and we only had 2 "twins living together" _(Othelia and Pansy)_, so they were dropped, and that leaves 7 people left.
+
