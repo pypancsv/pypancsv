@@ -331,7 +331,7 @@ print(df3.duplicated(['Address','D.O.B.'], keep=False))
 dtype: bool
 ```
 * Note that the `keep=False` setting meant that we wanted ALL "twins living together" flagged "True."
-  * There are also `keep='first'` and `keep='last` options that will only flag the "first row of a duplicate-set" or "last row of a duplicate-set" as "True."
+  * There are also `keep='first'` and `keep='last'` options that will only flag the "first row of a duplicate-set" or "last row of a duplicate-set" as "True."
 
 ## Exercise 3H:  Counting duplicate rows in `df3` using "address & birthdate" as the "duplicate key"
 
