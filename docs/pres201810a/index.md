@@ -22,6 +22,7 @@
   * [Exercise 2A](#ex2a)
   * [Exercise 2B](#ex2b)
   * [Exercise 2C](#ex2c)
+  * _(--Break-- -- leave your code up)_
   * [Exercise 2D](#ex2d)
   * [Exercise 2E](#ex2e)
   * [Exercise 2F](#ex2f)
@@ -35,6 +36,7 @@
   * [Exercise 3G](#ex3g)
   * [Exercise 3H](#ex3h)
   * [Exercise 3I](#ex3i)
+  * _(--Break--)_
 4. [Starter Code:  "filter1"](#4-starter-code--filter1)
   * [Exercise 4A](#ex4a)
   * [Exercise 4B](#ex4b)
