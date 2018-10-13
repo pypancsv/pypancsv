@@ -14,15 +14,15 @@
 
 ## Contents
 
-1. [Starter Code:  "hello"](#starter-code-hello)
-  a. hi
-2. [Starter Code:  "readcsv"](#start-code-readcsv)
+1. [Starter Code:  "hello"](#hello)
+  * hi
+2. [Starter Code:  "readcsv"](#readcsv)
 
 ---
 
 
 
-## 1. [Starter Code:  "hello"](https://link.stthomas.edu/sfpyhello){:target="_blank"}
+## 1. [Starter Code:  "hello"](https://link.stthomas.edu/sfpyhello){:target="_blank"}{name=hello}
 [https://link.stthomas.edu/sfpyhello](https://link.stthomas.edu/sfpyhello){:target="_blank"}
 
 ## Exercise 1A:  Running the "hello" starter code
@@ -75,7 +75,7 @@ print('Bye!')
 
 ---
 
-## 2. [Starter Code:  "readcsv"](https://link.stthomas.edu/sfpyreadcsv){:target="_blank"}
+## 2. [Starter Code:  "readcsv"](https://link.stthomas.edu/sfpyreadcsv){:target="_blank"}{name=readcsv}
 [https://link.stthomas.edu/sfpyreadcsv](https://link.stthomas.edu/sfpyreadcsv){:target="_blank"}
 
 ## Exercise 2A:  Running the "readcsv" starter code
