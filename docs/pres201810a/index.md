@@ -32,6 +32,7 @@
   * [Exercise 3C](#ex3c)
   * [Exercise 3D](#ex3d)
   * [Exercise 3E](#ex3e)
+  * _(Close your code and reload "123" starter code)_
   * [Exercise 3F](#ex3f)
   * [Exercise 3G](#ex3g)
   * [Exercise 3H](#ex3h)
