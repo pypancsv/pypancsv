@@ -16,9 +16,28 @@
 
 1. [Starter Code:  "hello"](#1-starter-code--hello)
   * [Exercise 1A](#ex1a)
+  * [Exercise 1B](#ex1b)
+  * [Exercise 1C](#ex1c)
 2. [Starter Code:  "readcsv"](#2-starter-code--readcsv)
+  * [Exercise 2A](#ex2a)
+  * [Exercise 2B](#ex2b)
+  * [Exercise 2C](#ex2c)
+  * [Exercise 2D](#ex2d)
+  * [Exercise 2E](#ex2e)
+  * [Exercise 2F](#ex2f)
 3. [Starter Code:  "123"](#3-starter-code--123)
+  * [Exercise 3A](#ex3a)
+  * [Exercise 3B](#ex3b)
+  * [Exercise 3C](#ex3c)
+  * [Exercise 3D](#ex3d)
+  * [Exercise 3E](#ex3e)
+  * [Exercise 3F](#ex3f)
+  * [Exercise 3G](#ex3g)
+  * [Exercise 3H](#ex3h)
+  * [Exercise 3I](#ex3i)
 4. [Starter Code:  "filter1"](#4-starter-code--filter1)
+  * [Exercise 4A](#ex4a)
+  * [Exercise 4B](#ex4b)
 
 ---
 
@@ -81,6 +100,7 @@ print('Bye!')
 ## 2. [Starter Code:  "readcsv"](https://link.stthomas.edu/sfpyreadcsv){:target="_blank"}
 [https://link.stthomas.edu/sfpyreadcsv](https://link.stthomas.edu/sfpyreadcsv){:target="_blank"}
 
+<div id='ex2a'/>
 ## Exercise 2A:  Running the "readcsv" starter code
 
 * For this exercise, we're just:
@@ -88,11 +108,13 @@ print('Bye!')
   * looking at the output
 * _(Remember all the "fork" stuff when you first load the starter code!)_
 
+<div id='ex2b'/>
 ## Exercise 2B:  Changing `df1` to `df2` and seeing the new output
 
 * Be sure not to change `df1` to `df2` in the line at the top where we read the first CSV file into `df1`.  Leave that alone.
 * Change `df1` to `df2` in all of the `print()` statements and re-run the code and look at the differences in the output.
 
+<div id='ex2c'/>
 ## Exercise 2C:  Changing `df2` to `df3` in all of the `print()` statements and re-running the code
 
 * Be sure not to change `df2` to `df3` in the line at the top where we read the second CSV file into `df2`.  Leave that alone.
@@ -101,6 +123,7 @@ print('Bye!')
 
 * Leave your code up -- we'll pick up where we left off.
 
+<div id='ex2d'/>
 ## Exercise 2D:  Inspecting "unique addresses" in `df3`
 
 * Note that in the slideshow page header, I labeled this exercise "df3-A."
@@ -114,6 +137,7 @@ print(df3['Address'].unique())
 ['305 Grover Lane, Sunny, AK' '800 Golden Leaf Street, Snowy, NM' '87834 Lyons Terrace, Rainy, OR' '98 Paget Trail, Cloudy, WY']
 ```
 
+<div id='ex2e'/>
 ## Exercise 2E:  Counting "unique addresses" in `df3`
 
 * Note that in the slideshow page header, I labeled this exercise "df3-B."
@@ -127,6 +151,7 @@ print(len(df3['Address'].unique()))
 4
 ```
 
+<div id='ex2f'/>
 ## Exercise 2F:  Playing with `.drop_duplicates()` against `df3`
 
 * Note that in the slideshow page header, I labeled this exercise "df3-C."
@@ -156,6 +181,7 @@ print(len(df3.drop_duplicates(['Address','D.O.B.'], keep=False)))
 ## 3. [Starter Code:  "123"](https://link.stthomas.edu/sfpy123){:target="_blank"}
 [https://link.stthomas.edu/sfpy123](https://link.stthomas.edu/sfpy123){:target="_blank"}
 
+<div id='ex3a'/>
 ## Exercise 3A:  Building a "Pandas Series" of Initials from `df1` first & last name columns
 
 * _(Remember all the "fork" stuff when you first load the starter code!)_
@@ -178,6 +204,7 @@ print(ser1initials)
 dtype: object
 ```
 
+<div id='ex3b'/>
 ## Exercise 3B:  Building a SORTED "Pandas Series" of Initials from `df1` first & last name columns and adding it to `df1` as a new column
 
 * Completely backspace out your line of code from exercise 3A that says `print(ser1initials)`
@@ -215,6 +242,7 @@ print(df1)
 6    724   Albert    Howard  ah@example.com  Imperial College of Science    A. H.
 ```
 
+<div id='ex3c'/>
 ## Exercise 3C:  Building a SORTED "Python List" of Initials from `df1` first & last name columns and adding it to `df1` as a new column
 
 * Completely backspace out your lines of code from exercise 3B that say `print(ser1initsrt)` and `print(df1)`
@@ -247,6 +275,7 @@ print(df1)
 ```
 * Moral of the story:  "Pandas Series" and "Python Lists" are kind of similar, but can behave differently when you're trying to use them for specialized purposes, such as editing the data in a "Pandas DataFrame."
 
+<div id='ex3d'/>
 ## Exercise 3D:  Trying to sort `df3` from oldest to youngest
 
 * Completely **backspace out** all the code we just wrote in exercises 3A-3C.  We won't need it anymore.
@@ -272,6 +301,7 @@ print(df3sorted[['First','Last','D.O.B.']])
 4   Doretta      Herche   9/21/2010
 ```
 
+<div id='ex3e'/>
 ## Exercise 3E:  Actually sorting `df3` from oldest to youngest
 * Don't erase any code from exercise 3D.
 * Find the line near the top of the code that already existed in the starter code" that reads like `df3 = pandas.read_csv(…)` and, right after the word `object`, add `, parse_dates=['D.O.B.']` _(with the leading comma)_ so that the line ends up looking like this, and run the code:
@@ -292,6 +322,7 @@ df3 = pandas.read_csv('https://raw.githubusercontent.com/pypancsv/pypancsv/maste
 4   Doretta      Herche 2010-09-21
 ```
 
+<div id='ex3f'/>
 ## Exercise 3F:  Identifying duplicate rows in `df3` using "all columns" as the "duplicate key"
 
 * Close the tab where you performed exercise 3E and open [https://link.stthomas.edu/sfpy123](https://link.stthomas.edu/sfpy123){:target="_blank"} fresh in a new tab to start the "starter code" over.
@@ -315,6 +346,7 @@ dtype: bool
 ```
 * Note that there are no duplicates, because when we take "all columns" into consideration, no two rows in `df3` are exactly alike!
 
+<div id='ex3g'/>
 ## Exercise 3G:  Identifying duplicate rows in `df3` using "address & birthdate" as the "duplicate key"
 
 * Change the line of code you wrote in exercise 3F to be this line of code instead and run the program:
@@ -337,6 +369,7 @@ dtype: bool
 * Note that the `keep=False` setting meant that we wanted ALL "twins living together" flagged "True."
   * There are also `keep='first'` and `keep='last'` options that will only flag the "first row of a duplicate-set" or "last row of a duplicate-set" as "True."
 
+<div id='ex3h'/>
 ## Exercise 3H:  Counting duplicate rows in `df3` using "address & birthdate" as the "duplicate key"
 
 * Change the line of code you wrote in exercise 3G to be this line of code instead and run the program:
@@ -350,7 +383,9 @@ print(df3.duplicated(['Address','D.O.B.'], keep=False).sum())
 * Because `True` is interpreted as `1` and `False` is interpreted as `0` by the `.sum()` operation available for "Pandas Series"-typed data, we can quickly count the "number of people who live with a twin."
   * This is handy when the data set is too big to eyeball that information from!
 
+<div id='ex3i'/>
 ## Exercise 3I:  Displaying duplicate rows in `df3` using "address & birthdate" as the "duplicate key"
+
 * Backspace out your code from exercise 3H.
 * Add the following code to the end of the program and run the program:
 ```python
@@ -371,6 +406,7 @@ print(df3[ser3isdup])
 ## 4. [Starter Code:  "filter1"](https://link.stthomas.edu/sfpyfilter1){:target="_blank"}
 [https://link.stthomas.edu/sfpyfilter1](https://link.stthomas.edu/sfpyfilter1){:target="_blank"}
 
+<div id='ex4a'/>
 ## Exercise 4A:  Running the "filter1" starter code
 
 * For this exercise, we're just:
@@ -378,7 +414,9 @@ print(df3[ser3isdup])
   * looking at the output
 * _(Remember all the "fork" stuff when you first load the starter code!)_
 
+<div id='ex4b'/>
 ## Exercise 4B:  Changing the "filters" to different business logic
+
 * Business rule change #1
   * Instead of doing:  "Display all columns, but only rows where 'Last' starts with capital 'C' or 'S'" 
   * Do:  "Display all columns, but only rows where 'Company' case-insensitively ends with 'a' or where 'Id' is less than 800"
