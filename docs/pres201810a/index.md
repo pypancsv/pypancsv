@@ -16,6 +16,7 @@
 
 1. [Starter Code:  "hello"](#1-starter-code--hello)
 2. [Starter Code:  "readcsv"](#2-starter-code--readcsv)
+3. [Starter Code:  "123"](#3-starter-code--123)
 
 ---
 
@@ -145,3 +146,164 @@ print(len(df3.drop_duplicates(['Address','D.O.B.'], keep=False)))
     * As you can see, we added a 2nd parameter to the list of columns indicating our "duplication criteria."  Now we only "drop duplicate rows" from our output if they have the same address AND date of birth as someone else in the data set.
     * It's a 9-row data set, and we only had 2 "twins living together" _(Othelia and Pansy)_, so they were dropped, and that leaves 7 people left.
 
+---
+
+## 3. [Starter Code:  "123"](https://link.stthomas.edu/sfpy123){:target="_blank"}
+[https://link.stthomas.edu/sfpy123](https://link.stthomas.edu/sfpy123){:target="_blank"}
+
+## Exercise 3A:  Building a "Pandas Series" of Initials from `df1` first & last name columns
+
+* _(Remember all the "fork" stuff when you first load the starter code!)_
+* At the end of the program, add the following code and run the program:
+```python
+ser1first = df1['First'].str[0]
+ser1last = df1['Last'].str[0]
+ser1initials = ser1first + '. ' + ser1last + '.'
+print(ser1initials)
+```
+* You should see the following output:
+```
+0    J. B.
+1    S. C.
+2    M. M.
+3    C. C.
+4    V. S.
+5    A. S.
+6    A. H.
+dtype: object
+```
+
+## Exercise 3B:  Building a SORTED "Pandas Series" of Initials from `df1` first & last name columns and adding it to `df1` as a new column
+
+* Completely backspace out your line of code from exercise 3A that says `print(ser1initials)`
+* At the end of the program, add the following code and run the program:
+```python
+ser1initsrt = ser1initials.sort_values()
+print(ser1initsrt)
+df1['Initials'] = ser1initsrt
+```
+* You should see the following output:
+```
+6    A. H.
+5    A. S.
+3    C. C.
+0    J. B.
+2    M. M.
+1    S. C.
+4    V. S.
+dtype: object
+```
+* Note how the initials are now in alphabetical order, and that the "row IDs" as initially assigned have "stuck with" their data.
+* At the end of the program, add the following code and run the program:
+```python
+print(df1)
+```
+* You should see the following output _(note that the initials are with the correct names, despite us "pre-sorting" the "Pandas Series")_:
+```
+      Id    First      Last           Email                      Company Initials
+0   5829    Jimmy    Buffet  jb@example.com                          RCA    J. B.
+1   2894  Shirley  Chisholm  sc@example.com       United States Congress    S. C.
+2    294  Marilyn    Monroe  mm@example.com                          Fox    M. M.
+3  30829    Cesar    Chavez  cc@example.com          United Farm Workers    C. C.
+4    827  Vandana     Shiva  vs@example.com                     Navdanya    V. S.
+5   9284   Andrea     Smith  as@example.com     University of California    A. S.
+6    724   Albert    Howard  ah@example.com  Imperial College of Science    A. H.
+```
+
+## Exercise 3C:  Building a SORTED "Python List" of Initials from `df1` first & last name columns and adding it to `df1` as a new column
+
+* Completely backspace out your lines of code from exercise 3B that say `print(ser1initsrt)` and `print(df1)`
+* At the end of the program, add the following code and run the program:
+```python
+list1initsrt = list(ser1initsrt)
+df1['Initials'] = list1initsrt
+print(list1initsrt)
+```
+* You should see the following output:
+```
+['A. H.', 'A. S.', 'C. C.', 'J. B.', 'M. M.', 'S. C.', 'V. S.']
+```
+* Note how this looks different from the pre-sorted "Pandas Series."
+  * "Item IDs" in the list are implied, with "A. H." being "0," "A. S." being "1," etc.
+* At the end of the program, add the following code and run the program:
+```python
+print(df1)
+```
+* You should see the following output _(note that the intials are all messed up compared to the names!)_:
+```
+      Id    First      Last           Email                      Company Initials
+0   5829    Jimmy    Buffet  jb@example.com                          RCA    A. H.
+1   2894  Shirley  Chisholm  sc@example.com       United States Congress    A. S.
+2    294  Marilyn    Monroe  mm@example.com                          Fox    C. C.
+3  30829    Cesar    Chavez  cc@example.com          United Farm Workers    J. B.
+4    827  Vandana     Shiva  vs@example.com                     Navdanya    M. M.
+5   9284   Andrea     Smith  as@example.com     University of California    S. C.
+6    724   Albert    Howard  ah@example.com  Imperial College of Science    V. S.
+```
+* Moral of the story:  "Pandas Series" and "Python Lists" are kind of similar, but can behave differently when you're trying to use them for specialized purposes, such as editing the data in a "Pandas DataFrame."
+
+## Exercise 3D:  Trying to sort `df3` from oldest to youngest
+
+* Completely **backspace out** all the code we just wrote in exercises 3A-3C.  We won't need it anymore.
+  * Leave in the code that was already in the "starter code."
+* At the end of the program, add the following code and run the program:
+```python
+df3sorted = df3.sort_values(by=['D.O.B.'], ascending=[True])
+print(df3sorted[['First','Last','D.O.B.']])
+```
+* You should see the following output _(did we actually sort people from oldest to youngest?)_:
+```
+      First        Last      D.O.B.
+1  Quintina        Lean  10/14/1963
+8      Kata      Windus   10/4/1991
+3      Yuri      Dalton  11/12/1980
+2     Corny      Noller  12/13/1990
+0     Salli      Broxup   12/3/1991
+5      Mata  Pierrepont   8/19/1970
+6   Othelia    Eastbury    8/4/1955
+7     Pansy      Mallya    8/4/1955
+4   Doretta      Herche   9/21/2010
+```
+
+## Exercise 3E:  Actually sorting `df3` from oldest to youngest
+* Don't erase any code from exercise 3D.
+* Find the line near the top of the code that already existed in the starter code" that reads like `df3 = pandas.read_csv(…)` and, right after the word `object`, add `, parse_dates=['D.O.B.']` _(with the leading comma)_ so that the line ends up looking like this, and run the code:
+```python
+df3 = pandas.read_csv('https://(…long URL here…).csv', dtype=object, parse_dates=['D.O.B.'])
+```
+* You should see the following output _(did we actually sort people from oldest to youngest?)_:
+```
+      First        Last     D.O.B.
+6   Othelia    Eastbury 1955-08-04
+7     Pansy      Mallya 1955-08-04
+1  Quintina        Lean 1963-10-14
+5      Mata  Pierrepont 1970-08-19
+3      Yuri      Dalton 1980-11-12
+2     Corny      Noller 1990-12-13
+8      Kata      Windus 1991-10-04
+0     Salli      Broxup 1991-12-03
+4   Doretta      Herche 2010-09-21
+```
+
+## Exercise 3F:  Identifying duplicate rows in `df3` using "all columns" as the "duplicate key"
+
+* Close the tab where you performed exercise 3E and open [https://link.stthomas.edu/sfpy123](https://link.stthomas.edu/sfpy123){:target="_blank"} fresh in a new tab to start the "starter code" over.
+  * _(Remember all the "fork" stuff when you first load the starter code!)_
+* At the end of the program, add the following code and run the program:
+```python
+print(df3.duplicated(keep=False))
+```
+* You should see the following output:
+```
+0    False
+1    False
+2    False
+3    False
+4    False
+5    False
+6    False
+7    False
+8    False
+dtype: bool
+```
+* Note that there are no duplicates, because when we take "all columns" into consideration, no two rows in `df3` are exactly alike!
