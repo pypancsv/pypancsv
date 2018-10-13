@@ -12,7 +12,7 @@
 
 ---
 
-## Quick Links To Sections Of These Instructions
+## Table of Contents
 
 1. [Starter Code:  "hello"](#1-starter-code--hello)
   * [Exercise 1A](#ex1a)
