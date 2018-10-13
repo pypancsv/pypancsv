@@ -14,15 +14,14 @@
 
 ## Contents
 
-1. [Starter Code:  "hello"](#hello)
+1. [Starter Code:  "hello"](#id-hello)
   * hi
-2. [Starter Code:  "readcsv"](#readcsv)
+2. [Starter Code:  "readcsv"](#id-readcsv)
 
 ---
 
-
-
-## 1. [Starter Code:  "hello"](https://link.stthomas.edu/sfpyhello){:target="_blank"}{name=hello}
+<div id='hello'/>
+## 1. [Starter Code:  "hello"](https://link.stthomas.edu/sfpyhello){:target="_blank"}
 [https://link.stthomas.edu/sfpyhello](https://link.stthomas.edu/sfpyhello){:target="_blank"}
 
 ## Exercise 1A:  Running the "hello" starter code
@@ -75,11 +74,14 @@ print('Bye!')
 
 ---
 
-## 2. [Starter Code:  "readcsv"](https://link.stthomas.edu/sfpyreadcsv){:target="_blank"}{name=readcsv}
+<div id='readcsv'/>
+## 2. [Starter Code:  "readcsv"](https://link.stthomas.edu/sfpyreadcsv){:target="_blank"}
 [https://link.stthomas.edu/sfpyreadcsv](https://link.stthomas.edu/sfpyreadcsv){:target="_blank"}
 
 ## Exercise 2A:  Running the "readcsv" starter code
 
 * For this exercise, we're just making sure we can run the starter code.  Remember all the "fork" stuff.
 
+## Exercise 2B:  Changing `df1` to `df2` in all of the `print()` statements and re-running the code
 
+* Be sure not to change `df1` to `df2` in the line at the top where we read the first CSV file into `df1`.  Leave that alone.
