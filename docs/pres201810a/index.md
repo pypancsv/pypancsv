@@ -15,6 +15,7 @@
 ## Quick Links To Sections Of These Instructions
 
 1. [Starter Code:  "hello"](#1-starter-code--hello)
+  * [Exercise 1A](#ex1a)
 2. [Starter Code:  "readcsv"](#2-starter-code--readcsv)
 3. [Starter Code:  "123"](#3-starter-code--123)
 4. [Starter Code:  "filter1"](#4-starter-code--filter1)
@@ -24,6 +25,7 @@
 ## 1. [Starter Code:  "hello"](https://link.stthomas.edu/sfpyhello){:target="_blank"}
 [https://link.stthomas.edu/sfpyhello](https://link.stthomas.edu/sfpyhello){:target="_blank"}
 
+<div id='ex1a'/>
 ## Exercise 1A:  Running the "hello" starter code
 
 * For this exercise, we're just making sure we can run the starter code.  Remember that in Codebunk, you can't just run the "starter code."  to make your code runnable _(which also makes it editable)_, you have to:
@@ -41,11 +43,13 @@ But that new URL is **yours**.  If you need help and want to show someone else y
 
 _(If you open someone else's URL, be careful not to get it confused with your own code!  Also note that I believe you won't be able to run it without in turn "forking" **it** into a new URL, which is great -- you shouldn't be able to mess up anybody else's code, and if you make fixes and want to send them back a "fixed" copy, you can just send back your "fork" of their "fork" -- note that we're now 3 "forks" in from the original "starter code!")_
   
+<div id='ex1b'/>
 ## Exercise 1B:  Modifying the "hello" starter code and running your modifications
 
 * For this exercise, change the phrase `Hello World` to instead say `Yay Us`.
 * There's no need to re-load the "hello" starter code, but if you did, you'll have to re-do Exercise 1A (all the "fork" stuff).
 
+<div id='ex1c'/>
 ## Exercise 1C:  Modifying the "hello" starter code to see what  `print()` and `print(type())` statements do with various inputs
 
 * Backspace out or "comment out" your old `print('Yay Us!')` code.
