@@ -251,6 +251,8 @@ print(df1)
 df3sorted = df3.sort_values(by=['D.O.B.'], ascending=[True])
 print(df3sorted[['First','Last','D.O.B.']])
 ```
+* Note the "double brackets" in the 2nd line of code.  By putting a "list of column names" inside the outer brackets following the name of our `df3sorted` "Pandas Dataframe," we are specifying that we only want to see the data from those columns in our output.
+  * This is handy when we are working with data that has as lot of columns, but we only need to see a few to spot-check.
 * You should see the following output _(did we actually sort people from oldest to youngest?)_:
 ```
       First        Last      D.O.B.
@@ -269,7 +271,7 @@ print(df3sorted[['First','Last','D.O.B.']])
 * Don't erase any code from exercise 3D.
 * Find the line near the top of the code that already existed in the starter code" that reads like `df3 = pandas.read_csv(…)` and, right after the word `object`, add `, parse_dates=['D.O.B.']` _(with the leading comma)_ so that the line ends up looking like this, and run the code:
 ```python
-df3 = pandas.read_csv('https://(…long URL here…).csv', dtype=object, parse_dates=['D.O.B.'])
+df3 = pandas.read_csv('https://raw.githubusercontent.com/pypancsv/pypancsv/master/docs/_data/sample3.csv', dtype=object, parse_dates=['D.O.B.'])
 ```
 * You should see the following output _(did we actually sort people from oldest to youngest?)_:
 ```
@@ -307,3 +309,78 @@ print(df3.duplicated(keep=False))
 dtype: bool
 ```
 * Note that there are no duplicates, because when we take "all columns" into consideration, no two rows in `df3` are exactly alike!
+
+## Exercise 3G:  Identifying duplicate rows in `df3` using "address & birthdate" as the "duplicate key"
+
+* Change the line of code you wrote in exercise 3F to be this line of code instead and run the program:
+```python
+print(df3.duplicated(['Address','D.O.B.'], keep=False))
+```
+* You should see the following output:
+```
+0    False
+1    False
+2    False
+3    False
+4    False
+5    False
+6     True
+7     True
+8    False
+dtype: bool
+```
+* Note that the `keep=False` setting meant that we wanted ALL "twins living together" flagged "True."
+  * There are also `keep='first'` and `keep='last` options that will only flag the "first row of a duplicate-set" or "last row of a duplicate-set" as "True."
+
+## Exercise 3H:  Counting duplicate rows in `df3` using "address & birthdate" as the "duplicate key"
+
+* Change the line of code you wrote in exercise 3G to be this line of code instead and run the program:
+```python
+print(df3.duplicated(['Address','D.O.B.'], keep=False).sum())
+```
+* You should see the following output:
+```
+2
+```
+* Because `True` is interpreted as `1` and `False` is interpreted as `0` by the `.sum()` operation available for "Pandas Series"-typed data, we can quickly count the "number of people who live with a twin."
+  * This is handy when the data set is too big to eyeball that information from!
+
+## Exercise 3I:  Displaying duplicate rows in `df3` using "address & birthdate" as the "duplicate key"
+* Backspace out your code from exercise 3H.
+* Add the following code to the end of the program and run the program:
+```python
+ser3isdup = df3.duplicated(['Address','D.O.B.'], keep=False)
+print(df3[ser3isdup])
+```
+* You should see the following output:
+```
+      Id    First      Last    D.O.B.                         Address
+6  32443  Othelia  Eastbury  8/4/1955  87834 Lyons Terrace, Rainy, OR
+7  22082    Pansy    Mallya  8/4/1955  87834 Lyons Terrace, Rainy, OR
+```
+
+## --Break--
+
+---
+
+## 4. [Starter Code:  "filter1"](https://link.stthomas.edu/sfpyfilter1){:target="_blank"}
+[https://link.stthomas.edu/sfpyfilter1](https://link.stthomas.edu/sfpyfilter1){:target="_blank"}
+
+## Exercise 4A:  Running the "filter1" starter code
+
+* For this exercise, we're just:
+  * making sure we can run the starter code and
+  * looking at the output
+* _(Remember all the "fork" stuff when you first load the starter code!)_
+
+## Exercise 4B:  Changing the "filters" to different business logic
+* Business rule change #1
+  * Instead of doing:  "Display all columns, but only rows where 'Last' starts with capital 'C' or 'S'" 
+  * Do:  "Display all columns, but only rows where 'Company' case-insensitively ends with 'a' or where 'Id' is less than 800"
+* Hint:  every "Pandas Series" has the following operations:
+  * `.str.lower()` _(the resulting output is also a Series, full of text-typed data)_
+  * `.str.upper()` _(the resulting output is also a Series, full of text-typed data)_
+  * `.str.endswith(…)` _(the resulting output is also a Series, full of True-False data)_
+  * `.astype('int')` _(the resulting output is also a Series, full of integer-typed data)_
+* Try it yourself and follow along as volunteers from the face-to-face group come up to my desk to edit the code collaboratively
+* It might help to "comment out" all of the code starting with the first `print(…)` statement from the "starter code" so that you can see it for hints but so that it doesn't run.
