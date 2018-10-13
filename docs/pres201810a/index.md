@@ -128,7 +128,6 @@ print('Bye!')
 <div id='ex2d'/>
 ## Exercise 2D:  Inspecting "unique addresses" in `df3`
 
-* Note that in the slideshow page header, I labeled this exercise "df3-A."
 * "Comment out" _(render unrunnable)_ all of our previous `print()` statements by putting `'''` before the first line of `print()` statements and `'''` after the last line of `print()` statements
 * At the end of the code, add the following new line and run your program:
 ```python
@@ -142,7 +141,6 @@ print(df3['Address'].unique())
 <div id='ex2e'/>
 ## Exercise 2E:  Counting "unique addresses" in `df3`
 
-* Note that in the slideshow page header, I labeled this exercise "df3-B."
 * At the end of the code, add the following new line and run your program:
 ```python
 print(len(df3['Address'].unique()))
@@ -156,7 +154,6 @@ print(len(df3['Address'].unique()))
 <div id='ex2f'/>
 ## Exercise 2F:  Playing with `.drop_duplicates()` against `df3`
 
-* Note that in the slideshow page header, I labeled this exercise "df3-C."
 * "Comment out" _(render unrunnable)_ your two lines of code from exercises "2D" and "2E" by prefixing them with a `#`
 * At the end of the code, add the following new lines of code and run your program:
 ```python
