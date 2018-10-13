@@ -1,8 +1,6 @@
-<div style="text-align: center;">
-# Zoom Videoconference link:
+# Zoom VIDEOCONFERENCE link:
 # [https://bit.ly/2naF1N8](https://bit.ly/2naF1N8)
-</div>
 
-# Hi
+---
 
-**Instructions / other links you should know:**  (Coming soon)
+# Instructions / other links you should know:**  (Coming soon)
