@@ -1,12 +1,3 @@
----
-layout: default
-title: Rédiger mon français, svp ?
----
-
-<table valign="top">
-<tr valign="top">
-<td valign="top">
-
 # Salesforce: métadonnées personnalisées v. objets personnalisés
 
 Une collègue, peu familière avec Salesforce, m'a demandée quelle était la différence entre « **métadonnées personnalisées** » et « **objets personnalisés** » pour stocker des données de configuration et de validation dans une organisation Salesforce.
@@ -51,9 +42,8 @@ On m'a fait honte de cette position à Dreamforce.  Ben, je maintiens ma choix d
 1.  [« Build Awesome Configuration Pages with Lightning Components & Custom Metadata » de Dan Appleman](https://www.youtube.com/watch?v=Qr2tqjWnXgY){:target="_blank"}
 2.  [« Crafting Flexible APIs in Apex Using Custom Metadata » de Gustavo Melendez & Krystian Charubin](https://www.youtube.com/watch?v=sGhAcGjQzyo){:target="_blank"}
 3.  [« Create Guided User Experiences for Managing ISV Custom Metadata » de Beth Breisness & Randi Wilson](https://www.youtube.com/watch?v=nlqFB89DhfI){:target="_blank"}
-</td>
 
-<td valign="top">
+---
 
 # Salesforce Custom Metadata vs. Custom Objects
 
@@ -99,7 +89,3 @@ I was thoroughly scolded at Dreamforce. Actually, I stand by my decision to use 
 1.  [Dan Appleman's "Build Awesome Configuration Pages with Lightning Components & Custom Metadata"](https://www.youtube.com/watch?v=Qr2tqjWnXgY){:target="_blank"}
 2.  [Gustavo Melendez & Krystian Charubin's "Crafting Flexible APIs in Apex Using Custom Metadata"](https://www.youtube.com/watch?v=sGhAcGjQzyo){:target="_blank"}
 3.  [Beth Breisness & Randi Wilson's "Create Guided User Experiences for Managing ISV Custom Metadata"](https://www.youtube.com/watch?v=nlqFB89DhfI){:target="_blank"}
-
-</td>
-</tr>
-</table>
