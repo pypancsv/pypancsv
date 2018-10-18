@@ -1,3 +1,8 @@
+---
+layout: default
+title: Rédiger mon français, svp ?
+---
+
 <table valign="top">
 <tr valign="top">
 <td valign="top">
