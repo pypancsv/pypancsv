@@ -1,3 +1,10 @@
+---
+layout: default
+title: Réviser mon français, svp ?
+summary: Premier tutoriel en français
+image: /pypancsv/images/usfrflag.png
+---
+
 # Salesforce: métadonnées personnalisées v. objets personnalisés
 
 Une collègue, peu familière avec Salesforce, m'a demandée quelle était la différence entre « **métadonnées personnalisées** » et « **objets personnalisés** » pour stocker des données de configuration et de validation dans une organisation Salesforce.
