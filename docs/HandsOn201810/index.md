@@ -11,13 +11,17 @@ Thanks for coding for THREE HOURS with me on a sunny Saturday!
 
 ### Homework
 
-If I could give you one homework assignment, it'd be to get Python up and running on your computer.
+If I could give you one homework assignment, it'd be to **get Python up and running on your computer**.
 
-If you can't apply this to your real-world business problems, I'm going to cry.  And the number one thing that's going to stop you isn't lack of Python knowledge ... it's not having your tools "ready to go" when you think of a business problem you could solve using it.  Don't make me cry.
+If you can't apply this to your real-world business problems, I'm going to cry.
 
-So your homework is to get an "IDE" set up and to copy/paste [this code](https://codebunk.com/b/612238124/){:target="_blank"} and [this code](https://codebunk.com/b/437206634/){:target="_blank"} on **YOUR** computer.
+And the number one thing that's going to stop you isn't lack of Python knowledge ... it's not having your tools "ready to go" when you think of a business problem you could solve using it.
 
-As soon as you have both of those up and running, **the world is at your fingertips**!
+Don't make me cry.
+
+* **So your homework is to get an "IDE" set up and to copy/paste [this code](https://codebunk.com/b/612238124/){:target="_blank"} and [this code](https://codebunk.com/b/437206634/){:target="_blank"} on _YOUR_ computer.**
+
+As soon as you have both of those code snippets up and running, **the world is at your fingertips**!
 
 * For Windows computers on which I have "admin" rights to properly install software, I've really enjoyed working with "[**Anaconda**](https://www.anaconda.com/download/){:target="_blank"}," which both installs Python plus its "Pandas" plugin on your computer _(so that an IDE's "run button" actually does something -- your computer doesn't come "out of the box" understanding Python code)_ and installs the "Spyder" IDE (the actual text-editor-with-run-button).
 * For Windows computers on which I don't have permission to install software, I've made good use of [these directions for installing **WinPython**](https://tinyurl.com/PyPanCsvWinIde){:target="_blank"}.  Note that without administrator rights, you might not be able to update certain components of Windows to support the latest version of WinPython, which I address in the directions, but older versions of WinPython make your computer only understand commands from older versions of Python and its Pandas plugin, which might leave you Googling for how things "used to be done" in cases where the way Python code is written has gotten simpler and easier to use as time goes on.
