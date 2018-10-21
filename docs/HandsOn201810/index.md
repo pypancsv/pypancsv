@@ -38,13 +38,7 @@ As soon as you have both of those up and running, **the world is at your fingert
 > 
 > So .../sfpyhello becomes .../sfpy201810-hello and .../sfpyhello-b becomes .../sfpy201820-hello-b
 
-<div align="center">
-  
-[![Python for Spreadsheet Manipulation 101 - video](/pypancsv/images/handsonslidesnip.jpg)](https://www.youtube.com/watch?v=rytPU9_NcGI "Python for Spreadsheet Manipulation 101 - video"){:target="_blank"}
-
-<small>[(Click here for session video)](https://www.youtube.com/watch?v=L-oX_A2cXt4 "Python for Spreadsheet Manipulation 101 - video"){:target="_blank"}</small>
-
-</div>
+[![Click here for session video](/pypancsv/images/handsonslidesnip.jpg)](https://www.youtube.com/watch?v=rytPU9_NcGI "Python for Spreadsheet Manipulation 101 - video"){:target="_blank"}
 
 ### More Exercises & Resources
 
