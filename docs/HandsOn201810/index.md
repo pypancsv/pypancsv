@@ -1,6 +1,8 @@
 ---
 layout: default
-title: CSV Processing with Python and Pandas
+title: Python for CSV Processing 101
+summary: Salesforce Saturday Hands-On Training
+image: http://img.youtube.com/vi/rytPU9_NcGI/0.jpg
 ---
 
 ## Python for Spreadsheet Manipulation 101 - Hands-On Training for Salesforce Admins
