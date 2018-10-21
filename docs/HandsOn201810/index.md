@@ -11,12 +11,12 @@ Thanks for coding for THREE HOURS with me on a sunny Saturday!
 
 ### Table of Contents
 
-* [Homework](#Homework)
-* [Exercises we did](#Exercises-We-Did)
-* [Slides](#Slides-PDF)
-* [Video](#Session-Recording)
-* [Further Resources](#Further-Resources)
-* [Door Prize Scripts](#Door-Prize-Scripts)
+* [Homework](#homework)
+* [Exercises we did](#exercises-we-did)
+* [Slides](#slides-pdf)
+* [Video](#session-recording)
+* [Further Resources](#further-resources)
+* [Door Prize Scripts](#door-prize-scripts)
 
 ### Homework
 
