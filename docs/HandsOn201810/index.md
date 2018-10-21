@@ -28,6 +28,8 @@ As soon as you have both of those code snippets up and running, **the world is a
 * Some people also like [**PyCharm**](https://www.jetbrains.com/pycharm/){:target="_blank"}.  (Definitely seems available for Windows & Mac...)
 * Linux / Mac:  I ... don't have either of those.  Try [**Anaconda**](https://www.anaconda.com/download/){:target="_blank"} -- it seems to be available for both.
 
+DM me [on Twitter](https://www.twitter.com/KatieKodes){:target="_blank"} if you get stuck.
+
 ### Slides PDF
 
 [Click here to download a PDF of the slides](){:target="_blank"}
