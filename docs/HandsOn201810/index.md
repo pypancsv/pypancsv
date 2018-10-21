@@ -32,6 +32,10 @@ As soon as you have both of those code snippets up and running, **the world is a
 
 DM me [on Twitter](https://www.twitter.com/KatieKodes){:target="_blank"} if you get stuck.
 
+### Exercises We Did
+
+[Click here for the "Exercises" instructions](exercises){:target="_blank"}
+
 ### Slides PDF
 
 [Click here to download a PDF of the slides](HandsOn201810.pdf){:target="_blank"}
