@@ -11,13 +11,14 @@ Thanks for coding for THREE HOURS with me on a sunny Saturday!
 
 ### Table of Contents
 
-* [Homework](#hw)
-* [Exercises we did](#exercises)
-* [Slides](#slides)
-* [Video](#vid)
-* ["Door Prize" scripts for you to use at work](#dp)
+* [Homework](#Homework)
+* [Exercises we did](#Exercises-We-Did)
+* [Slides](#Slides-PDF)
+* [Video](#Session-Recording)
+* [Further Resources](#Further-Resources)
+* [Door Prize Scripts](#Door-Prize-Scripts)
 
-### Homework{#hw}
+### Homework
 
 If I could give you one homework assignment, it'd be to **get Python up and running on your computer**.
 
@@ -40,15 +41,15 @@ As soon as you have both of those code snippets up and running, **the world is a
 
 DM me [on Twitter](https://www.twitter.com/KatieKodes){:target="_blank"} if you get stuck.
 
-### Exercises We Did{#exercises}
+### Exercises We Did
 
 [Click here for the "Exercises" instructions](exercises){:target="_blank"}
 
-### Slides PDF{#slides}
+### Slides PDF
 
 [Click here to download a PDF of the slides](HandsOn201810.pdf){:target="_blank"}
 
-### Session Recording{#vid}
+### Session Recording
 
 > **IMPORTANT NOTE:**
 > 
@@ -62,7 +63,16 @@ DM me [on Twitter](https://www.twitter.com/KatieKodes){:target="_blank"} if you 
 
 [(Click here for session video)](https://www.youtube.com/watch?v=rytPU9_NcGI "Python for Spreadsheet Manipulation 101 - video"){:target="_blank"}
 
-### "Door Prize" Scripts That Can Help You At Work YESTERDAY{#dp}
+### Further Resources
+
+* [Official documentation of Pandas commands](https://pandas.pydata.org/pandas-docs/stable/api.html){:target="_blank"}
+  * [Official documentation of Pandas commands available for every "Series"-typed expression](https://pandas.pydata.org/pandas-docs/stable/api.html#series){:target="_blank"}
+  * [Official documentation of Pandas commands available for "Series"-typed expressions that contain plaintext cells](https://pandas.pydata.org/pandas-docs/stable/api.html#string-handling){:target="_blank"}
+* [Quick Examples](/pypancsv/quickexamples){:target="_blank"} of the sort that we went over in class, with a "homework" exercise for each problem
+
+### Door Prize Scripts
+
+Hopefully you can use these at work **yesterday**.
 
 [Tweet me if you use these in real life](https://www.twitter.com/KatieKodes){:target="_blank"} -- #AwesomeAdmin & #YayUs !
 
@@ -92,10 +102,3 @@ print(df[isDupeSeries])
 print('\r\n---The "dupe keys" are:---')
 print(df[isFirstDupeSeries][dupeColumns])
 ```
-
-### More Exercises & Resources
-
-* [Official documentation of Pandas commands](https://pandas.pydata.org/pandas-docs/stable/api.html){:target="_blank"}
-  * [Official documentation of Pandas commands available for every "Series"-typed expression](https://pandas.pydata.org/pandas-docs/stable/api.html#series){:target="_blank"}
-  * [Official documentation of Pandas commands available for "Series"-typed expressions that contain plaintext cells](https://pandas.pydata.org/pandas-docs/stable/api.html#string-handling){:target="_blank"}
-* [Quick Examples](/pypancsv/quickexamples){:target="_blank"} of the sort that we went over in class, with a "homework" exercise for each problem
