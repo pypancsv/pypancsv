@@ -19,7 +19,7 @@ Thanks for coding for THREE HOURS with me on a sunny Saturday!
 
 <div align="center">
   
-[![Python for Spreadsheet Manipulation 101 - video](http://img.youtube.com/vi/L-oX_A2cXt4/0.jpg)](https://www.youtube.com/watch?v=L-oX_A2cXt4 "Python for Spreadsheet Manipulation 101 - video"){:target="_blank"}
+[![Python for Spreadsheet Manipulation 101 - video](http://img.youtube.com/vi/rytPU9_NcGI/0.jpg)](https://www.youtube.com/watch?v=rytPU9_NcGI "Python for Spreadsheet Manipulation 101 - video"){:target="_blank"}
 
 <small>[(Click here for session video)](https://www.youtube.com/watch?v=L-oX_A2cXt4 "Python for Spreadsheet Manipulation 101 - video"){:target="_blank"}</small>
 
