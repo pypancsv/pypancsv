@@ -34,7 +34,7 @@ DM me [on Twitter](https://www.twitter.com/KatieKodes){:target="_blank"} if you 
 
 ### Slides PDF
 
-[Click here to download a PDF of the slides](){:target="_blank"}
+[Click here to download a PDF of the slides](HandsOn201810.pdf){:target="_blank"}
 
 ### Session Recording
 
