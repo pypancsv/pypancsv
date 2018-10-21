@@ -40,7 +40,7 @@ As soon as you have both of those up and running, **the world is at your fingert
 
 <div align="center">
   
-[(http://img.youtube.com/vi/rytPU9_NcGI/0.jpg)](https://www.youtube.com/watch?v=rytPU9_NcGI "Python for Spreadsheet Manipulation 101 - video"){:target="_blank"}
+[![Python for Spreadsheet Manipulation 101 - video](images/handsonslidesnip.jpg)](https://www.youtube.com/watch?v=rytPU9_NcGI "Python for Spreadsheet Manipulation 101 - video"){:target="_blank"}
 
 <small>[(Click here for session video)](https://www.youtube.com/watch?v=L-oX_A2cXt4 "Python for Spreadsheet Manipulation 101 - video"){:target="_blank"}</small>
 
