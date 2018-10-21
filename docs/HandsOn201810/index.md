@@ -19,7 +19,7 @@ And the number one thing that's going to stop you isn't lack of Python knowledge
 
 Don't make me cry.
 
-* **So your homework is to get an "IDE" set up and to copy/paste [this code](https://codebunk.com/b/612238124/){:target="_blank"} and [this code](https://codebunk.com/b/437206634/){:target="_blank"} on _YOUR_ computer.**
+* **So your homework is to get an "IDE" set up and to copy/paste [the "Hello World" program](https://codebunk.com/b/612238124/){:target="_blank"} and [the "read a CSV file off the internet and print stuff out about it" program](https://codebunk.com/b/437206634/){:target="_blank"} onto _YOUR_ computer, running them from there.**
 
 As soon as you have both of those code snippets up and running, **the world is at your fingertips**!
 
