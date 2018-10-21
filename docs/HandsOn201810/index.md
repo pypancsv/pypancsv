@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Python for CSV Processing 101
+title: Python for CSV Processing 101 Slides and Video
 summary: Salesforce Saturday Hands-On Training
 image: /pypancsv/images/handsonslidesnip.jpg
 ---
