@@ -23,7 +23,7 @@ Don't make me cry.
 
 As soon as you have both of those code snippets up and running, **the world is at your fingertips**!
 
-DM me [Tweet me](https://www.twitter.com/KatieKodes){:target="_blank"} when you get it -- be sure to hashtag #AwesomeAdmin and #YayUs !
+[Tweet me when you get it](https://www.twitter.com/KatieKodes){:target="_blank"} -- be sure to hashtag #AwesomeAdmin and #YayUs !
 
 * For Windows computers on which I have "admin" rights to properly install software, I've really enjoyed working with "[**Anaconda**](https://www.anaconda.com/download/){:target="_blank"}," which both installs Python plus its "Pandas" plugin on your computer _(so that an IDE's "run button" actually does something -- your computer doesn't come "out of the box" understanding Python code)_ and installs the "Spyder" IDE (the actual text-editor-with-run-button).
 * For Windows computers on which I don't have permission to install software, I've made good use of [these directions for installing **WinPython**](https://tinyurl.com/PyPanCsvWinIde){:target="_blank"}.  Note that without administrator rights, you might not be able to update certain components of Windows to support the latest version of WinPython, which I address in the directions, but older versions of WinPython make your computer only understand commands from older versions of Python and its Pandas plugin, which might leave you Googling for how things "used to be done" in cases where the way Python code is written has gotten simpler and easier to use as time goes on.
