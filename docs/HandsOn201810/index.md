@@ -40,7 +40,7 @@ As soon as you have both of those up and running, **the world is at your fingert
 
 <div align="center">
   
-[![Python for Spreadsheet Manipulation 101 - video](images/handsonslidesnip.jpg)](https://www.youtube.com/watch?v=rytPU9_NcGI "Python for Spreadsheet Manipulation 101 - video"){:target="_blank"}
+[![Python for Spreadsheet Manipulation 101 - video](/pypancsv/images/handsonslidesnip.jpg)](https://www.youtube.com/watch?v=rytPU9_NcGI "Python for Spreadsheet Manipulation 101 - video"){:target="_blank"}
 
 <small>[(Click here for session video)](https://www.youtube.com/watch?v=L-oX_A2cXt4 "Python for Spreadsheet Manipulation 101 - video"){:target="_blank"}</small>
 
@@ -51,4 +51,4 @@ As soon as you have both of those up and running, **the world is at your fingert
 * [Official documentation of Pandas commands](https://pandas.pydata.org/pandas-docs/stable/api.html){:target="_blank"}
   * [Official documentation of Pandas commands available for every "Series"-typed expression](https://pandas.pydata.org/pandas-docs/stable/api.html#series){:target="_blank"}
   * [Official documentation of Pandas commands available for "Series"-typed expressions that contain plaintext cells](https://pandas.pydata.org/pandas-docs/stable/api.html#string-handling){:target="_blank"}
-* [Quick Examples](quickexamples){:target="_blank"} of the sort that we went over in class, with a "homework" exercise for each problem
+* [Quick Examples](/pypancsv/quickexamples){:target="_blank"} of the sort that we went over in class, with a "homework" exercise for each problem
