@@ -44,6 +44,8 @@ As soon as you have both of those code snippets up and running, **the world is a
 
 [![Click here for session video](/pypancsv/images/handsonslidesnip.jpg)](https://www.youtube.com/watch?v=rytPU9_NcGI "Python for Spreadsheet Manipulation 101 - video"){:target="_blank"}
 
+[(Click here for session video)](https://www.youtube.com/watch?v=rytPU9_NcGI "Python for Spreadsheet Manipulation 101 - video"){:target="_blank"}
+
 ### More Exercises & Resources
 
 * [Official documentation of Pandas commands](https://pandas.pydata.org/pandas-docs/stable/api.html){:target="_blank"}
