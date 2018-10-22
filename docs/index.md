@@ -19,9 +19,9 @@ If you're here after watching a presentation, visit [Quick Examples](quickexampl
 
 ### Slide Links
 
-# [October 2018 slides, video, and afterthoughts here](HandsOn201810)
+* [October 2018 slides, video, and afterthoughts here](HandsOn201810)
 
-# [April 2018 slides PDF here](Presentation201804.pdf){:target="_blank"}
+* [April 2018 slides PDF here](Presentation201804.pdf){:target="_blank"}
 
 ## Common "Operations"
 
