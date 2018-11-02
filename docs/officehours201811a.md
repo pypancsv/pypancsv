@@ -3,8 +3,8 @@ layout: default
 title: "Nov. 10, 2018 office hours"
 ---
 
-# Zoom VIDEOCONFERENCE link:
-# [https://bit.ly/2yMlEQm](https://bit.ly/2yMlEQm){:target="_blank"}
+# Zoom VIDEOCONFERENCE link (10AM-12PM Saturday November 10, 2018)
+# [https://bit.ly/2SGo6Az](https://bit.ly/2SGo6Az){:target="_blank"}
 
 ---
 
