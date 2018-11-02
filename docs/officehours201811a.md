@@ -1,4 +1,6 @@
 ---
+layout: default
+title: "Nov. 10, 2018 office hours"
 ---
 
 # Zoom VIDEOCONFERENCE link:
