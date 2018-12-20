@@ -15,7 +15,7 @@ image: /pypancsv/images/craftingpython.png
 
 ### Exercises We Did
 
-We started with this code, which you can edit [edit here](here){:target="_blank"}:
+We started with this code, which you can edit [edit here](https://repl.it/@rplrpl/40-Minute-Semi-Hands-On-Starter-Code){:target="_blank"}:
 
 ```python
 import pandas
