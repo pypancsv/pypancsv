@@ -9,9 +9,13 @@ image: /pypancsv/images/craftingpython.png
 
 ### Table of Contents
 
-* [Exercises we did](#exercises-we-did)
 * [Slides](#slides-pdf)
+* [Exercises we did](#exercises-we-did)
 * [Further Resources](#further-resources)
+
+### Slides PDF
+
+[Click here to download a PDF of the slides](Demo201901.pdf){:target="_blank"}
 
 ### Exercises We Did
 
@@ -191,11 +195,6 @@ Name: Last, dtype: object
 7
 ---DIVIDER---
 ```
-
-
-### Slides PDF
-
-[Click here to download a PDF of the slides](Demo201901.pdf){:target="_blank"}
 
 ### Further Resources
 
