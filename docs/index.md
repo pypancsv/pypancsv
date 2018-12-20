@@ -19,6 +19,8 @@ If you're here after watching a presentation, visit [Quick Examples](quickexampl
 
 ### Slide Links
 
+* [January 2019 slides and code here](Demo201901)
+
 * [October 2018 slides, video, and afterthoughts here](HandsOn201810)
 
 * [April 2018 slides PDF here](Presentation201804.pdf){:target="_blank"}
