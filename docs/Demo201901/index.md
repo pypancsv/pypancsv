@@ -90,6 +90,108 @@ mergedf = df1.merge(df2match, on=flcolnames, how='outer', indicator=True)
 mergedf.to_csv('mergeoutput.csv', index=0)
 ```
 
+#### Exercise 1
+
+This code addition:
+
+```python
+def p(input):
+	print(input)
+	print('---DIVIDER---')
+p('Hello World')
+```
+
+Produced this output:
+
+```
+Hello World
+---DIVIDER---
+```
+
+#### Exercise 2
+
+This code addition:
+
+```python
+df1 = pandas.read_csv(filepath1)
+p(df1)
+```
+
+Produced this output:
+
+```
+      Id    First      Last           Email                      Company
+0   5829    Jimmy    Buffet  jb@example.com                          RCA
+1   2894  Shirley  Chisholm  sc@example.com       United States Congress
+2    294  Marilyn    Monroe  mm@example.com                          Fox
+3  30829    Cesar    Chavez  cc@example.com          United Farm Workers
+4    827  Vandana     Shiva  vs@example.com                     Navdanya
+5   9284   Andrea     Smith  as@example.com     University of California
+6    724   Albert    Howard  ah@example.com  Imperial College of Science
+---DIVIDER---
+```
+
+#### Exercise 3
+
+This code addition:
+
+```python
+p(len(df1))
+p(df1.columns)
+p(len(df1.columns))
+p(list(df1.columns))
+p(sorted(df1.columns, key=str.lower))
+```
+
+Produced this output:
+
+```
+7
+---DIVIDER---
+Index(['Id', 'First', 'Last', 'Email', 'Company'], dtype='object')
+---DIVIDER---
+5
+---DIVIDER---
+['Id', 'First', 'Last', 'Email', 'Company']
+---DIVIDER---
+['Company', 'Email', 'First', 'Id', 'Last']
+---DIVIDER---
+```
+
+#### Exercise 4
+
+This code addition:
+
+```python
+lcol = df1['Last']
+p(lcol)
+p(list(lcol))
+lcolunq = lcol.unique()
+p(lcolunq)
+p(len(lcolunq))
+```
+
+
+Produced this output:
+
+```
+0      Buffet
+1    Chisholm
+2      Monroe
+3      Chavez
+4       Shiva
+5       Smith
+6      Howard
+Name: Last, dtype: object
+---DIVIDER---
+['Buffet', 'Chisholm', 'Monroe', 'Chavez', 'Shiva', 'Smith', 'Howard']
+---DIVIDER---
+['Buffet' 'Chisholm' 'Monroe' 'Chavez' 'Shiva' 'Smith' 'Howard']
+---DIVIDER---
+7
+---DIVIDER---
+```
+
 
 ### Slides PDF
 
