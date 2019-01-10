@@ -8,6 +8,8 @@
 # Saturday, January 26th
 # [11:25AM-2PM CST](https://www.timeanddate.com/worldclock/fixedtime.html?iso=20190126T1125&p1=64&ah=2&am=35){:target="_blank"}
 
+This is an online live webcast of a face-to-face training, but I will so my best to monitor the chat for Q&A from online attendees, particularly during designated Q&A times.
+
 ---
 
 # Teaser
