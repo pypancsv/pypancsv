@@ -33,12 +33,6 @@ But if you're adventurous and missed out last time, join us anyway! Worst you ca
 > 
 > 4. Looping over every file in a directory, running the same program against each file
 
-Agenda:
-
-
-
-2-2:30: Networking/social
-
 ---
 
 # Instructions & Code Snippets You Will Need
