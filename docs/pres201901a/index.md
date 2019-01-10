@@ -3,9 +3,16 @@
 
 ---
 
-# Teaser:
+# Salesforce Saturday
 
-**Saturday, January 26th, [11:25AM-2PM CST](https://www.timeanddate.com/worldclock/fixedtime.html?iso=20190126T1125&p1=64&ah=2&am=35){:target="_blank"}**
+## Python for Spreadsheet Manipulation 102 - Hands-On Training for Salesforce Admins
+
+# Saturday, January 26th
+# [11:25AM-2PM CST](https://www.timeanddate.com/worldclock/fixedtime.html?iso=20190126T1125&p1=64&ah=2&am=35){:target="_blank"}**
+
+---
+
+# Teaser
 
 PART TWO: this time we'll get to VLOOKUP! Woot!
 
