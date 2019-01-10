@@ -3,12 +3,10 @@
 
 ---
 
-# Salesforce Saturday
-
-## Python for Spreadsheet Manipulation 102 - Hands-On Training for Salesforce Admins
+## Python for Spreadsheet Manipulation 102 - Hands-On Training for Salesforce Admins ("Salesforce Saturday")
 
 # Saturday, January 26th
-# [11:25AM-2PM CST](https://www.timeanddate.com/worldclock/fixedtime.html?iso=20190126T1125&p1=64&ah=2&am=35){:target="_blank"}**
+# [11:25AM-2PM CST](https://www.timeanddate.com/worldclock/fixedtime.html?iso=20190126T1125&p1=64&ah=2&am=35){:target="_blank"}
 
 ---
 
