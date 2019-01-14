@@ -174,6 +174,19 @@ etc.
 
 Open the [https://link.stthomas.edu/sfpy123](https://link.stthomas.edu/sfpy123){:target="_blank"} "starter code."
 
+If this "starter code" had a `print(df1)` command in it, `df1` would look like this to start:
+
+```
+      Id    First      Last           Email                      Company
+0   5829    Jimmy    Buffet  jb@example.com                          RCA
+1   2894  Shirley  Chisholm  sc@example.com       United States Congress
+2    294  Marilyn    Monroe  mm@example.com                          Fox
+3  30829    Cesar    Chavez  cc@example.com          United Farm Workers
+4    827  Vandana     Shiva  vs@example.com                     Navdanya
+5   9284   Andrea     Smith  as@example.com     University of California
+6    724   Albert    Howard  ah@example.com  Imperial College of Science
+```
+
 * _(Remember to "fork" the code before trying to edit it when you first open the starter code.)_
 * At the end of the program, add code that modifies the contents of `df1` as follows, and make your last line of code `print(df1)`:
  1. Add a column called `Hello` with the phrase `Yay Us` filled in all the way down
