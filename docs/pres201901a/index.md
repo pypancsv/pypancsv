@@ -118,7 +118,7 @@ etc.
 
 <div id="colcommands-reo-1"/>
 
-### Reordering columns _(note: typed the same as "delete columns by keeping the ones named")_
+### Reordering columns
 
 ```python
 dfVarName = dfVarName[['ColumnName1','ColumnName2','ColumnName3']]
@@ -132,7 +132,7 @@ dfVarName = dfVarName[varNameHoldingAListOfColumnNames]
 
 etc.
 
-_(Remember -- reordering is for human eyes; the computer doesn't really care.)_
+_(They'll come out in the order you specified.)_
 
 
 <div id="colcommands-ren-2"/>
