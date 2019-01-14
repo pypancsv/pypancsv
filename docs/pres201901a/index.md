@@ -175,7 +175,11 @@ They're just concise-to-type "for loops," to be honest.
 
 To build `newColumnOrder` _(a "list")_, this code takes advantage of Python's ridiculously simple grammar for combining two lists:  you just put a "`+`" between them.
 
-What's really neat, though, is that it dynamically extracts the "columns that have the word `Program` in their name, strips that word from those column names _(a rename)_, and then shoves them all to the beginning of the spreadsheet ahead of "the rest" of the columns.
+What's really neat, though, is that it:
+
+ 1. dynamically extracts a list of all columns that have the word `Program` in their name
+ 2. strips that word from those column names _(a rename)_, and then
+ 3. shoves them all to the beginning of the spreadsheet ahead of "the rest" of the columns _("the rest" being something it also computed dynamically)_
 
 Code:
 
