@@ -54,7 +54,7 @@ But if you're adventurous and missed out last time, join us anyway! Worst you ca
 
 1. [Exercise 1:  "readcsv"](#2-starter-code--readcsv)
 
-* [Door Prize Script:  Rename Certain Columns](#doorprize-col)
+* [Door Prize Script:  Dynamic Rename & Reorder](#doorprize-col)
 
 ---
 
@@ -165,7 +165,7 @@ etc.
 
 <div id="doorprize-col"/>
 
-## Door Prize Script:  Rename Certain Columns
+## Door Prize Script:  Dynamic Rename & Reorder
 
 [Tweet me if you use this in real life](https://www.twitter.com/KatieKodes){:target="_blank"} – remember to hashtag #AwesomeAdmin & #YayUs !
 
