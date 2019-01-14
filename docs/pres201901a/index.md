@@ -146,7 +146,7 @@ dfVarName = dfVarName.rename(columns={'ColumnName1':'NewColumnName1','ColumnName
 or
 
 ```python
-dfVarName = dfVarName.drop(columns=varNameHoldingAMapOfColumnRenameLogic)
+dfVarName = dfVarName.rename(columns=varNameHoldingAMapOfColumnRenameLogic)
 ```
 
 etc.
