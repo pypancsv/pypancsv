@@ -1,3 +1,7 @@
+---
+title: "Python for Spreadsheet Manipulation 102 - Hands-On Training for Salesforce Admins"
+---
+
 # Zoom VIDEOCONFERENCE link:
 # [https://bit.ly/2D0rwbw](https://bit.ly/2D0rwbw){:target="_blank"}
 
