@@ -49,9 +49,11 @@ But if you're adventurous and missed out last time, join us anyway! Worst you ca
 ---
 
 <div id="colcommands"/>
+
 ## Columns:  Adding, Deleting, Reordering, & Renaming
 
 <div id="colcommands-add-1"/>
+
 ### Adding columns, approach 1 of 2
 
 `dfVarName['ColumnName'] = 'abc'` overwrites every cell in the column called `ColumnName`, within the table (a.k.a. a "[Pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/dsintro.html){:target="_blank"}") that you've stored in the variable `dfVarName`, with the value `abc` if such a column already existed.
@@ -69,6 +71,7 @@ dfVarName['UpperCaseFirstName'] = dfVarName['FirstName'].str.upper()
 ```
 
 <div id="colcommands-add-2"/>
+
 ### Adding columns, approach 2 of 2
 
 `dfVarName = dfVarName.assign(ColumnName1 = 'abc', ColumnName2 = 'def')` overwrites every cell in the columns called `ColumnName1` and `ColumnName2`, within the table (a.k.a. a "[Pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/dsintro.html){:target="_blank"}") that you've stored in the variable `dfVarName`, with the value `abc` if such a column already existed.
