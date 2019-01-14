@@ -100,7 +100,7 @@ dfVarName = dfVarName[varNameHoldingAListOfColumnNames]
 
 etc.
 
-<div id="colcommands-del-1"/>
+<div id="colcommands-del-2"/>
 
 ### Deleting columns, approach 2 of 2 _(discard columns named)_
 
@@ -112,6 +112,41 @@ or
 
 ```python
 dfVarName = dfVarName.drop(columns=varNameHoldingAListOfColumnNames)
+```
+
+etc.
+
+<div id="colcommands-reo-1"/>
+
+### Reordering columns _(note: typed the same as "delete columns by keeping the ones named")_
+
+```python
+dfVarName = dfVarName[['ColumnName1','ColumnName2','ColumnName3']]
+```
+
+or
+
+```python
+dfVarName = dfVarName[varNameHoldingAListOfColumnNames]
+```
+
+etc.
+
+_(Remember -- reordering is for human eyes; the computer doesn't really care.)_
+
+
+<div id="colcommands-ren-2"/>
+
+### Renaming columns
+
+```python
+dfVarName = dfVarName.rename(columns={'ColumnName1':'NewColumnName1','ColumnName2':'NewColumnName2'})
+```
+
+or
+
+```python
+dfVarName = dfVarName.drop(columns=varNameHoldingAMapOfColumnRenameLogic)
 ```
 
 etc.
