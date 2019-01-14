@@ -45,3 +45,45 @@ But if you're adventurous and missed out last time, join us anyway! Worst you ca
 # Instructions & Code Snippets You Will Need
 
 ...(coming soon)...
+
+---
+
+<div id="colcommands"/>
+## Columns:  Adding, Deleting, Reordering, & Renaming
+
+<div id="colcommands-add-1"/>
+### Adding columns, approach 1 of 2
+
+`dfVarName['ColumnName'] = 'abc'` overwrites every cell in the column called `ColumnName`, within the table (a.k.a. a "[Pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/dsintro.html){:target="_blank"}") that you've stored in the variable `dfVarName`, with the value `abc` if such a column already existed.
+
+* If it didn't already exist, the command adds a new column by that name and fills it down with the value `abc`.
+
+Of course, you could also put `None` on the right-hand side of the `=` to create a new blank column.
+
+Or you could put some sort of "[Pandas Series](https://pandas.pydata.org/pandas-docs/stable/dsintro.html){:target="_blank"}" with the same set of "item IDs" that `dfVarName` has as "row IDs" to on the right-hand side of the `=`.
+
+* So, for example, if you had a column in `dfVarName` called `FirstName`, you could create a new `UpperCaseFirstName` column with upper-cased copies of that data by saying:
+
+```python
+dfVarName['UpperCaseFirstName'] = dfVarName['FirstName'].str.upper()
+```
+
+<div id="colcommands-add-2"/>
+### Adding columns, approach 2 of 2
+
+`dfVarName = dfVarName.assign(ColumnName1 = 'abc', ColumnName2 = 'def')` overwrites every cell in the columns called `ColumnName1` and `ColumnName2`, within the table (a.k.a. a "[Pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/dsintro.html){:target="_blank"}") that you've stored in the variable `dfVarName`, with the value `abc` if such a column already existed.
+
+* If either or both of those columns didn't already exist, the command would add the appropriate columns and fill them down as specified.
+
+Of course, you could also put `None` where I've put `'abc'` or `'def'` to create new blank columns.
+
+Or you could put some sort of "[Pandas Series](https://pandas.pydata.org/pandas-docs/stable/dsintro.html){:target="_blank"}" with the same set of "item IDs" that `dfVarName` has as "row IDs" on the right-hand side of either (or both) `=` symbols within the `assign()` parentheses.
+
+* For example:
+```python
+dfVarName = dfVarName.assign(UpperCaseFirstName = dfVarName['FirstName'].str.upper(), LowerCaseFirstNamedfVarName['FirstName'].str.lower())
+```
+
+Although the `.assign()` approach involves more typing and doesn't offer an obvious way to include spaces in your column names, a nifty thing about it is that the `dfVarName.assign(...)` produces a full-fledged "enhanced" copy of `dfVarName` without, in and of itself, overwriting the original contents of `dfVarName` _(that's why we have it to the right of a `dfVarName = ...` -- we're overwriting the contents of `dfVarName`)_.
+
+* That can be handy when, for example, you want to temporarily append a "throwaway" additional column to a table just before passing it to "spreadsheet concatenation" code as input, so that you'll be able to tell which rows of your "concatenation" output came from which input spreadsheet.
