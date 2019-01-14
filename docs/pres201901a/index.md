@@ -54,6 +54,8 @@ But if you're adventurous and missed out last time, join us anyway! Worst you ca
 
 1. [Exercise 1:  "readcsv"](#2-starter-code--readcsv)
 
+* [Door Prize Script:  Rename Certain Columns](#doorprize-col)
+
 ---
 
 <div id="colcommands"/>
@@ -159,6 +161,8 @@ dfVarName = dfVarName.rename(columns=varNameHoldingAMapOfColumnRenameLogic)
 
 etc.
 
+---
+
 <div id="doorprize-col"/>
 
 ## Door Prize Script:  Rename Certain Columns
@@ -214,3 +218,5 @@ Output:
 1  Registered           NaN          NaN  Registered  872       Jane      Dill
 2         NaN           NaN   Registered  Registered   75       Mick       Jag
 ```
+
+---
