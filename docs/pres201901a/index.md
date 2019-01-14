@@ -57,7 +57,7 @@ But if you're adventurous and missed out last time, join us anyway! Worst you ca
 
 * [Cheat Sheet:  Add/Delete/Reorder/Rename Columns](#colcommands)
 
-1. [Exercise 1:  "readcsv"](#2-starter-code--readcsv)
+1. [Exercise 1:  Add/Delete/Rename/Reorder Columns Yourself](#ex1)
 
 * [Door Prize Script:  Dynamic Rename & Reorder](#doorprize-col)
 
@@ -168,10 +168,7 @@ etc.
 
 ---
 
-## 1. [Starter Code:  "123"](https://link.stthomas.edu/sfpy123){:target="_blank"}
-[https://link.stthomas.edu/sfpy123](https://link.stthomas.edu/sfpy123){:target="_blank"}
-
-<div id='ex3a'/>
+<div id='ex1'/>
 ## Exercise 1:  Add/Delete/Rename/Reorder Columns Yourself
 
 Open the [https://link.stthomas.edu/sfpy123](https://link.stthomas.edu/sfpy123){:target="_blank"} "starter code."
