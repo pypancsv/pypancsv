@@ -50,7 +50,7 @@ But if you're adventurous and missed out last time, join us anyway! Worst you ca
 
 <div id="colcommands"/>
 
-## Columns:  Adding, Deleting, Reordering, & Renaming
+## Cheat Sheet:  Add/Delete/Reorder/Rename Columns
 
 <div id="colcommands-add-1"/>
 
