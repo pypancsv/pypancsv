@@ -44,6 +44,11 @@ But if you're adventurous and missed out last time, join us anyway! Worst you ca
 
 # Instructions & Code Snippets You Will Need
 
+## Notes:
+
+* All links you will need start with "https://link.stthomas.edu/**sfpy**..."
+* If the "Codebunk" development environment gives you trouble, all "starter code" links can have "-b" _(a hyphen and a lowercase letter b)_ added to the end of them to get the same "starter code" in a slower-but-less-finicky environment called "Repl.it"
+
 ...(coming soon)...
 
 ---
@@ -160,6 +165,39 @@ dfVarName = dfVarName.rename(columns=varNameHoldingAMapOfColumnRenameLogic)
 ```
 
 etc.
+
+---
+
+## 1. [Starter Code:  "123"](https://link.stthomas.edu/sfpy123){:target="_blank"}
+[https://link.stthomas.edu/sfpy123](https://link.stthomas.edu/sfpy123){:target="_blank"}
+
+<div id='ex3a'/>
+## Exercise 1:  Add/Delete/Rename/Reorder Columns Yourself
+
+Open the [https://link.stthomas.edu/sfpy123](https://link.stthomas.edu/sfpy123){:target="_blank"} "starter code."
+
+* _(Remember to "fork" the code before trying to edit it when you first open the starter code.)_
+* At the end of the program, add code that modifies the contents of `df1` as follows, and make your last line of code `print(df1)`:
+ 1. Add a column called `Hello` with the phrase `Yay Us` filled in all the way down
+ 2. Rename `Last` to `Last Name` and `First` to `First Name`
+ 3. Delete the `Email` column
+ 4. Reorder the columns to be `Hello`, `Last Name`, `Company`, `First Name`, & then `Id`.
+* You should see the following output:
+```
+    Hello Last Name                      Company First Name     Id
+0  Yay Us    Buffet                          RCA      Jimmy   5829
+1  Yay Us  Chisholm       United States Congress    Shirley   2894
+2  Yay Us    Monroe                          Fox    Marilyn    294
+3  Yay Us    Chavez          United Farm Workers      Cesar  30829
+4  Yay Us     Shiva                     Navdanya    Vandana    827
+5  Yay Us     Smith     University of California     Andrea   9284
+6  Yay Us    Howard  Imperial College of Science     Albert    724
+```
+
+Don't forget that:
+
+* You might need to surround column names with single quotes to indicate that they're text, not code
+* When typing out a list in your code, you need a pair of square brackets around them to indicate it's a list _(in addition to whatever other square brackets might be present in your code due to Pandas loving square brackets)_
 
 ---
 
