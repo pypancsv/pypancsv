@@ -83,3 +83,39 @@ dfVarName = dfVarName.assign(UpperCaseFirstName = dfVarName['FirstName'].str.upp
 ```
 
 etc.
+
+<div id="colcommands-del-1"/>
+
+### Deleting columns, approach 1 of 2
+
+Keep only columns named:
+
+```python
+dfVarName = dfVarName[['ColumnName1','ColumnName2','ColumnName3']]
+```
+
+or
+
+```python
+dfVarName = dfVarName[varNameHoldingAListOfColumnNames]
+```
+
+etc.
+
+<div id="colcommands-del-1"/>
+
+### Deleting columns, approach 1 of 2
+
+Discard columns named:
+
+```python
+dfVarName = dfVarName.drop(columns=['ColumnName1','ColumnName2','ColumnName3'])
+```
+
+or
+
+```python
+dfVarName = dfVarName.drop(columns=varNameHoldingAListOfColumnNames)
+```
+
+etc.
