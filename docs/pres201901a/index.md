@@ -51,12 +51,7 @@ But if you're adventurous and missed out last time, join us anyway! Worst you ca
 ## Table of Contents
 
 * [Cheat Sheet:  Add/Delete/Reorder/Rename Columns](#colcommands)
-1. [Starter Code:  "readcsv"](#2-starter-code--readcsv)
-  ** [Exercise 2A](#ex2a)
-  ** _(--Break-- -- leave your code up)_
-  ** [Exercise 2D](#ex2d)
-3. [Starter Code:  "123"](#3-starter-code--123)
-  ** [Exercise 3A](#ex3a)
+1. [Exercise 1:  "readcsv"](#2-starter-code--readcsv)
 
 ---
 
