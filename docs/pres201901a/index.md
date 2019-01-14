@@ -84,7 +84,7 @@ Or you could put some sort of "[Pandas Series](https://pandas.pydata.org/pandas-
 
 * For example:
 ```python
-dfVarName = dfVarName.assign(UpperCaseFirstName = dfVarName['FirstName'].str.upper(), LowerCaseFirstNamedfVarName['FirstName'].str.lower())
+dfVarName = dfVarName.assign(UpperCaseFirstName = dfVarName['FirstName'].str.upper(), LowerCaseFirstName = dfVarName['FirstName'].str.lower())
 ```
 
 Although the `.assign()` approach involves more typing and doesn't offer an obvious way to include spaces in your column names, a nifty thing about it is that the `dfVarName.assign(...)` produces a full-fledged "enhanced" copy of `dfVarName` without, in and of itself, overwriting the original contents of `dfVarName` _(that's why we have it to the right of a `dfVarName = ...` -- we're overwriting the contents of `dfVarName`)_.
