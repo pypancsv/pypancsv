@@ -86,9 +86,7 @@ etc.
 
 <div id="colcommands-del-1"/>
 
-### Deleting columns, approach 1 of 2
-
-Keep only columns named:
+### Deleting columns, approach 1 of 2 _(keep only columns named)_
 
 ```python
 dfVarName = dfVarName[['ColumnName1','ColumnName2','ColumnName3']]
@@ -104,9 +102,7 @@ etc.
 
 <div id="colcommands-del-1"/>
 
-### Deleting columns, approach 1 of 2
-
-Discard columns named:
+### Deleting columns, approach 2 of 2 _(discard columns named)_
 
 ```python
 dfVarName = dfVarName.drop(columns=['ColumnName1','ColumnName2','ColumnName3'])
