@@ -87,6 +87,6 @@ Or you could put some sort of "[Pandas Series](https://pandas.pydata.org/pandas-
 dfVarName = dfVarName.assign(UpperCaseFirstName = dfVarName['FirstName'].str.upper(), LowerCaseFirstName = dfVarName['FirstName'].str.lower())
 ```
 
-Although the `.assign()` approach involves more typing and doesn't offer an obvious way to include spaces in your column names, a nifty thing about it is that the `dfVarName.assign(...)` produces a full-fledged "enhanced" copy of `dfVarName` without, in and of itself, overwriting the original contents of `dfVarName` _(that's why we have it to the right of a `dfVarName = ...` -- we're overwriting the contents of `dfVarName`)_.
+Although the `.assign()` approach involves more typing and doesn't offer an obvious way to include spaces in your column names, a nifty thing about it is that the `dfVarName.assign(...)` produces a full-fledged "enhanced" copy of `dfVarName` without, in and of itself, overwriting the original contents of `dfVarName` _(that's why we have it to the right of `dfVarName =` -- to overwrite the contents of `dfVarName`, we have to explicitly replace the contents of `dfVarName` with the "enhanced" copy)_.
 
 * That can be handy when, for example, you want to temporarily append a "throwaway" additional column to a table just before passing it to "spreadsheet concatenation" code as input, so that you'll be able to tell which rows of your "concatenation" output came from which input spreadsheet.
