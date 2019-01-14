@@ -167,8 +167,7 @@ etc.
 
 ## Door Prize Script:  Rename Certain Columns
 
-[Tweet me if you use this in real life](https://www.twitter.com/KatieKodes){:target="_blank"} – #AwesomeAdmin & #YayUs !
-Duplicate Summarizer
+[Tweet me if you use this in real life](https://www.twitter.com/KatieKodes){:target="_blank"} – remember to hashtag #AwesomeAdmin & #YayUs !
 
 This code makes use of intermediate-level Python functionality called "list [comprehensions](https://dbader.org/blog/list-dict-set-comprehensions-in-python){:target="_blank"}" and "dict comprehensions" to build the contents of `columnsWithProgramInTheName` _(a list)_, `theRestOfTheColumns` _(a list)_, and `renamingMap` _(a "dict", which is a data structure to indicate that certain things should "become" other things as specified)_.
 
