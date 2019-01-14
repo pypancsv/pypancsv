@@ -169,6 +169,7 @@ etc.
 ---
 
 <div id='ex1'/>
+
 ## Exercise 1:  Add/Delete/Rename/Reorder Columns Yourself
 
 Open the [https://link.stthomas.edu/sfpy123](https://link.stthomas.edu/sfpy123){:target="_blank"} "starter code."
