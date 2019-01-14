@@ -158,3 +158,59 @@ dfVarName = dfVarName.rename(columns=varNameHoldingAMapOfColumnRenameLogic)
 ```
 
 etc.
+
+<div id="doorprize-col"/>
+
+## Door Prize Script:  Rename Certain Columns
+
+[Tweet me if you use this in real life](https://www.twitter.com/KatieKodes){:target="_blank"} – #AwesomeAdmin & #YayUs !
+Duplicate Summarizer
+
+This code makes use of intermediate-level Python functionality called "list [comprehensions](https://dbader.org/blog/list-dict-set-comprehensions-in-python){:target="_blank"}" and "dict comprehensions" to build the contents of `columnsWithProgramInTheName` _(a list)_, `theRestOfTheColumns` _(a list)_, and `renamingMap` _(a "dict", which is a data structure to indicate that certain things should "become" other things as specified)_.
+
+They're just concise-to-type "for loops," to be honest.
+
+To build `newColumnOrder` _(a "list")_, this code takes advantage of Python's ridiculously simple grammar for combining two lists:  you just put a "`+`" between them.
+
+What's really neat, though, is that it dynamically extracts the "columns that have the word `Program` in their name, strips that word from those column names _(a rename)_, and then shoves them all to the beginning of the spreadsheet ahead of "the rest" of the columns.
+
+Code:
+
+```python
+import pandas
+pandas.set_option('expand_frame_repr', False)
+
+df = pandas.read_csv('https://raw.githubusercontent.com/pypancsv/pypancsv/master/docs/_data/tallypivotoutput.csv', dtype=object)
+
+print('---At first, "df" looks like this:---')
+print(df)
+
+columnsWithProgramInTheName = [x for x in df.columns if 'Program' in x]
+theRestOfTheColumns = [x for x in df.columns if x not in columnsWithProgramInTheName]
+
+newColumnOrder = columnsWithProgramInTheName + theRestOfTheColumns
+df = df[newColumnOrder]
+
+renamingMap = {x:x.replace('Program','') for x in columnsWithProgramInTheName}
+df = df.rename(columns=renamingMap)
+
+print()
+print('---After reordering and renaming dynamically, "df" looks like this:---')
+print(df)
+```
+
+Output:
+
+```
+---At first, "df" looks like this:---
+    Id First Name Last Name ProgramAcrobatics ProgramBasketWeaving ProgramComputerProgramming ProgramScubaDiving
+0   29       John       Doe               NaN           Registered                        NaN         Registered
+1  872       Jane      Dill        Registered                  NaN                        NaN         Registered
+2   75       Mick       Jag               NaN                  NaN                 Registered         Registered
+
+---After reordering and renaming dynamically, "df" looks like this:---
+   Acrobatics BasketWeaving Computerming ScubaDiving   Id First Name Last Name
+0         NaN    Registered          NaN  Registered   29       John       Doe
+1  Registered           NaN          NaN  Registered  872       Jane      Dill
+2         NaN           NaN   Registered  Registered   75       Mick       Jag
+```
