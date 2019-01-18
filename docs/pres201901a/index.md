@@ -623,7 +623,6 @@ import os
 import pandas
 pandas.set_option('expand_frame_repr', False)
 
-
 lookForCSVsInThisFolder = 'C:\\FolderWhereIPutAllTheFiles\\'
 
 listOfDataFrames = []
@@ -637,12 +636,12 @@ concatdf = pandas.concat(listOfDataFrames)
 
 concatdf = concatdf.sort_values(by=['First','Last','Email','WhichCSV'])
 
-print(concatdf)
+concatdf.to_csv('c:\\example\\loopconcat.csv', index=False)
 ```
 
 > _(Note:  in the Repl.it, instead of setting "`lookForCSVsInThisFolder`" to `'C:\\FolderWhereIPutAllTheFiles\\'`, in the Repl.it, I set it to "`'.'`" because that means "the same folder I'm running my Python from" -- this is specific to Repl.it and isn't normally the way I want you to code.)_.
 
-Output:
+Then the file we saved to, loopconcat.csv, looks like this when opened:
 
 First|Last|Email|Event Name|Event Date|Attendance Status|WhichCSV
 ---|---|---|---|---|---|---
