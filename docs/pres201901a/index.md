@@ -647,24 +647,13 @@ First|Last|Email|Event Name|Event Date|Attendance Status|WhichCSV
 ---|---|---|---|---|---|---
 Adah|Dimmock|adimmock2@issuu.com|Python for Salesforce 102|2019-01-26|Cancelled|mergehandson_event3.csv
 Adah|Dimmock|adimmock2@issuu.com|Python for Salesforce 103|2019-12-29|RSVPed|mergehandson_event4.csv
-Any|Karpeev|akarpeev0@usgs.gov|Python for Salesforce 102|2019-01-26|Cancelled|mergehandson_event3.csv
 Ashien|Lilford|alilford0@digg.com|Python for Salesforce 101-Office Hours|2018-11-10|No-Show|mergehandson_event2.csv
-Ashien|Lilford|alilford0@digg.com|Python for Salesforce 102|2019-01-26|No-Show|mergehandson_event3.csv
-Catherine|Kaemena|ckaemena1@spotify.com|Python for Salesforce 101-Office Hours|2018-11-10|No-Show|mergehandson_event2.csv
-Catherine|Kaemena|ckaemena1@spotify.com|Python for Salesforce 103|2019-12-29|RSVPed|mergehandson_event4.csv
 Ermanno|Withinshaw|ewithinshaw4@people.com.cn|Python for Salesforce 101|2018-10-20|Attended|mergehandson_event1.csv
 Harwilll|Menhenitt|hmenhenitt0@google.co.uk|Python for Salesforce 103|2019-12-29|RSVPed|mergehandson_event4.csv
 Haskel|Southerns|hsoutherns1@kickstarter.com|Python for Salesforce 101|2018-10-20|No-Show|mergehandson_event1.csv
 Haskel|Southerns|hsoutherns1@kickstarter.com|Python for Salesforce 101-Office Hours|2018-11-10|No-Show|mergehandson_event2.csv
+Haskel|Southerns|hsoutherns1@kickstarter.com|Python for Salesforce 101|2018-10-20|No-Show|mergehandson_event3.csv
 Haskel|Southerns|hsoutherns1@kickstarter.com|Python for Salesforce 103|2019-12-29|RSVPed|mergehandson_event4.csv
-Jacklyn|Fernao|jfernao1@altervista.org|Python for Salesforce 103|2019-12-29|Cancelled|mergehandson_event4.csv
 Julianna|Judron|jjudron1@live.com|Python for Salesforce 102|2019-01-26|No-Show|mergehandson_event3.csv
-Justina|Evennett|jevennett2@buzzfeed.com|Python for Salesforce 101-Office Hours|2018-11-10|No-Show|mergehandson_event2.csv
-Marillin|Douthwaite|mdouthwaite3@sakura.ne.jp|Python for Salesforce 101|2018-10-20|No-Show|mergehandson_event1.csv
-Marillin|Douthwaite|mdouthwaite3@sakura.ne.jp|Python for Salesforce 102|2019-01-26|No-Show|mergehandson_event3.csv
-Nathanil|Storrock|nstorrock2@booking.com|Python for Salesforce 103|2019-12-29|RSVPed|mergehandson_event4.csv
-Revkah|Lilburn|rlilburn0@seesaa.net|Python for Salesforce 101|2018-10-20|Cancelled|mergehandson_event1.csv
+Revkah|Lilburn|rlilburn0@seesaa.net|Python for Salesforce 101|2018-10-20|Attended|mergehandson_event1.csv
 Revkah|Lilburn|rlilburn0@seesaa.net|Python for Salesforce 103|2019-12-29|Cancelled|mergehandson_event4.csv
-Tiebout|Douglas|tdouglas2@hugedomains.com|Python for Salesforce 101|2018-10-20|No-Show|mergehandson_event1.csv
-Tiebout|Douglas|tdouglas2@hugedomains.com|Python for Salesforce 101-Office Hours|2018-11-10|No-Show|mergehandson_event2.csv
-
