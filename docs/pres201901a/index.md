@@ -59,11 +59,53 @@ But if you're adventurous and missed out last time, join us anyway! Worst you ca
 
 ## Table of Contents
 
-* [Cheat Sheet:  Add/Delete/Reorder/Rename Columns](#colcommands)
-
 1. [Exercise 1:  Add/Delete/Rename/Reorder Columns Yourself](#ex1)
+ * [Cheat Sheet:  Add/Delete/Reorder/Rename Columns](#colcommands)
+ * [Door Prize Script:  Dynamic Rename & Reorder](#doorprize-col)
 
-* [Door Prize Script:  Dynamic Rename & Reorder](#doorprize-col)
+---
+
+<div id='ex1'/>
+
+## Exercise 1:  Add/Delete/Rename/Reorder Columns Yourself
+
+Open the [https://link.stthomas.edu/sfpy123](https://link.stthomas.edu/sfpy123){:target="_blank"} "starter code."
+
+If this "starter code" had a `print(df1)` command in it, `df1` would look like this to start:
+
+```
+      Id    First      Last           Email                      Company
+0   5829    Jimmy    Buffet  jb@example.com                          RCA
+1   2894  Shirley  Chisholm  sc@example.com       United States Congress
+2    294  Marilyn    Monroe  mm@example.com                          Fox
+3  30829    Cesar    Chavez  cc@example.com          United Farm Workers
+4    827  Vandana     Shiva  vs@example.com                     Navdanya
+5   9284   Andrea     Smith  as@example.com     University of California
+6    724   Albert    Howard  ah@example.com  Imperial College of Science
+```
+
+* _(Remember to "fork" the code before trying to edit it when you first open the starter code.)_
+* At the end of the program, add code that modifies the contents of `df1` as follows, and make your last line of code `print(df1)`:
+ 1. Add a column called `Hello` with the phrase `Yay Us` filled in all the way down
+ 2. Rename `Last` to `Last Name` and `First` to `First Name`
+ 3. Delete the `Email` column
+ 4. Reorder the columns to be `Hello`, `Last Name`, `Company`, `First Name`, & then `Id`.
+* You should see the following output:
+```
+    Hello Last Name                      Company First Name     Id
+0  Yay Us    Buffet                          RCA      Jimmy   5829
+1  Yay Us  Chisholm       United States Congress    Shirley   2894
+2  Yay Us    Monroe                          Fox    Marilyn    294
+3  Yay Us    Chavez          United Farm Workers      Cesar  30829
+4  Yay Us     Shiva                     Navdanya    Vandana    827
+5  Yay Us     Smith     University of California     Andrea   9284
+6  Yay Us    Howard  Imperial College of Science     Albert    724
+```
+
+Don't forget that:
+
+* You might need to surround column names with single quotes to indicate that they're text, not code
+* When typing out a list in your code, you need a pair of square brackets around them to indicate it's a list _(in addition to whatever other square brackets might be present in your code due to Pandas loving square brackets)_
 
 ---
 
@@ -169,50 +211,6 @@ dfVarName = dfVarName.rename(columns=varNameHoldingAMapOfColumnRenameLogic)
 ```
 
 etc.
-
----
-
-<div id='ex1'/>
-
-## Exercise 1:  Add/Delete/Rename/Reorder Columns Yourself
-
-Open the [https://link.stthomas.edu/sfpy123](https://link.stthomas.edu/sfpy123){:target="_blank"} "starter code."
-
-If this "starter code" had a `print(df1)` command in it, `df1` would look like this to start:
-
-```
-      Id    First      Last           Email                      Company
-0   5829    Jimmy    Buffet  jb@example.com                          RCA
-1   2894  Shirley  Chisholm  sc@example.com       United States Congress
-2    294  Marilyn    Monroe  mm@example.com                          Fox
-3  30829    Cesar    Chavez  cc@example.com          United Farm Workers
-4    827  Vandana     Shiva  vs@example.com                     Navdanya
-5   9284   Andrea     Smith  as@example.com     University of California
-6    724   Albert    Howard  ah@example.com  Imperial College of Science
-```
-
-* _(Remember to "fork" the code before trying to edit it when you first open the starter code.)_
-* At the end of the program, add code that modifies the contents of `df1` as follows, and make your last line of code `print(df1)`:
- 1. Add a column called `Hello` with the phrase `Yay Us` filled in all the way down
- 2. Rename `Last` to `Last Name` and `First` to `First Name`
- 3. Delete the `Email` column
- 4. Reorder the columns to be `Hello`, `Last Name`, `Company`, `First Name`, & then `Id`.
-* You should see the following output:
-```
-    Hello Last Name                      Company First Name     Id
-0  Yay Us    Buffet                          RCA      Jimmy   5829
-1  Yay Us  Chisholm       United States Congress    Shirley   2894
-2  Yay Us    Monroe                          Fox    Marilyn    294
-3  Yay Us    Chavez          United Farm Workers      Cesar  30829
-4  Yay Us     Shiva                     Navdanya    Vandana    827
-5  Yay Us     Smith     University of California     Andrea   9284
-6  Yay Us    Howard  Imperial College of Science     Albert    724
-```
-
-Don't forget that:
-
-* You might need to surround column names with single quotes to indicate that they're text, not code
-* When typing out a list in your code, you need a pair of square brackets around them to indicate it's a list _(in addition to whatever other square brackets might be present in your code due to Pandas loving square brackets)_
 
 ---
 
