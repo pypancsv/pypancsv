@@ -60,8 +60,11 @@ But if you're adventurous and missed out last time, join us anyway! Worst you ca
 ## Table of Contents
 
 1. [Exercise 1:  Add/Delete/Rename/Reorder Columns Yourself](#ex1)
- ** [Cheat Sheet:  Add/Delete/Reorder/Rename Columns](#colcommands)
- ** [Door Prize Script:  Dynamic Rename & Reorder](#doorprize-col)
+ * [Cheat Sheet:  Add/Delete/Reorder/Rename Columns](#colcommands)
+ * [Door Prize Script:  Dynamic Rename & Reorder](#doorprize-col)
+2. [Exercise 2:  XXX](#ex2)
+ * [Cheat Sheet:  Concatenation Examples](#concat)
+ * [Cheat Sheet:  Merge Examples](#merge)
 
 ---
 
@@ -274,3 +277,28 @@ Output:
 ```
 
 ---
+
+<div id="concat"/>
+
+## Cheat Sheet:  Concatenation Examples
+
+### Example 1:  List all unique e-mail addresses in a spreadsheet, whether they be under the "`Email`," "`WorkEmail__c`," or "`SchoolEmail__c` columns.
+
+```python
+concat_series = pandas.concat([df['Email'],df['WorkEmail__c'],df['SchoolEmail__c']])
+nonnullemails_series = concat_series.dropna()
+uniquenonnullemails_ndarray = nonnullemails_series.unique()
+pandas.Series(uniquenonnullemails_ndarray, name='Emails').to_csv('c:\\example\\uniqueemails.csv', index=False, header=True)
+```
+
+The file we saved to, uniqueemails.csv, looks like this when opened:
+
+TO DO:  INSERT TABLE
+
+> Note that the "`.unique()`" operation that you can append to any "Series"-typed data produces output that is not a Series.
+> 
+> It's yet _another_ list-like data structure called a `numpy.ndarray`.
+> 
+> To write back to disk as a 1-column CSV or Excel file, we'll want to turn it back into a Series, which is what we do on the last line _(giving the first column the name "Emails" because that feels like a good name)_.
+> 
+> If instead we had put `uniquenonnullemails_ndarray` inside `print(...)`, we would have seen the data surrounded by square brackets, separated by a space but no commas.  If we had wanted commas as a separator, we would have put it inside of `print(list(...))` to form `print(list(uniquenonnullemails_ndarray))`.
