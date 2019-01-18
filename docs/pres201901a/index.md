@@ -527,7 +527,7 @@ Id|First|Last|Email|Company|PersonId|FavoriteFood
 ||Albert|Howard|ahotherem@example.com||8xi|Potatoes
 ||Vandana|Shiva|vs@example.com||02e|Amaranth
 
-As you can see, we did manage to "stack" the First, Last, & Email columns by renaming column names in `df2` before adding it to the list of sheets to vertically concatenate _(`pandas.concat(...)` looks for column names that are exact matches of each other and just "adds on" columns not found in every spreadsheet passed do it)_, but we also don't have any connection between the facts that Marilyn Monroe works for Fox and the fact that Marilyn Monroe likes to eat carrots.
+As you can see, we did manage to "stack" the First, Last, & Email columns by renaming column names in `df2` before adding it to the list of sheets to vertically concatenate _(`pandas.concat(...)` looks for column names that are exact matches of each other and just "adds on" columns not found in every spreadsheet passed do it)_, but we also don't have any connection between the fact that Marilyn Monroe works for Fox and the fact that Marilyn Monroe likes to eat carrots.
 
 There might be business cases where we actually want our output to look like this, but I can't think of one off the top of my head.
 
