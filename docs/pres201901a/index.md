@@ -550,6 +550,6 @@ Id|First|Last|Email|Company|PersonId|FavoriteFood|\_merge
 827|Vandana|Shiva|vs@example.com|Navdanya|02e|Amaranth|both
 9284|Andrea|Smith|as@example.com|University of California|9e84f|Kale|both
 724|Albert|Howard|ah@example.com|Imperial College of Science|||left\_only
-|Shirley|Temple|st@example.com||983mv|Lollipops|right\_only
-|Donald|Duck|dd@example.com||k28fo|Pancakes|right\_only
-|Albert|Howard|ahotherem@example.com||8xi|Potatoes|right\_only
+||Shirley|Temple|st@example.com||983mv|Lollipops|right\_only
+||Donald|Duck|dd@example.com||k28fo|Pancakes|right\_only
+||Albert|Howard|ahotherem@example.com||8xi|Potatoes|right\_only
