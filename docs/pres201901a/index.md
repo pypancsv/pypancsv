@@ -339,7 +339,7 @@ TO DO:  INSERT TABLE
 col2EquivInCol1 = {'FirstName':'First', 'LastName':'Last', 'Em':'Email'}
 rawconcat_df = pandas.concat([df1, df2.rename(columns=col2EquivInCol1)], sort=False)
 dedupedconcat_df = rawconcat_df.drop_duplicates(subset=df1.columns)
-dedupedconcat_df.to_csv('c:\\example\\concattables.csv', index=False)
+dedupedconcat_df.to_csv('c:\\example\\concatdedupedtables.csv', index=False)
 ```
 
 > Note:  The "`sort=False`" option in "`pandas.concat(...)`" keeps that command from rearranging the columns in alphabetical order.
@@ -367,7 +367,7 @@ If we ran the above code after reading a spreadsheet into the "`df1`" variable t
 | Howard | ahotherem@example.com | Albert |
 | Shiva | vs@example.com | Vandana |
 
-Then the file we saved to, concattables.csv, looks like this when opened:
+Then the file we saved to, concatdedupedtables.csv, looks like this when opened:
 
 | First | Last | Email |
 | --- | --- | --- |
@@ -382,10 +382,12 @@ Then the file we saved to, concattables.csv, looks like this when opened:
 | Donald | Duck | dd@example.com |
 | Albert | Howard | ahotherem@example.com |
 
-### Example 4:  Spreadsheet 1, Spreadsheet 2, & Spreadsheet 3 all have columns "`Name`," "`DOB`," & "`AttendedOrNot`" _(they're EventBrite exports)_.<br/>Add a "`WhichSheet`" column to each of them saying "Event1," "Event2," or "Event3," concatenate, and sort by "`Name`," "`DOB`," & "`WhichSheet.`"
+### Example 4:  Spreadsheet 1, Spreadsheet 2, & Spreadsheet 3 all have columns "`Name`," "`DOB`," & "`AttendedOrNot`" _(they're EventBrite exports)_.<br/>Add a "`WhichSheet`" column to each of them saying "Event1," "Event2," or "Event3," concatenate, and sort by "`Name`," "`DOB`," & "`WhichSheet`."
 
 ```python
-TO DO:  WRITE CODE
+rawconcat_df = pandas.concat([df1.assign(WhichSheet='Event1'), df2.assign(WhichSheet='Event2'), df3.assign(WhichSheet='Event3')], sort=False)
+sortedconcat_df = rawconcat_df.sort_values(by=['Name','DOB','WhichSheet'])
+sortedconcat_df.to_csv('c:\\example\\concatsortedtables.csv', index=False)
 ```
 
 > Note:  The "`sort=False`" option in "`pandas.concat(...)`" keeps that command from rearranging the columns in alphabetical order.
@@ -402,6 +404,6 @@ TO DO:  INSERT TABLE
 
 TO DO:  INSERT TABLE
 
-Then the file we saved to, concattables.csv, looks like this when opened:
+Then the file we saved to, concatsortedtables.csv, looks like this when opened:
 
 TO DO:  INSERT TABLE
