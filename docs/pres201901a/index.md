@@ -469,32 +469,38 @@ If we ran the above code after reading a spreadsheet into the "`df1`" variable t
 
 TransactionId|Amount|Timestamp|CCLast4
 ---|---|---|---
-28499202|$87.71|2018-06-14T04:02:00+05:00|3885
-17689183|$1,508.82|2014-11-13T18:27:00+05:00|9274
-92840068|$1.08|2016-02-08T15:53:00+05:00|9274
-92848928|$981.46|2019-01-03T07:01:00+05:00|1784
+28499202|$87.71|2018-06-14T04:02:00-05:00|3885
+17689183|$1,508.82|2014-11-13T18:27:00-05:00|9274
+92840068|$1.08|2016-02-08T15:53:00-05:00|9274
+92848928|$981.46|2019-01-03T07:01:00-05:00|1784
 
 ...and after reading a spreadsheet into the "`df2`" variable that looked like this:
 
 Timestamp|BudgetCode|Amount|Id
 ---|---|---|---
-2016-02-08T15:53:00+05:00|8294|$1.08|92840068
-2014-12-01T08:23:00+05:00|7140|$1,508.82|17689183
-2018-06-14T04:02:00+06:00|8294|$87.71|28499202
-2013-02-09T08:01:00+05:00|8294|$517.84|82947820
+2016-02-08T15:53:00-05:00|8294|$1.08|92840068
+2014-12-01T08:23:00-05:00|7140|$1,508.82|17689183
+2018-06-14T04:02:00-04:00|8294|$87.71|28499202
+2013-02-09T08:01:00-05:00|8294|$517.84|82947820
 
 Then the file we saved to, transactionverify.csv, looks like this when opened:
 
 HasProblem|TransactionId|\_merge|Timestamp\_x|Amount\_x|Timestamp\_y|Amount\_y
 ---|---|---|---|---|---|---
-True|28499202|both|2018-06-14T04:02:00+05:00|$87.71|2018-06-14T04:02:00+06:00|$87.71
-True|17689183|both|2014-11-13T18:27:00+05:00|$1,508.82|2014-12-01T08:23:00+05:00|$1,508.82
-False|92840068|both|2016-02-08T15:53:00+05:00|$1.08|2016-02-08T15:53:00+05:00|$1.08
-True|92848928|left\_only|2019-01-03T07:01:00+05:00|$981.46||
-True||right\_only|||2013-02-09T08:01:00+05:00|$517.84
+True|28499202|both|2018-06-14T04:02:00-05:00|$87.71|2018-06-14T04:02:00-04:00|$87.71
+True|17689183|both|2014-11-13T18:27:00-05:00|$1,508.82|2014-12-01T08:23:00-05:00|$1,508.82
+False|92840068|both|2016-02-08T15:53:00-05:00|$1.08|2016-02-08T15:53:00-05:00|$1.08
+True|92848928|left\_only|2019-01-03T07:01:00-05:00|$981.46||
+True||right\_only|||2013-02-09T08:01:00-05:00|$517.84
 
 > If we were working with millions of records, most of which would be false, we might want to filter out the rows where "`HasProblem`" is `False`.
 > 
 > We haven't gotten to this yet, but you could use an approach for filtering series by adding the following line of code right before `mergedf = mergedf[['HasProblem','TransactionId',...,'Amount_y']]`:
 > 
 > `mergedf = mergedf[mergedf['HasProblem']]`
+
+If you look at our output data carefully, you might notice that transaction ID 28499202 is only problematic because of a time zone difference (UTC+.
+
+June 14th, 2018 is in the summer, so this might be a simple problem of one of our systems logging Daylight Savings Time correctly.
+
+We could update our Python script to ignore this particular kind of issue _(by creating copies of the "Timestamp" column that are properly interpreted as dates rather than as plaintext, then creating a "date difference" column and ignoring the difference if it's only a question of "our time zone in winter" vs. "our time zone in summer" -- this is a bit advanced, so we won't cover it today)_ or, better yet, we could leave them in our errorwe could go talk to whoever maintains the systems producing these transaction logs and ask them to log transaction times correctly.
