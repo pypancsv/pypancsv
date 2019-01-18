@@ -622,7 +622,6 @@ Code:
 ```python
 import os
 import pandas
-pandas.set_option('expand_frame_repr', False)
 
 lookForCSVsInThisFolder = 'C:\\FolderWhereIPutAllTheFiles\\'
 
@@ -647,7 +646,6 @@ Note that if you don't need the "WhichCSV" column added, your code can be **much
 ```python
 import os
 import pandas
-pandas.set_option('expand_frame_repr', False)
 
 lookForCSVsInThisFolder = 'C:\\FolderWhereIPutAllTheFiles\\'
 
