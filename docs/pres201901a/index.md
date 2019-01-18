@@ -503,4 +503,6 @@ If you look at our output data carefully, you might notice that transaction ID 2
 
 June 14th, 2018 is in the summer, so this might be a simple problem of one of our systems logging Daylight Savings Time correctly.
 
-We could update our Python script to ignore this particular kind of issue _(by creating copies of the "Timestamp" column that are properly interpreted as dates rather than as plaintext, then creating a "date difference" column and ignoring the difference if it's only a question of "our time zone in winter" vs. "our time zone in summer" -- this is a bit advanced, so we won't cover it today)_ or, better yet, we could leave them in our errorwe could go talk to whoever maintains the systems producing these transaction logs and ask them to log transaction times correctly.
+We could update our Python script to ignore this particular kind of issue _(which might be the right approach if, say, one system logged "noon in New York" as "T12:00:00-05:00" winter / "T12:00:00-04:00" summer, with the other system logging "noon in New York" as "T17:00:00Z" winter / "T16:00:00Z" summer)_.
+
+However, for this particular issue, it's probably one of the systems producing the logs that is forgetting to account for Daylight Savings Time, so there's probably a bug we should ask to have fixed "upstream" of our logs.
