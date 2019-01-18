@@ -642,6 +642,22 @@ concatdf.to_csv('c:\\example\\loopconcat.csv', index=False)
 
 > _(Note:  in the Repl.it, instead of setting "`lookForCSVsInThisFolder`" to `'C:\\FolderWhereIPutAllTheFiles\\'`, in the Repl.it, I set it to "`'.'`" because that means "the same folder I'm running my Python from" -- this is specific to Repl.it and isn't normally the way I want you to code.)_.
 
+Note that if you don't need the "WhichCSV" column added, your code can be **much** shorter, bringing the creation of "`concatdf`" down to a single line thanks to "list comprehensions":
+
+```python
+import os
+import pandas
+pandas.set_option('expand_frame_repr', False)
+
+lookForCSVsInThisFolder = 'C:\\FolderWhereIPutAllTheFiles\\'
+
+concatdf = pandas.concat([pandas.read_csv(x) for x in os.listdir(lookForCSVsInThisFolder) if x.endswith('.csv')])
+
+concatdf = concatdf.sort_values(by=['First','Last','Email','WhichCSV'])
+
+concatdf.to_csv('c:\\example\\loopconcat-alternate.csv', index=False)
+```
+
 Then the file we saved to, loopconcat.csv, looks like this when opened:
 
 First|Last|Email|Event Name|Event Date|Attendance Status|WhichCSV
