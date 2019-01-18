@@ -60,8 +60,8 @@ But if you're adventurous and missed out last time, join us anyway! Worst you ca
 ## Table of Contents
 
 1. [Exercise 1:  Add/Delete/Rename/Reorder Columns Yourself](#ex1)
- * [Cheat Sheet:  Add/Delete/Reorder/Rename Columns](#colcommands)
- * [Door Prize Script:  Dynamic Rename & Reorder](#doorprize-col)
+  * [Cheat Sheet:  Add/Delete/Reorder/Rename Columns](#colcommands)
+  * [Door Prize Script:  Dynamic Rename & Reorder](#doorprize-col)
 2. [Exercise 2:  XXX](#ex2)
  * [Cheat Sheet:  Concatenation Examples ↕](#concat)
  * [Cheat Sheet:  Merge Examples ↔](#merge)
@@ -504,9 +504,6 @@ If you look at our output data carefully, you might notice that transaction ID 2
 June 14th, 2018 is in the summer, so this might be a simple problem of one of our systems logging Daylight Savings Time incorrectly.
 
 * We could update our Python script to ignore this particular kind of issue.  That might be the right approach if:
-
- * One system logged "noon in New York" as "T12:00:00-05:00" winter / "T12:00:00-04:00" summer
- 
- * The other system logged "noon in New York" as "T17:00:00Z" winter / "T16:00:00Z" summer)_.
- 
+  * One system logged "noon in New York" as "T12:00:00-05:00" winter / "T12:00:00-04:00" summer
+  * The other system logged "noon in New York" as "T17:00:00Z" winter / "T16:00:00Z" summer)_.
 * However, for this particular issue, it's probably one of the systems producing the logs that is forgetting to account for Daylight Savings Time, so there's probably a bug we should ask to have fixed "upstream" of our logs.
