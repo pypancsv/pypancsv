@@ -337,10 +337,12 @@ TO DO:  INSERT TABLE
 
 ```python
 col2EquivInCol1 = {'FirstName':'First', 'LastName':'Last', 'Em':'Email'}
-rawconcat_df = pandas.concat([df1, df2.rename(columns=col2EquivInCol1)])
+rawconcat_df = pandas.concat([df1, df2.rename(columns=col2EquivInCol1)], sort=False)
 dedupedconcat_df = rawconcat_df.drop_duplicates(subset=df1.columns)
 dedupedconcat_df.to_csv('c:\\example\\concattables.csv', index=False)
 ```
+
+> Note:  The "`sort=False`" option in "`pandas.concat(...)`" keeps that command from rearranging the columns in alphabetical order.
 
 If we ran the above code after reading a spreadsheet into the "`df1`" variable that looked like this...
 
@@ -367,23 +369,16 @@ If we ran the above code after reading a spreadsheet into the "`df1`" variable t
 
 Then the file we saved to, concattables.csv, looks like this when opened:
 
-| Email | First | Last |
+| First | Last | Email |
 | --- | --- | --- |
-| jb@example.com | Jimmy | Buffet |
-| sc@example.com | Shirley | Chisholm |
-| mm@example.com | Marilyn | Monroe |
-| cc@example.com | Cesar | Chavez |
-| vs@example.com | Vandana | Shiva |
-| as@example.com | Andrea | Smith |
-| ah@example.com | Albert | Howard |
-| st@example.com | Shirley | Temple |
-| dd@example.com | Donald | Duck |
-| ahotherem@example.com | Albert | Howard |
+| Jimmy | Buffet | jb@example.com |
+| Shirley | Chisholm | sc@example.com |
+| Marilyn | Monroe | mm@example.com |
+| Cesar | Chavez | cc@example.com |
+| Vandana | Shiva | vs@example.com |
+| Andrea | Smith | as@example.com |
+| Albert | Howard | ah@example.com |
+| Shirley | Temple | st@example.com |
+| Donald | Duck | dd@example.com |
+| Albert | Howard | ahotherem@example.com |
 
-> Note that the order of the columns isn't anything we'd explicitly seen before.
-> 
-> It seems to be alphabetical.
-> 
-> That's okay -- we know how to reorder columns!
-> 
-> _(We could just add a line that says `dedupedconcat_df = dedupedconcat_df[df1.columns]`, since `dedupedconcat_df` and `df1` share the same column names, just in a different order.)_
