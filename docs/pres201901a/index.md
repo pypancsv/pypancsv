@@ -597,3 +597,75 @@ June 14th, 2018 is in the summer, so this might be a simple problem of one of ou
   * The other system logged "noon in New York" as "T17:00:00Z" _(winter)_ / "T16:00:00Z" _(summer)_, which means it's logging transactions when they happened in Greenwich Mean Time / UTC.
 
 However, for this particular issue, that's not quite what we're seeing.  It's probably one of the systems producing the logs that is forgetting to account for Daylight Savings Time, so there's probably a bug we should ask to have fixed "upstream" of our logs.
+
+---
+
+<div id="doorprize-col"/>
+
+## Door Prize Script:  Event-Attendance-Concatenating Loop ↕
+
+[Tweet me if you use this in real life](https://www.twitter.com/KatieKodes){:target="_blank"} – remember to hashtag #AwesomeAdmin & #YayUs !
+
+To watch this run, visit [https://repl.it/@rplrpl/Door-Prize-Multi-Event-Concatenator](https://repl.it/@rplrpl/Door-Prize-Multi-Event-Concatenator){:target="_blank"}
+
+I've saved 4 files inside of my codebase at Repl.it _(the 3 we saw earlier, plus a new one full of RSVPs for "Python 103")_.
+
+**PLEASE BE CAREFUL** about the code you're writing when you run code against "every file in a folder."  You can overwrite so many files in a milisecond.
+
+**Just like I say, "Don't write your output to the same file that you're reading your input from"**:
+
+* **Don't write a loop that writes output files to the same filenames OR the same directory as you're reading your input from"**
+
+Code:
+
+```python
+import os
+import pandas
+pandas.set_option('expand_frame_repr', False)
+
+
+lookForCSVsInThisFolder = 'C:\\FolderWhereIPutAllTheFiles\\'
+
+listOfDataFrames = []
+for x in os.listdir(lookForCSVsInThisFolder):
+  if x.endswith('.csv'):
+    xdf = pandas.read_csv(x)
+    xdf = xdf.assign(WhichCSV = x)
+    listOfDataFrames.append(xdf)
+
+concatdf = pandas.concat(listOfDataFrames)
+
+concatdf = concatdf.sort_values(by=['First','Last','Email','WhichCSV'])
+
+print(concatdf)
+```
+
+> _(Note:  in the Repl.it, instead of setting "`lookForCSVsInThisFolder`" to `'C:\\FolderWhereIPutAllTheFiles\\'`, in the Repl.it, I set it to "`'.'`" because that means "the same folder I'm running my Python from" -- this is specific to Repl.it and isn't normally the way I want you to code.)_.
+
+Output:
+
+First|Last|Email|Event Name|Event Date|Attendance Status|WhichCSV
+---|---|---|---|---|---|---
+Adah|Dimmock|adimmock2@issuu.com|Python for Salesforce 102|2019-01-26|Cancelled|mergehandson_event3.csv
+Adah|Dimmock|adimmock2@issuu.com|Python for Salesforce 103|2019-12-29|RSVPed|mergehandson_event4.csv
+Any|Karpeev|akarpeev0@usgs.gov|Python for Salesforce 102|2019-01-26|Cancelled|mergehandson_event3.csv
+Ashien|Lilford|alilford0@digg.com|Python for Salesforce 101-Office Hours|2018-11-10|No-Show|mergehandson_event2.csv
+Ashien|Lilford|alilford0@digg.com|Python for Salesforce 102|2019-01-26|No-Show|mergehandson_event3.csv
+Catherine|Kaemena|ckaemena1@spotify.com|Python for Salesforce 101-Office Hours|2018-11-10|No-Show|mergehandson_event2.csv
+Catherine|Kaemena|ckaemena1@spotify.com|Python for Salesforce 103|2019-12-29|RSVPed|mergehandson_event4.csv
+Ermanno|Withinshaw|ewithinshaw4@people.com.cn|Python for Salesforce 101|2018-10-20|Attended|mergehandson_event1.csv
+Harwilll|Menhenitt|hmenhenitt0@google.co.uk|Python for Salesforce 103|2019-12-29|RSVPed|mergehandson_event4.csv
+Haskel|Southerns|hsoutherns1@kickstarter.com|Python for Salesforce 101|2018-10-20|No-Show|mergehandson_event1.csv
+Haskel|Southerns|hsoutherns1@kickstarter.com|Python for Salesforce 101-Office Hours|2018-11-10|No-Show|mergehandson_event2.csv
+Haskel|Southerns|hsoutherns1@kickstarter.com|Python for Salesforce 103|2019-12-29|RSVPed|mergehandson_event4.csv
+Jacklyn|Fernao|jfernao1@altervista.org|Python for Salesforce 103|2019-12-29|Cancelled|mergehandson_event4.csv
+Julianna|Judron|jjudron1@live.com|Python for Salesforce 102|2019-01-26|No-Show|mergehandson_event3.csv
+Justina|Evennett|jevennett2@buzzfeed.com|Python for Salesforce 101-Office Hours|2018-11-10|No-Show|mergehandson_event2.csv
+Marillin|Douthwaite|mdouthwaite3@sakura.ne.jp|Python for Salesforce 101|2018-10-20|No-Show|mergehandson_event1.csv
+Marillin|Douthwaite|mdouthwaite3@sakura.ne.jp|Python for Salesforce 102|2019-01-26|No-Show|mergehandson_event3.csv
+Nathanil|Storrock|nstorrock2@booking.com|Python for Salesforce 103|2019-12-29|RSVPed|mergehandson_event4.csv
+Revkah|Lilburn|rlilburn0@seesaa.net|Python for Salesforce 101|2018-10-20|Cancelled|mergehandson_event1.csv
+Revkah|Lilburn|rlilburn0@seesaa.net|Python for Salesforce 103|2019-12-29|Cancelled|mergehandson_event4.csv
+Tiebout|Douglas|tdouglas2@hugedomains.com|Python for Salesforce 101|2018-10-20|No-Show|mergehandson_event1.csv
+Tiebout|Douglas|tdouglas2@hugedomains.com|Python for Salesforce 101-Office Hours|2018-11-10|No-Show|mergehandson_event2.csv
+
