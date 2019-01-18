@@ -319,7 +319,25 @@ pandas.Series(uniquenonnullemails_ndarray, name='Emails').to_csv('c:\\example\\u
 
 > <b>** HEY LOOK! **</b>
 > 
-> It's the exact same code as example 1 ... we just added more things to the list inside "`pandas.concat(...)`" in the first line!
+> It's the exact same code as example 1.  We just added more things to the list inside "`pandas.concat(...)`" in the first line!
+
+If we ran the above code after reading a spreadsheet into the "`df1`" variable that looked like this...
+
+TO DO:  INSERT TABLE
+
+...and after reading a spreadsheet into the "`df2`" variable that looked like this:
+
+TO DO:  INSERT TABLE
+
+Then the file we saved to, uniqueemails2.csv, looks like this when opened:
+
+TO DO:  INSERT TABLE
+
+### Example 3:  Spreadsheet 1 has columns “FirstName,” “LastName,” “DOB,” & “Email.”<br/>Spreadsheet 2 has columns “Birthdate,” “FN,” “LN,” & “EmailAddr.”<br/>Concatenate appropriately _(e.g. DOB:Birthdate)_ & dedupe (by all 4 fields together).
+
+```python
+TO DO:  INSERT CODE
+```
 
 If we ran the above code after reading a spreadsheet into the "`df1`" variable that looked like this...
 
