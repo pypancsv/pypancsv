@@ -454,3 +454,40 @@ Then the file we saved to, countryenhanced.csv, looks like this when opened:
 | 827 | Vandana | Shiva | India | IN | New Delhi |
 | 9284 | Andrea | Smith | United States | US | Washington, D.C. |
 | 724 | Albert | Howard | United Kingdom | UK | London |
+
+### Example 1:  Spreadsheet #1 is full of people.<br/>Spreadsheet #2 is full of data about countries of the world.<br/>Add "`Country Code`" & "`Country Capital`" columns to #1, using people's "`MailingCountry`" data as a matching key to #2's "`Name`" column.
+
+```python
+columnstokeep = list(df1.columns) + ['Code','Capital']
+mergedf = df1.merge(df2, how='left', left_on=['MailingCountry'], right_on=['Name'])
+mergedf = mergedf[columnstokeep]
+mergedf = mergedf.rename(columns={'Code':'Country Code', 'Capital':'Country Capital'})
+mergedf.to_csv('c:\\example\\countryenhanced.csv', index=False)
+```
+
+If we ran the above code after reading a spreadsheet into the "`df1`" variable that looked like this...
+
+TransactionId|Amount|Timestamp|CCLast4
+---|---|---|---
+28499202|$87.71|2018-06-14T04:02:00+05:00|3885
+17689183|$1,508.82|2014-11-13T18:27:00+05:00|9274
+92840068|$1.08|2016-02-08T15:53:00+05:00|9274
+92848928|$981.46|2019-01-03T07:01:00+05:00|1784
+
+...and after reading a spreadsheet into the "`df2`" variable that looked like this:
+
+Timestamp|BudgetCode|Amount|Id
+---|---|---|---
+2016-02-08T15:53:00+05:00|8294|$1.08|92840068
+2014-12-01T08:23:00+05:00|7140|$1,508.82|17689183
+2018-06-14T04:02:00+06:00|8294|$87.71|28499202
+2013-02-09T08:01:00+05:00|8294|$517.84|82947820
+
+Then the file we saved to, transactionverify.csv, looks like this when opened:
+
+HasProblem|TransactionId|\_merge|Timestamp\_x|Amount\_x|Timestamp\_y|Amount\_y
+---|---|---|---|---|---|---
+True|28499202|both|2018-06-14T04:02:00+05:00|$87.71|2018-06-14T04:02:00+06:00|$87.71
+True|17689183|both|2014-11-13T18:27:00+05:00|$1,508.82|2014-12-01T08:23:00+05:00|$1,508.82
+True|92848928|left\_only|2019-01-03T07:01:00+05:00|$981.46||
+True||right\_only|||2013-02-09T08:01:00+05:00|$517.84
