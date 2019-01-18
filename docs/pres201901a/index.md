@@ -285,13 +285,17 @@ Output:
 ### Example 1:  List all unique e-mail addresses in a spreadsheet, whether they be under the "`Email`," "`WorkEmail__c`," or "`SchoolEmail__c`" columns.
 
 ```python
-concat_series = pandas.concat([df['Email'],df['WorkEmail__c'],df['SchoolEmail__c']])
+concat_series = pandas.concat([df['Email'], df['WorkEmail__c'], df['SchoolEmail__c']])
 nonnullemails_series = concat_series.dropna()
 uniquenonnullemails_ndarray = nonnullemails_series.unique()
 pandas.Series(uniquenonnullemails_ndarray, name='Emails').to_csv('c:\\example\\uniqueemails.csv', index=False, header=True)
 ```
 
-The file we saved to, uniqueemails.csv, looks like this when opened:
+If we ran the above code after reading a spreadsheet into the "`df`" variable that looked like this:
+
+TO DO:  INSERT TABLE
+
+Then the file we saved to, uniqueemails.csv, looks like this when opened:
 
 TO DO:  INSERT TABLE
 
@@ -302,3 +306,29 @@ TO DO:  INSERT TABLE
 > To write back to disk as a 1-column CSV or Excel file, we'll want to turn it back into a Series, which is what we do on the last line _(giving the first column the name "Emails" because that feels like a good name)_, so we can take advantage of "`.to_csv(...)`."
 > 
 > If instead we had put `uniquenonnullemails_ndarray` inside `print(...)`, we would have seen the data surrounded by square brackets, separated by a space but no commas.  If we had wanted commas as a separator, we would have put it inside of `print(list(...))` to form `print(list(uniquenonnullemails_ndarray))`.
+
+
+### Example 2:  List all unique e-mail addresses between 2 spreadsheets, whether they be under #1's "`Email`," "`WorkEmail__c`," or "`SchoolEmail__c`" columns, or under #2's "`EMAILADDR`," "`EMAIL2__C`," "`EMAIL3__C`," or "`EMAIL4__C`" columns.
+
+```python
+concat_series = pandas.concat([df1['Email'], df1['WorkEmail__c'], df1['SchoolEmail__c'], df2['EMAILADDR'], df2['EMAIL2__C', df2['EMAIL3__c'], df2['EMAIL4__C']])
+nonnullemails_series = concat_series.dropna()
+uniquenonnullemails_ndarray = nonnullemails_series.unique()
+pandas.Series(uniquenonnullemails_ndarray, name='Emails').to_csv('c:\\example\\uniqueemails2.csv', index=False, header=True)
+```
+
+> ** HEY LOOK! **
+> 
+> It's the exact same code as example 1 ... we just added more things to the list inside "`pandas.concat(...)`" in the first line!
+
+If we ran the above code after reading a spreadsheet into the "`df1`" variable that looked like this...
+
+TO DO:  INSERT TABLE
+
+...and after reading a spreadsheet into the "`df2`" variable that looked like this:
+
+TO DO:  INSERT TABLE
+
+Then the file we saved to, uniqueemails2.csv, looks like this when opened:
+
+TO DO:  INSERT TABLE
