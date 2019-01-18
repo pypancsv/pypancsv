@@ -282,7 +282,7 @@ Output:
 
 ## Cheat Sheet:  Concatenation Examples
 
-### Example 1:  List all unique e-mail addresses in a spreadsheet, whether they be under the "`Email`," "`WorkEmail__c`," or "`SchoolEmail__c` columns.
+### Example 1:  List all unique e-mail addresses in a spreadsheet, whether they be under the "`Email`," "`WorkEmail__c`," or "`SchoolEmail__c`" columns.
 
 ```python
 concat_series = pandas.concat([df['Email'],df['WorkEmail__c'],df['SchoolEmail__c']])
@@ -295,7 +295,7 @@ The file we saved to, uniqueemails.csv, looks like this when opened:
 
 TO DO:  INSERT TABLE
 
-> Note that the "`.unique()`" operation that you can append to any "Series"-typed data produces output that is not a Series.
+> Note that the "`.unique()`" operation, which you can append to any "Series"-typed data, produces output that is _not_ a Pandas Series _(whereas "`.dropna()`," for example, produces another Series as output)_.
 > 
 > It's yet _another_ list-like data structure called a `numpy.ndarray`.
 > 
