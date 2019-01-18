@@ -382,3 +382,26 @@ Then the file we saved to, concattables.csv, looks like this when opened:
 | Donald | Duck | dd@example.com |
 | Albert | Howard | ahotherem@example.com |
 
+### Example 4:  Spreadsheet 1, Spreadsheet 2, & Spreadsheet 3 all have columns "`Name`," "`DOB`," & "`AttendedOrNot`" _(they're EventBrite exports)_.<br/>Add a "`WhichSheet`" column to each of them saying "Event1," "Event2," or "Event3," concatenate, and sort by "`Name`," "`DOB`," & "`WhichSheet.`"
+
+```python
+TO DO:  WRITE CODE
+```
+
+> Note:  The "`sort=False`" option in "`pandas.concat(...)`" keeps that command from rearranging the columns in alphabetical order.
+
+If we ran the above code after reading a spreadsheet into the "`df1`" variable that looked like this...
+
+TO DO:  INSERT TABLE
+
+...and after reading a spreadsheet into the "`df2`" variable that looked like this...
+
+TO DO:  INSERT TABLE
+
+...and after reading a spreadsheet into the "`df3`" variable that looked like this:
+
+TO DO:  INSERT TABLE
+
+Then the file we saved to, concattables.csv, looks like this when opened:
+
+TO DO:  INSERT TABLE
