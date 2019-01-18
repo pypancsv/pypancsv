@@ -317,7 +317,7 @@ uniquenonnullemails_ndarray = nonnullemails_series.unique()
 pandas.Series(uniquenonnullemails_ndarray, name='Emails').to_csv('c:\\example\\uniqueemails2.csv', index=False, header=True)
 ```
 
-> ** HEY LOOK! **
+> <b>** HEY LOOK! **</b>
 > 
 > It's the exact same code as example 1 ... we just added more things to the list inside "`pandas.concat(...)`" in the first line!
 
