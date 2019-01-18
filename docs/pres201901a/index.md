@@ -65,6 +65,7 @@ But if you're adventurous and missed out last time, join us anyway! Worst you ca
 2. [Exercise 2:  XXX](#ex2)
  * [Cheat Sheet:  Concatenation Examples ↕](#concat)
  * [Cheat Sheet:  Merge Examples ↔](#merge)
+ * [Door Prize Script:  Event-Attendance-Concatenating Loop ↕](#doorprize-concat)
 
 ---
 
@@ -600,7 +601,7 @@ However, for this particular issue, that's not quite what we're seeing.  It's pr
 
 ---
 
-<div id="doorprize-col"/>
+<div id="doorprize-concat"/>
 
 ## Door Prize Script:  Event-Attendance-Concatenating Loop ↕
 
