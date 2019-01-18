@@ -336,7 +336,10 @@ TO DO:  INSERT TABLE
 ### Example 3:  Spreadsheet 1 has columns “FirstName,” “LastName,” “DOB,” & “Email.”<br/>Spreadsheet 2 has columns “Birthdate,” “FN,” “LN,” & “EmailAddr.”<br/>Concatenate appropriately _(e.g. DOB:Birthdate)_ & dedupe (by all 4 fields together).
 
 ```python
-TO DO:  INSERT CODE
+col2EquivInCol1 = {'FirstName':'First', 'LastName':'Last', 'Em':'Email'}
+rawconcat_df = pandas.concat([df1, df2.rename(columns=col2EquivInCol1)])
+dedupedconcat_df = rawconcat_df.drop_duplicates(subset=df1.columns)
+dedupedconcat_df.to_csv('c:\\example\\concattables.csv', index=False)
 ```
 
 If we ran the above code after reading a spreadsheet into the "`df1`" variable that looked like this...
@@ -347,6 +350,6 @@ TO DO:  INSERT TABLE
 
 TO DO:  INSERT TABLE
 
-Then the file we saved to, uniqueemails2.csv, looks like this when opened:
+Then the file we saved to, concattables.csv, looks like this when opened:
 
 TO DO:  INSERT TABLE
