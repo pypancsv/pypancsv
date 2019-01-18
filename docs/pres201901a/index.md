@@ -64,7 +64,7 @@ But if you're adventurous and missed out last time, join us anyway! Worst you ca
  * [Door Prize Script:  Dynamic Rename & Reorder](#doorprize-col)
 2. [Exercise 2:  XXX](#ex2)
  * [Cheat Sheet:  Concatenation Examples ↕](#concat)
- * [Cheat Sheet:  Merge Examples](#merge)
+ * [Cheat Sheet:  Merge Examples ↔](#merge)
 
 ---
 
@@ -407,3 +407,50 @@ TO DO:  INSERT TABLE
 Then the file we saved to, concatsortedtables.csv, looks like this when opened:
 
 TO DO:  INSERT TABLE
+
+---
+
+<div id="merge"/>
+
+## Cheat Sheet:  Merge Examples ↔
+
+### Example 1:  Spreadsheet #1 is full of people.<br/>Spreadsheet #2 is full of data about countries of the world.<br/>Add "`Country Code`" & "`Country Capital`" columns to #1, using people's "`MailingCountry`" data as a matching key to #2's "`Name`" column.
+
+```python
+columnstokeep = list(df1.columns) + ['Code','Capital']
+mergedf = df1.merge(df2, how='left', left_on=['MailingCountry'], right_on=['Name'])
+mergedf = mergedf[columnstokeep]
+mergedf = mergedf.rename(columns={'Code':'Country Code', 'Capital':'Country Capital'})
+mergedf.to_csv('c:\\example\\countryenhanced.csv', index=False)
+```
+
+If we ran the above code after reading a spreadsheet into the "`df1`" variable that looked like this...
+
+| Id | First | Last | MailingCountry |
+| --- | --- | --- | --- |
+| 30829 | Cesar | Chavez | United States |
+| 827 | Vandana | Shiva | India |
+| 9284 | Andrea | Smith | United States |
+| 724 | Albert | Howard | United Kingdom |
+
+...and after reading a spreadsheet into the "`df2`" variable that looked like this:
+
+| Name | Code | Capital | SqKm |
+| --- | --- | --- | --- |
+| Argentina | AR | Buenos | Aires | 2,780,400 |
+| Barbados | BB | Bridgetown | 430 |
+| Iceland | IC | Reykjavik | 103,000 |
+| India | IN | New | Delhi | 3,287,263 |
+| Tunisia | TS | Tunis | 163,610 |
+| United | Kingdom | UK | London | 242,495 |
+| United | States | US | Washington, | D.C. | 9,525,067 |
+| Vanuatu | NH | Port | Vila | 12,189 |
+
+Then the file we saved to, concatdedupedtables.csv, looks like this when opened:
+
+| Id | First | Last | MailingCountry | Country Code | Country Capital |
+| --- | --- | --- | --- | --- | --- |
+| 30829 | Cesar | Chavez | United States | US | Washington, D.C. |
+| 827 | Vandana | Shiva | India | IN | New Delhi |
+| 9284 | Andrea | Smith | United States | US | Washington, D.C. |
+| 724 | Albert | Howard | United Kingdom | UK | London |
