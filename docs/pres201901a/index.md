@@ -645,15 +645,14 @@ Then the file we saved to, loopconcat.csv, looks like this when opened:
 
 First|Last|Email|Event Name|Event Date|Attendance Status|WhichCSV
 ---|---|---|---|---|---|---
-Adah|Dimmock|adimmock2@issuu.com|Python for Salesforce 102|2019-01-26|Cancelled|mergehandson_event3.csv
-Adah|Dimmock|adimmock2@issuu.com|Python for Salesforce 103|2019-12-29|RSVPed|mergehandson_event4.csv
-Ashien|Lilford|alilford0@digg.com|Python for Salesforce 101-Office Hours|2018-11-10|No-Show|mergehandson_event2.csv
-Ermanno|Withinshaw|ewithinshaw4@people.com.cn|Python for Salesforce 101|2018-10-20|Attended|mergehandson_event1.csv
-Harwilll|Menhenitt|hmenhenitt0@google.co.uk|Python for Salesforce 103|2019-12-29|RSVPed|mergehandson_event4.csv
-Haskel|Southerns|hsoutherns1@kickstarter.com|Python for Salesforce 101|2018-10-20|No-Show|mergehandson_event1.csv
+Adah|Dimmock|ad@example.com|Python for Salesforce 102|2019-01-26|Cancelled|mergehandson_event3.csv
+Adah|Dimmock|ad@example.com|Python for Salesforce 103|2019-12-29|RSVPed|mergehandson_event4.csv
+Ermanno|Withinshaw|ew@example.com|Python for Salesforce 101|2018-10-20|Attended|mergehandson_event1.csv
+Harwilll|Menhenitt|hm@example.com|Python for Salesforce 103|2019-12-29|RSVPed|mergehandson_event4.csv
+Haskel|Southerns|hs@example.com|Python for Salesforce 101|2018-10-20|No-Show|mergehandson_event1.csv
+Haskel|Southerns|hs@example.com|Python for Salesforce 101|2018-10-20|No-Show|mergehandson_event3.csv
+Haskel|Southerns|hs@example.com|Python for Salesforce 103|2019-12-29|RSVPed|mergehandson_event4.csv
 Haskel|Southerns|hsoutherns1@kickstarter.com|Python for Salesforce 101-Office Hours|2018-11-10|No-Show|mergehandson_event2.csv
-Haskel|Southerns|hsoutherns1@kickstarter.com|Python for Salesforce 101|2018-10-20|No-Show|mergehandson_event3.csv
-Haskel|Southerns|hsoutherns1@kickstarter.com|Python for Salesforce 103|2019-12-29|RSVPed|mergehandson_event4.csv
-Julianna|Judron|jjudron1@live.com|Python for Salesforce 102|2019-01-26|No-Show|mergehandson_event3.csv
-Revkah|Lilburn|rlilburn0@seesaa.net|Python for Salesforce 101|2018-10-20|Attended|mergehandson_event1.csv
-Revkah|Lilburn|rlilburn0@seesaa.net|Python for Salesforce 103|2019-12-29|Cancelled|mergehandson_event4.csv
+Julianna|Judron|jj@example.com|Python for Salesforce 102|2019-01-26|No-Show|mergehandson_event3.csv
+Revkah|Lilburn|rl@example.com|Python for Salesforce 101|2018-10-20|Attended|mergehandson_event1.csv
+Revkah|Lilburn|rl@example.com|Python for Salesforce 103|2019-12-29|Cancelled|mergehandson_event4.csv
