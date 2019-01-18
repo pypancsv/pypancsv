@@ -501,6 +501,36 @@ Id|First|Last|Email|Company|PersonId|FavoriteFood|\_merge
 ||Donald|Duck|dd@example.com||k28fo|Pancakes|right\_only
 ||Albert|Howard|ahotherem@example.com||8xi|Potatoes|right\_only
 
+Just to help drive home how this "horizontal" "merge" operation is different from a "vertical" "concat" operation, check out this code:
+
+```python
+col2EquivInCol1 = {'FirstName':'First', 'LastName':'Last', 'Em':'Email'}
+concatdf = pandas.concat([df1,df2.rename(columns=col2EquivInCol1)], sort=False)
+concatdf.to_csv('c:\\example\\personconcat.csv', index=False)
+```
+
+The output file we'd have saved to, personconcat.csv, would like this when opened:
+
+Id|First|Last|Email|Company|PersonId|FavoriteFood
+---|---|---|---|---|---|---
+5829|Jimmy|Buffet|jb@example.com|RCA||
+2894|Shirley|Chisholm|sc@example.com|United States Congress||
+294|Marilyn|Monroe|mm@example.com|Fox||
+30829|Cesar|Chavez|cc@example.com|United Farm Workers||
+827|Vandana|Shiva|vs@example.com|Navdanya||
+9284|Andrea|Smith|as@example.com|University of California||
+724|Albert|Howard|ah@example.com|Imperial College of Science||
+||Shirley|Temple|st@example.com||983mv|Lollipops
+||Andrea|Smith|as@example.com||9e84f|Kale
+||Donald|Duck|dd@example.com||k28fo|Pancakes
+||Marilyn|Monroe|mm@example.com||x934|Carrots
+||Albert|Howard|ahotherem@example.com||8xi|Potatoes
+||Vandana|Shiva|vs@example.com||02e|Amaranth
+
+As you can see, we did manage to "stack" the First, Last, & Email columns by renaming column names in `df2` before adding it to the list of sheets to vertically concatenate _(`pandas.concat(...)` looks for column names that are exact matches of each other and just "adds on" columns not found in every spreadsheet passed do it)_, but we also don't have any connection between the facts that Marilyn Monroe works for Fox and the fact that Marilyn Monroe likes to eat carrots.
+
+There might be business cases where we actually want our output to look like this, but I can't think of one off the top of my head.
+
 ### Example 3:  Cross-check 2 financial transaction logs that should be identical, ensuring no Transaction ID exists in only one spreadsheet, nor has a different timestamp between the two spreadsheets.
 
 ```python
