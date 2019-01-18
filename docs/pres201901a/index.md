@@ -517,6 +517,7 @@ mergedf.to_csv('c:\\example\\personmerge.csv', index=False)
 ```
 
 If we ran the above code after reading a spreadsheet into the "`df1`" variable that looked like this...
+
 Id|First|Last|Email|Company
 ---|---|---|---|---
 5829|Jimmy|Buffet|jb@example.com|RCA
@@ -528,6 +529,7 @@ Id|First|Last|Email|Company
 724|Albert|Howard|ah@example.com|Imperial College of Science
 
 ...and after reading a spreadsheet into the "`df2`" variable that looked like this:
+
 PersonId|FirstName|LastName|Em|FavoriteFood
 ---|---|---|---|---
 983mv|Shirley|Temple|st@example.com|Lollipops
@@ -538,6 +540,7 @@ x934|Marilyn|Monroe|mm@example.com|Carrots
 02e|Vandana|Shiva|vs@example.com|Amaranth
 
 Then the file we saved to, personmerge.csv, looks like this when opened:
+
 Id|First|Last|Email|Company|PersonId|FavoriteFood|\_merge
 ---|---|---|---|---|---|---|---
 5829|Jimmy|Buffet|jb@example.com|RCA|||left\_only
