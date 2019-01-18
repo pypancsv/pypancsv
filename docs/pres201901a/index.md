@@ -446,7 +446,7 @@ If we ran the above code after reading a spreadsheet into the "`df1`" variable t
 | United States | US | Washington, D.C. | 9,525,067 |
 | Vanuatu | NH | Port Vila | 12,189 |
 
-Then the file we saved to, concatdedupedtables.csv, looks like this when opened:
+Then the file we saved to, countryenhanced.csv, looks like this when opened:
 
 | Id | First | Last | MailingCountry | Country Code | Country Capital |
 | --- | --- | --- | --- | --- | --- |
