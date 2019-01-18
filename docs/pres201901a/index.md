@@ -527,9 +527,23 @@ Id|First|Last|Email|Company|PersonId|FavoriteFood
 ||Albert|Howard|ahotherem@example.com||8xi|Potatoes
 ||Vandana|Shiva|vs@example.com||02e|Amaranth
 
-As you can see, we did manage to "stack" the First, Last, & Email columns by renaming column names in `df2` before adding it to the list of sheets to vertically concatenate _(`pandas.concat(...)` looks for column names that are exact matches of each other and just "adds on" columns not found in every spreadsheet passed do it)_, but we also don't have any connection between the fact that Marilyn Monroe works for Fox and the fact that Marilyn Monroe likes to eat carrots.
+As you can see, we did manage to "stack" the First, Last, & Email columns by renaming column names in `df2` before adding it to the list of sheets to vertically concatenate _(because `pandas.concat(...)` looks for column names that are exact matches of each other and just "adds on" columns not found in every spreadsheet passed do it)_.
 
-There might be business cases where we actually want our output to look like this, but I can't think of one off the top of my head.
+However, we've lost any sense of connection between the fact that Marilyn Monroe works for Fox and the fact that Marilyn Monroe likes to eat carrots.
+
+* We could alphabetize it for easier visual scanning _(`cdf = cdf.sort_values(by=['First','Last','Email'])`)_ ...
+* We could facilitate visual scanning for duplicates on First+Last+Email by adding a helper column _(`cdf['isDupe'] = cdf.duplicated(subset=['First','Last','Email'], keep=False)`)_ ...
+* We could even get "non-duplicates" out of our way by filtering on that column _(`cdf = cdf[cdf['isDupe']]`)_ ...
+
+...but why?  A horizontal merge probably serves our "find out that Marilyn works for Fox and likes carrots" use case better.
+
+There might be business processes where we actually want our output to be a "vertical concat," however.
+
+* For example, perhaps we actually are just trying to look for duplicates by first/last/email, and data like `Company` and `FavoriteFood` are "extra" data we couldn't care less about.
+  * We don't care if they show up, but we don't care if they don't.
+  * We want to take advantage of vertical-concatenation's ability to process dozens of spreadsheets in one command. 
+
+Point is, think about whether you would be copy-pasting vertically in Excel or whether you would be VLOOKUP-ing in Excel before you decide which is appropriate for you!
 
 ### Example 3:  Cross-check 2 financial transaction logs that should be identical, ensuring no Transaction ID exists in only one spreadsheet, nor has a different timestamp between the two spreadsheets.
 
