@@ -455,14 +455,13 @@ Then the file we saved to, countryenhanced.csv, looks like this when opened:
 | 9284 | Andrea | Smith | United States | US | Washington, D.C. |
 | 724 | Albert | Howard | United Kingdom | UK | London |
 
-### Example 1:  Spreadsheet #1 is full of people.<br/>Spreadsheet #2 is full of data about countries of the world.<br/>Add "`Country Code`" & "`Country Capital`" columns to #1, using people's "`MailingCountry`" data as a matching key to #2's "`Name`" column.
+### Example 2:  Cross-check 2 financial transaction logs that should be identical, ensuring no Transaction ID exists in only one spreadsheet, nor has a different timestamp between the two spreadsheets.
 
 ```python
-columnstokeep = list(df1.columns) + ['Code','Capital']
-mergedf = df1.merge(df2, how='left', left_on=['MailingCountry'], right_on=['Name'])
-mergedf = mergedf[columnstokeep]
-mergedf = mergedf.rename(columns={'Code':'Country Code', 'Capital':'Country Capital'})
-mergedf.to_csv('c:\\example\\countryenhanced.csv', index=False)
+mergedf = df1.merge(df2, how='outer', left_on=['TransactionId'], right_on=['Id'], indicator=True)
+mergedf['HasProblem'] = (mergedf['_merge'] != 'both') | (mergedf['Timestamp_x'] != mergedf['Timestamp_y'])
+mergedf = mergedf[['HasProblem','TransactionId','_merge','Timestamp_x','Amount_x','Timestamp_y','Amount_y']]
+mergedf.to_csv('c:\\example\\transactionverify.csv', index=False)
 ```
 
 If we ran the above code after reading a spreadsheet into the "`df1`" variable that looked like this...
