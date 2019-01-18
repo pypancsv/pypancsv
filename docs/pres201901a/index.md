@@ -489,5 +489,12 @@ HasProblem|TransactionId|\_merge|Timestamp\_x|Amount\_x|Timestamp\_y|Amount\_y
 ---|---|---|---|---|---|---
 True|28499202|both|2018-06-14T04:02:00+05:00|$87.71|2018-06-14T04:02:00+06:00|$87.71
 True|17689183|both|2014-11-13T18:27:00+05:00|$1,508.82|2014-12-01T08:23:00+05:00|$1,508.82
+False|92840068|both|2016-02-08T15:53:00+05:00|$1.08|2016-02-08T15:53:00+05:00|$1.08
 True|92848928|left\_only|2019-01-03T07:01:00+05:00|$981.46||
 True||right\_only|||2013-02-09T08:01:00+05:00|$517.84
+
+> If we were working with millions of records, most of which would be false, we might want to filter out the rows where "`HasProblem`" is `False`.
+> 
+> We haven't gotten to this yet, but you could use an approach for filtering series by adding the following line of code right before `mergedf = mergedf[['HasProblem','TransactionId',...,'Amount_y']]`:
+> 
+> `mergedf = mergedf[mergedf['HasProblem']]`
