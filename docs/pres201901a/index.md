@@ -505,5 +505,5 @@ June 14th, 2018 is in the summer, so this might be a simple problem of one of ou
 
 * We could update our Python script to ignore this particular kind of issue.  That might be the right approach if:
   * One system logged "noon in New York" as "T12:00:00-05:00" _(winter)_ / "T12:00:00-04:00" _(summer)_
-  * The other system logged "noon in New York" as "T17:00:00Z" _(winter)_ / "T16:00:00Z" _(summer)_
+  * The other system logged "noon in New York" as "T17:00:00Z" _(winter)_ / "T16:00:00Z" _(summer)_, which means it's logging transactions when they happened in Greenwich Mean Time / UTC.
 * However, for this particular issue, it's probably one of the systems producing the logs that is forgetting to account for Daylight Savings Time, so there's probably a bug we should ask to have fixed "upstream" of our logs.
