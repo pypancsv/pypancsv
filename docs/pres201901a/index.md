@@ -501,7 +501,7 @@ True||right\_only|||2013-02-09T08:01:00-05:00|$517.84
 
 If you look at our output data carefully, you might notice that transaction ID 28499202 is only problematic because of a time zone difference (UTC-5 vs. UTC-5).
 
-June 14th, 2018 is in the summer, so this might be a simple problem of one of our systems logging Daylight Savings Time correctly.
+June 14th, 2018 is in the summer, so this might be a simple problem of one of our systems logging Daylight Savings Time incorrectly.
 
 We could update our Python script to ignore this particular kind of issue _(which might be the right approach if, say, one system logged "noon in New York" as "T12:00:00-05:00" winter / "T12:00:00-04:00" summer, with the other system logging "noon in New York" as "T17:00:00Z" winter / "T16:00:00Z" summer)_.
 
