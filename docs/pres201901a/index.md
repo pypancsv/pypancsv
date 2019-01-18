@@ -333,7 +333,7 @@ Then the file we saved to, uniqueemails2.csv, looks like this when opened:
 
 TO DO:  INSERT TABLE
 
-### Example 3:  Spreadsheet 1 has columns “FirstName,” “LastName,” “DOB,” & “Email.”<br/>Spreadsheet 2 has columns “Birthdate,” “FN,” “LN,” & “EmailAddr.”<br/>Concatenate appropriately _(e.g. DOB:Birthdate)_ & dedupe (by all 4 fields together).
+### Example 3:  Spreadsheet 1 has columns "`First`," "`Last`," & "`Email`."<br/>Spreadsheet 2 has columns "`LastName`," "`Em`," & "`FirstName`."<br/>Concatenate appropriately _(e.g. `Em` = `Email`)_ & dedupe _(by all 3 fields together)_.
 
 ```python
 col2EquivInCol1 = {'FirstName':'First', 'LastName':'Last', 'Em':'Email'}
@@ -344,12 +344,46 @@ dedupedconcat_df.to_csv('c:\\example\\concattables.csv', index=False)
 
 If we ran the above code after reading a spreadsheet into the "`df1`" variable that looked like this...
 
-TO DO:  INSERT TABLE
+| First | Last | Email |
+| --- | --- | --- |
+| Jimmy | Buffet | jb@example.com |
+| Shirley | Chisholm | sc@example.com |
+| Marilyn | Monroe | mm@example.com |
+| Cesar | Chavez | cc@example.com |
+| Vandana | Shiva | vs@example.com |
+| Andrea | Smith | as@example.com |
+| Albert | Howard | ah@example.com |
 
 ...and after reading a spreadsheet into the "`df2`" variable that looked like this:
 
-TO DO:  INSERT TABLE
+| LastName | Em | FirstName |
+| --- | --- | --- |
+| Temple | st@example.com | Shirley |
+| Smith | as@example.com | Andrea |
+| Duck | dd@example.com | Donald |
+| Monroe | mm@example.com | Marilyn |
+| Howard | ahotherem@example.com | Albert |
+| Shiva | vs@example.com | Vandana |
 
 Then the file we saved to, concattables.csv, looks like this when opened:
 
-TO DO:  INSERT TABLE
+| Email | First | Last |
+| --- | --- | --- |
+| jb@example.com | Jimmy | Buffet |
+| sc@example.com | Shirley | Chisholm |
+| mm@example.com | Marilyn | Monroe |
+| cc@example.com | Cesar | Chavez |
+| vs@example.com | Vandana | Shiva |
+| as@example.com | Andrea | Smith |
+| ah@example.com | Albert | Howard |
+| st@example.com | Shirley | Temple |
+| dd@example.com | Donald | Duck |
+| ahotherem@example.com | Albert | Howard |
+
+> Note that the order of the columns isn't anything we'd explicitly seen before.
+> 
+> It seems to be alphabetical.
+> 
+> That's okay -- we know how to reorder columns!
+> 
+> _(We could just add a line that says `dedupedconcat_df = dedupedconcat_df[df1.columns]`, since `dedupedconcat_df` and `df1` share the same column names, just in a different order.)_
