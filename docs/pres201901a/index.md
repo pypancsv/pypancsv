@@ -63,7 +63,7 @@ But if you're adventurous and missed out last time, join us anyway! Worst you ca
  * [Cheat Sheet:  Add/Delete/Reorder/Rename Columns](#colcommands)
  * [Door Prize Script:  Dynamic Rename & Reorder](#doorprize-col)
 2. [Exercise 2:  XXX](#ex2)
- * [Cheat Sheet:  Concatenation Examples](#concat)
+ * [Cheat Sheet:  Concatenation Examples ↕](#concat)
  * [Cheat Sheet:  Merge Examples](#merge)
 
 ---
@@ -280,7 +280,7 @@ Output:
 
 <div id="concat"/>
 
-## Cheat Sheet:  Concatenation Examples
+## Cheat Sheet:  Concatenation Examples ↕
 
 ### Example 1:  List all unique e-mail addresses in a spreadsheet, whether they be under the "`Email`," "`WorkEmail__c`," or "`SchoolEmail__c`" columns.
 
