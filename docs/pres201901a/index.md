@@ -437,14 +437,14 @@ If we ran the above code after reading a spreadsheet into the "`df1`" variable t
 
 | Name | Code | Capital | SqKm |
 | --- | --- | --- | --- |
-| Argentina | AR | Buenos | Aires | 2,780,400 |
+| Argentina | AR | Buenos Aires | 2,780,400 |
 | Barbados | BB | Bridgetown | 430 |
 | Iceland | IC | Reykjavik | 103,000 |
-| India | IN | New | Delhi | 3,287,263 |
+| India | IN | New Delhi | 3,287,263 |
 | Tunisia | TS | Tunis | 163,610 |
-| United | Kingdom | UK | London | 242,495 |
-| United | States | US | Washington, | D.C. | 9,525,067 |
-| Vanuatu | NH | Port | Vila | 12,189 |
+| United Kingdom | UK | London | 242,495 |
+| United States | US | Washington, D.C. | 9,525,067 |
+| Vanuatu | NH | Port Vila | 12,189 |
 
 Then the file we saved to, concatdedupedtables.csv, looks like this when opened:
 
