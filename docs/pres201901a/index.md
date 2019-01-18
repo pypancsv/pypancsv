@@ -503,7 +503,7 @@ If you look at our output data carefully, you might notice that transaction ID 2
 
 June 14th, 2018 is in the summer, so this might be a simple problem of one of our systems logging Daylight Savings Time incorrectly.
 
-* We could update our Python script to ignore this particular kind of issue by converting "`Timestamp`" in `df1` and `df2` to be interpreted as real dates, rather than as plaintext.  That might be the right approach if:
+* We could update our Python script to ignore this particular kind of issue by converting "`Timestamp`" in `df1` and `df2` to be interpreted as real dates, rather than as plaintext, before we check for equivalency between `Timestamp_x` and `Timestamp_y`.  That might be the right approach if:
   * One system logged "noon in New York" as "T12:00:00-05:00" _(winter)_ / "T12:00:00-04:00" _(summer)_
   * The other system logged "noon in New York" as "T17:00:00Z" _(winter)_ / "T16:00:00Z" _(summer)_, which means it's logging transactions when they happened in Greenwich Mean Time / UTC.
 * However, for this particular issue, it's probably one of the systems producing the logs that is forgetting to account for Daylight Savings Time, so there's probably a bug we should ask to have fixed "upstream" of our logs.
