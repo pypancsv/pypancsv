@@ -60,8 +60,8 @@ But if you're adventurous and missed out last time, join us anyway! Worst you ca
 ## Table of Contents
 
 1. [Exercise 1:  Add/Delete/Rename/Reorder Columns Yourself](#ex1)
- * [Cheat Sheet:  Add/Delete/Reorder/Rename Columns](#colcommands)
- * [Door Prize Script:  Dynamic Rename & Reorder](#doorprize-col)
+ ** [Cheat Sheet:  Add/Delete/Reorder/Rename Columns](#colcommands)
+ ** [Door Prize Script:  Dynamic Rename & Reorder](#doorprize-col)
 
 ---
 
