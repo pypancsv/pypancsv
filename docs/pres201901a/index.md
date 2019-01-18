@@ -433,15 +433,6 @@ If we ran the above code after reading a spreadsheet into the "`df1`" variable t
 | 9284 | Andrea | Smith | United States |
 | 724 | Albert | Howard | United Kingdom |
 
-and
-
-Id|First|Last|MailingCountry
----|---|---|---
-30829|Cesar|Chavez|United States
-827|Vandana|Shiva|India
-9284|Andrea|Smith|United States
-724|Albert|Howard|United Kingdom
-
 ...and after reading a spreadsheet into the "`df2`" variable that looked like this:
 
 | Name | Code | Capital | SqKm |
