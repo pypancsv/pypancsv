@@ -455,7 +455,53 @@ Then the file we saved to, countryenhanced.csv, looks like this when opened:
 | 9284 | Andrea | Smith | United States | US | Washington, D.C. |
 | 724 | Albert | Howard | United Kingdom | UK | London |
 
-### Example 2:  Cross-check 2 financial transaction logs that should be identical, ensuring no Transaction ID exists in only one spreadsheet, nor has a different timestamp between the two spreadsheets.
+### Example 2:  Combine 2 spreadsheets full of people and things you know about them on "`First`," "`Last`," & "`Email`" as a matching key.
+
+```python
+col2EquivInCol1 = {'FirstName':'First', 'LastName':'Last', 'Em':'Email'}
+mergedf = df1.merge(df2.rename(columns=col2EquivInCol1), how='outer', on=['First','Last','Email'], indicator=True)
+mergedf.to_csv('c:\\example\\personmerge.csv', index=False)
+```
+
+If we ran the above code after reading a spreadsheet into the "`df1`" variable that looked like this...
+
+Id|First|Last|Email|Company
+---|---|---|---|---
+5829|Jimmy|Buffet|jb@example.com|RCA
+2894|Shirley|Chisholm|sc@example.com|United States Congress
+294|Marilyn|Monroe|mm@example.com|Fox
+30829|Cesar|Chavez|cc@example.com|United Farm Workers
+827|Vandana|Shiva|vs@example.com|Navdanya
+9284|Andrea|Smith|as@example.com|University of California
+724|Albert|Howard|ah@example.com|Imperial College of Science
+
+...and after reading a spreadsheet into the "`df2`" variable that looked like this:
+
+PersonId|FirstName|LastName|Em|FavoriteFood
+---|---|---|---|---
+983mv|Shirley|Temple|st@example.com|Lollipops
+9e84f|Andrea|Smith|as@example.com|Kale
+k28fo|Donald|Duck|dd@example.com|Pancakes
+x934|Marilyn|Monroe|mm@example.com|Carrots
+8xi|Albert|Howard|ahotherem@example.com|Potatoes
+02e|Vandana|Shiva|vs@example.com|Amaranth
+
+Then the file we saved to, personmerge.csv, looks like this when opened:
+
+Id|First|Last|Email|Company|PersonId|FavoriteFood|\_merge
+---|---|---|---|---|---|---|---
+5829|Jimmy|Buffet|jb@example.com|RCA|||left\_only
+2894|Shirley|Chisholm|sc@example.com|United States Congress|||left\_only
+294|Marilyn|Monroe|mm@example.com|Fox|x934|Carrots|both
+30829|Cesar|Chavez|cc@example.com|United Farm Workers|||left\_only
+827|Vandana|Shiva|vs@example.com|Navdanya|02e|Amaranth|both
+9284|Andrea|Smith|as@example.com|University of California|9e84f|Kale|both
+724|Albert|Howard|ah@example.com|Imperial College of Science|||left\_only
+||Shirley|Temple|st@example.com||983mv|Lollipops|right\_only
+||Donald|Duck|dd@example.com||k28fo|Pancakes|right\_only
+||Albert|Howard|ahotherem@example.com||8xi|Potatoes|right\_only
+
+### Example 3:  Cross-check 2 financial transaction logs that should be identical, ensuring no Transaction ID exists in only one spreadsheet, nor has a different timestamp between the two spreadsheets.
 
 ```python
 mergedf = df1.merge(df2, how='outer', left_on=['TransactionId'], right_on=['Id'], indicator=True)
@@ -507,49 +553,3 @@ June 14th, 2018 is in the summer, so this might be a simple problem of one of ou
   * The other system logged "noon in New York" as "T17:00:00Z" _(winter)_ / "T16:00:00Z" _(summer)_, which means it's logging transactions when they happened in Greenwich Mean Time / UTC.
 
 However, for this particular issue, that's not quite what we're seeing.  It's probably one of the systems producing the logs that is forgetting to account for Daylight Savings Time, so there's probably a bug we should ask to have fixed "upstream" of our logs.
-
-### Example 2:  Cross-check 2 financial transaction logs that should be identical, ensuring no Transaction ID exists in only one spreadsheet, nor has a different timestamp between the two spreadsheets.
-
-```python
-col2EquivInCol1 = {'FirstName':'First', 'LastName':'Last', 'Em':'Email'}
-mergedf = df1.merge(df2.rename(columns=col2EquivInCol1), how='outer', on=['First','Last','Email'], indicator=True)
-mergedf.to_csv('c:\\example\\personmerge.csv', index=False)
-```
-
-If we ran the above code after reading a spreadsheet into the "`df1`" variable that looked like this...
-
-Id|First|Last|Email|Company
----|---|---|---|---
-5829|Jimmy|Buffet|jb@example.com|RCA
-2894|Shirley|Chisholm|sc@example.com|United States Congress
-294|Marilyn|Monroe|mm@example.com|Fox
-30829|Cesar|Chavez|cc@example.com|United Farm Workers
-827|Vandana|Shiva|vs@example.com|Navdanya
-9284|Andrea|Smith|as@example.com|University of California
-724|Albert|Howard|ah@example.com|Imperial College of Science
-
-...and after reading a spreadsheet into the "`df2`" variable that looked like this:
-
-PersonId|FirstName|LastName|Em|FavoriteFood
----|---|---|---|---
-983mv|Shirley|Temple|st@example.com|Lollipops
-9e84f|Andrea|Smith|as@example.com|Kale
-k28fo|Donald|Duck|dd@example.com|Pancakes
-x934|Marilyn|Monroe|mm@example.com|Carrots
-8xi|Albert|Howard|ahotherem@example.com|Potatoes
-02e|Vandana|Shiva|vs@example.com|Amaranth
-
-Then the file we saved to, personmerge.csv, looks like this when opened:
-
-Id|First|Last|Email|Company|PersonId|FavoriteFood|\_merge
----|---|---|---|---|---|---|---
-5829|Jimmy|Buffet|jb@example.com|RCA|||left\_only
-2894|Shirley|Chisholm|sc@example.com|United States Congress|||left\_only
-294|Marilyn|Monroe|mm@example.com|Fox|x934|Carrots|both
-30829|Cesar|Chavez|cc@example.com|United Farm Workers|||left\_only
-827|Vandana|Shiva|vs@example.com|Navdanya|02e|Amaranth|both
-9284|Andrea|Smith|as@example.com|University of California|9e84f|Kale|both
-724|Albert|Howard|ah@example.com|Imperial College of Science|||left\_only
-||Shirley|Temple|st@example.com||983mv|Lollipops|right\_only
-||Donald|Duck|dd@example.com||k28fo|Pancakes|right\_only
-||Albert|Howard|ahotherem@example.com||8xi|Potatoes|right\_only
