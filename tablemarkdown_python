@@ -1,0 +1,6 @@
+def printmd(df):
+    from IPython.display import Markdown, display
+    fmt = ['---' for i in range(len(df.columns))]
+    df_fmt = pandas.DataFrame([fmt], columns=df.columns)
+    df_formatted = pandas.concat([df_fmt, df])
+    print(df_formatted.to_csv(sep="|", index=False))
