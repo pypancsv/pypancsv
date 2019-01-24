@@ -51,9 +51,7 @@ But if you're adventurous and missed out last time, join us anyway! Worst you ca
 ## Notes:
 
 * All links you will need start with "https://link.stthomas.edu/**sfpy**..."
-* If the "Codebunk" development environment gives you trouble, all "starter code" links can have "-b" _(a hyphen and a lowercase letter b)_ added to the end of them to get the same "starter code" in a slower-but-less-finicky environment called "Repl.it"
-
-...(coming soon)...
+* If the "Repl.it" development environment gives you trouble, try adding "-b" _(a hyphen and a lowercase letter b)_ to the end of the link to see the same thing in a different environment called "Codebunk" _(no guarantee I had time to get them all online in Codebunk, but check ... or just let me know)_
 
 ---
 
