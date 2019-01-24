@@ -63,7 +63,7 @@ But if you're adventurous and missed out last time, join us anyway! Worst you ca
 3. [Exercise 3:  Add/Delete/Rename/Reorder Columns Yourself](#ex3)
   * [Cheat Sheet:  Add/Delete/Reorder/Rename Columns](#colcommands)
   * [Door Prize Script:  Dynamic Rename & Reorder](#doorprize-col)
-4. [Exercise 4:  XXX](#ex4)
+4. [Exercise 4:  Combine 5 spreadsheets into 1 CampaignMemberRecordsToInsert spreadsheet](#ex4)
  * [Cheat Sheet:  Concatenation Examples ↕](#concat)
  * [Cheat Sheet:  Merge Examples ↔](#merge)
  * [Door Prize Script:  Event-Attendance-Concatenating Loop ↕](#doorprize-concat)
@@ -140,7 +140,6 @@ If this "starter code" had a `print(df1)` command in it, `df1` would look like t
 6    724   Albert    Howard  ah@example.com  Imperial College of Science
 ```
 
-* _(Remember to "fork" the code before trying to edit it when you first open the starter code.)_
 * At the end of the program, add code that modifies the contents of `df1` as follows, and make your last line of code `print(df1)`:
  1. Add a column called `Hello` with the phrase `Yay Us` filled in all the way down
  2. Rename `Last` to `Last Name` and `First` to `First Name`
@@ -328,6 +327,88 @@ Output:
 1  Registered           NaN          NaN  Registered  872       Jane      Dill
 2         NaN           NaN   Registered  Registered   75       Mick       Jag
 ```
+
+---
+
+<div id='ex4'/>
+
+## Exercise 4:  Combine 5 spreadsheets into 1 CampaignMemberRecordsToInsert spreadsheet
+
+Open the [https://link.stthomas.edu/sfpyeventmerge](https://link.stthomas.edu/sfpyeventmerge){:target="_blank"} "starter code" if you want to work alone without anybody typing over you, or [https://link.stthomas.edu/sfpy102collab](https://link.stthomas.edu/sfpy102collab){:target="_blank"} if you'd rather collaborative-code with others (or open both in separate tabs, but keep track of which is which).
+
+Your data looks like this.
+
+Event attendance spreadsheet #1 (`evdf1`):
+
+```
+     First        Last           Email                 Event Name  Event Date Attendance Status
+0   Revkah     Lilburn  rl@example.com  Python for Salesforce 101  2018-10-20          Attended
+1   Haskel   Southerns  hs@example.com  Python for Salesforce 101  2018-10-20           No-Show
+2  Ermanno  Withinshaw  ew@example.com  Python for Salesforce 101  2018-10-20          Attended
+```
+
+Event attendance spreadsheet #2 (`evdf2`):
+
+```
+    First       Last           Email                              Event Name  Event Date Attendance Status
+0  Haskel  Southerns  hs@example.com  Python for Salesforce 101-Office Hours  2018-11-10           No-Show
+```
+
+Event attendance spreadsheet #3 (`evdf3`):
+
+```
+      First       Last           Email                 Event Name  Event Date Attendance Status
+0  Julianna     Judron  jj@example.com  Python for Salesforce 102  2019-01-26           No-Show
+1    Haskel  Southerns  hs@example.com  Python for Salesforce 102  2019-01-26          Attended
+2      Adah    Dimmock  ad@example.com  Python for Salesforce 102  2019-01-26         Cancelled
+```
+
+Salesforce Contact object existing record dump:
+
+```
+       ID FIRSTNAME  LASTNAME             EMAIL         PHONE
+0  003X01      Anna  Appleton    aa@example.com  555-555-0101
+1  003X02      Adah   Dimmock  dima@example.com  555-555-0202
+2  003X03       Ben  Bensalem    bs@example.com  555-555-0303
+3  003X04  Julianna    Judron    jj@example.com  555-555-0404
+4  003X05  Julianna    Judron    jj@example.com  555-555-0505
+5  003X06    Zainab     Zahar    zz@example.com  555-555-0606
+```
+
+Salesforce Campaign object existing record dump:
+
+```
+       ID                                    NAME HAPPENED_ON__C
+0  701X01                     Parasailing Fun Day     2017-07-20
+1  701X02               Python for Salesforce 101     2018-10-20
+2  701X03  Python for Salesforce 101-Office Hours     2018-11-10
+3  701X04                           Hockey Outing     2019-01-01
+4  701X05               Python for Salesforce 102     2019-01-26
+```
+
+
+We're going to create a file called **CampaignMemberRecordsToInsert.csv** that looks like this:
+
+| ContactId | CampaignId | CampaignMemberStatus | Last Name | First Name | Email | Event Name | Event Date |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|1|2|3|4|5|6|7|8|
+
+Here are the steps we'll follow to get there:
+
+1. Concatenate the 3 EventBrite sheets vertically ↕ and save it as “eventsdf”
+2. Do an “inner” merge from “eventsdf” to “contactsdf” (“inner” implication:  drops any attendees not yet in Salesforce – we’ll get to them later) matching on the FIRSTNAME, LASTNAME, & EMAIL; save the result as “merge1df”.
+3. Drop any “First+Last+Email” duplicates in “merge1df,” keeping only the 1st one found for a given combo.
+4. Delete columns from “merge1df” so that only the columns of “eventsdf” and “Id” remain; ensure the change persists to “merge1df”.
+5. Rename the “Id” column of “merge1df” to “ContactId”; ensure “merge1df” changes.
+6. Merge “merge1df” against “campaignsdf” on event name & start date; “inner” merge; save the result as “merge2df”.
+7. Rename the “Id” column of “merge2df” to “CampaignId”; ensure “merge2df” changes.
+8. Rename the “Attendance Status” column of “merge2df” to “CampaignMemberStatus”; ensure “merge2df” changes.
+9. Re-order the fields of “merge2df” to be:  ContactId, CampaignId, CampaignMemberStatus, Last Name, First Name, Email, Event Name, Event Date
+10. Export your data to “CampaignMemberRecordsToInsert.csv” and have a look.  Does it look like in the “cheat sheet?”
+
+Whew!  That's a lot!
+
+Whether you're coding in your own "solo" console or helping type into the "group" console, we'll solve this one out loud together.
 
 ---
 
