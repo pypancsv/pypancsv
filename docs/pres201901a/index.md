@@ -387,11 +387,16 @@ Salesforce Campaign object existing record dump:
 ```
 
 
-We're going to create a file called **CampaignMemberRecordsToInsert.csv** that looks like this:
+We're going to create a file called **CampaignMemberRecordsToInsert.csv** of people we can find in Salesforce already that looks like this:
 
 | ContactId | CampaignId | CampaignMemberStatus | Last Name | First Name | Email | Event Name | Event Date |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-|1|2|3|4|5|6|7|8|
+|003X04|701X05|No-Show|Judron|Julianna|jj@example.com|Python for Salesforce 102|2019-01-26|
+
+Wow!  Just Julianna?
+
+* What about Adah?  _(Oh, his email address is different in Salesforce.)_
+* And wait, why only the one record for Julianna?  Isn't she duplicated in Salesforce?  _(We'll handle that ... see below.  We're deciding to only mark 1 of her 2 duplicate Contact records as having been at the event, as a business practice.)_
 
 Here are the steps we'll follow to get there:
 
