@@ -59,10 +59,13 @@ But if you're adventurous and missed out last time, join us anyway! Worst you ca
 
 ## Table of Contents
 
-1. [Exercise 1:  Add/Delete/Rename/Reorder Columns Yourself](#ex1)
+1. [Exercise 1:  Make sure you can run Python code](#ex1)
+2. [Exercise 2:  Reading, displaying, & analyzing a CSV file](#ex2)
+  * [Code To Look At:  Python 101 Recap](#recap101)
+3. [Exercise 3:  Add/Delete/Rename/Reorder Columns Yourself](#ex3)
   * [Cheat Sheet:  Add/Delete/Reorder/Rename Columns](#colcommands)
   * [Door Prize Script:  Dynamic Rename & Reorder](#doorprize-col)
-2. [Exercise 2:  XXX](#ex2)
+4. [Exercise 4:  XXX](#ex4)
  * [Cheat Sheet:  Concatenation Examples ↕](#concat)
  * [Cheat Sheet:  Merge Examples ↔](#merge)
  * [Door Prize Script:  Event-Attendance-Concatenating Loop ↕](#doorprize-concat)
@@ -71,7 +74,58 @@ But if you're adventurous and missed out last time, join us anyway! Worst you ca
 
 <div id='ex1'/>
 
-## Exercise 1:  Add/Delete/Rename/Reorder Columns Yourself
+## Exercise 1:  Make sure you can run Python code
+
+Open [https://link.stthomas.edu/sfpyhello](https://link.stthomas.edu/sfpyhello){:target="_blank"} "starter code."
+
+All it says is this:
+
+```python
+print('Hello, world!')
+```
+
+Hit the big green "run" button, top center.
+
+Do you see "`Hello, world!`" at right?  Hooray!  (Let me know if not.)
+
+Now **change** `Hello, world!` to `Yay, us!` so that your code looks like this and hit the "run" button again.
+
+Do you see "`Yay, us!`" at right?  Yay, you!  (Let me know if not.  We want to make this a "Yay, us!" moment.)
+
+---
+
+<div id='ex3'/>
+
+## Exercise 2:  Reading, displaying, & analyzing a CSV file
+
+Open the [https://link.stthomas.edu/sfpyfiles](https://link.stthomas.edu/sfpyfiles){:target="_blank"} "starter code."
+
+Add a new line to the end of the file and type these4 lines exactly as seen here (hitting “enter” to start a new line as indicated):
+
+```python
+df1 = pandas.read_csv(filepath1)
+print(df1)
+print('--------')
+print('There are ' + str(len(df1)) + ' rows')
+```
+
+Hit the "run" button.
+
+Do you see a table full of contacts at right, then a divider line, then an announcement that there are "7 rows"?
+
+---
+
+<div id="recap101"/>
+
+## Code To Look At:  Python 101 Recap
+
+TO DO:  type stuff here
+
+---
+
+<div id='ex3'/>
+
+## Exercise 3:  Add/Delete/Rename/Reorder Columns Yourself
 
 Open the [https://link.stthomas.edu/sfpy123](https://link.stthomas.edu/sfpy123){:target="_blank"} "starter code."
 
