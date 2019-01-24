@@ -94,7 +94,7 @@ Do you see "`Yay, us!`" at right?  Yay, you!  (Let me know if not.  We want to m
 
 ---
 
-<div id='ex3'/>
+<div id='ex2'/>
 
 ## Exercise 2:  Reading, displaying, & analyzing a CSV file
 
