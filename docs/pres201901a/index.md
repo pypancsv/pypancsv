@@ -119,7 +119,7 @@ Do you see a table full of contacts at right, then a divider line, then an annou
 
 ## Code To Look At:  Python 101 Recap
 
-TO DO:  type stuff here
+We'll look together at the code at [https://link.stthomas.edu/sfpy101recap](https://link.stthomas.edu/sfpy101recap){:target="_blank"}
 
 ---
 
