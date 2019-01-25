@@ -1,0 +1,4 @@
+First,Last,Email,Event Name,Event Date,Attendance Status
+Julianna,Judron,jj@example.com,Python for Salesforce 102,2019-01-26,No-Show
+Haskel,Southerns,hs@example.com,Python for Salesforce 102,2019-01-26,Attended
+Adah,Dimmock,ad@example.com,Python for Salesforce 102,2019-01-26,Cancelled
