@@ -16,33 +16,16 @@ This is an online live webcast of a face-to-face training, but I will so my best
 
 ---
 
-# Teaser
-
-PART TWO: this time we'll get to VLOOKUP! Woot!
+# "101" recording link
 
 We'll do a quick recap from "101" (see https://pypancsv.github.io/pypancsv/HandsOn201810/).
 
-We won't go back in depth over programming fundamentals like "what is a variable?" and "what're the implications of running code against a single cell vs. a column vs. a whole subsection of a table?"
+# "102" material
 
-But if you're adventurous and missed out last time, join us anyway! Worst you can do is get a little lost.  :-)
-
-> Have you ever dreaded the first of the month because you know there's a CSV or XLSX spreadsheet waiting in your inbox that is going to consume half your day to clean up in Excel, just like it did last month, and the month before that, and the month before that...?
-> 
-> Python is a programming language that, together with its extension Pandas, has exploded in popularity among "non-programmers" with data to crunch because of its simplicity to write.
-> 
-> If you are a bit of an "Excel formula geek" or "Salesforce formula field go-to" or "Salesforce Process Builder whiz," YOU CAN DO THIS!
-> 
-> (Disclaimer: if you toss spreadsheets in terror to your "Excel power-user" coworker, you might find this Salesforce Saturday a bit of a challenge.)
-> 
-> With a practical focus on real-world Salesforce Admin problems, we'll cover writing and combining spreadsheet edits such as:
-> 
-> 1. Modifying only cells that meet certain criteria
-> 
-> 2. Pivoting data into a different shape
-> 
-> 3. Combining spreadsheets on data they share in common (think "VLOOKUP")
-> 
-> 4. Looping over every file in a directory, running the same program against each file
+> 1. Combining spreadsheets on data they share in common (think "VLOOKUP")
+> 2. Looping over every file in a directory, running the same program against each file
+> 3. Selectively editing data in specific cells or deleting specific rows _(if time)_
+> 4. A very basic "pivot" _(if time)_
 
 ---
 
@@ -98,7 +81,7 @@ Do you see "`Yay, us!`" at right?  Yay, you!  (Let me know if not.  We want to m
 
 Open the [https://link.stthomas.edu/sfpyfiles](https://link.stthomas.edu/sfpyfiles){:target="_blank"} "starter code."
 
-Add a new line to the end of the file and type these4 lines exactly as seen here (hitting “enter” to start a new line as indicated):
+Add a new line to the end of the file and type these 4 lines exactly as seen here (hitting “enter” to start a new line as indicated):
 
 ```python
 df1 = pandas.read_csv(filepath1)
