@@ -387,11 +387,11 @@ Here are the steps we'll follow to get there:
 2. Do an “inner” merge from “eventsdf” to “contactsdf” (“inner” implication:  drops any attendees not yet in Salesforce – we’ll get to them later) matching on the FIRSTNAME, LASTNAME, & EMAIL; save the result as “merge1df”.
 3. Drop any “First+Last+Email” duplicates in “merge1df,” keeping only the 1st one found for a given combo.
 4. Delete columns from “merge1df” so that only the columns of “eventsdf” and “Id” remain; ensure the change persists to “merge1df”.
-5. Rename the “Id” column of “merge1df” to “ContactId”; ensure “merge1df” changes.
+5. Rename the “ID” column of “merge1df” to “ContactId”; ensure “merge1df” changes.
 6. Merge “merge1df” against “campaignsdf” on event name & start date; “inner” merge; save the result as “merge2df”.
-7. Rename the “Id” column of “merge2df” to “CampaignId”; ensure “merge2df” changes.
+7. Rename the “ID” column of “merge2df” to “CampaignId”; ensure “merge2df” changes.
 8. Rename the “Attendance Status” column of “merge2df” to “CampaignMemberStatus”; ensure “merge2df” changes.
-9. Re-order the fields of “merge2df” to be:  ContactId, CampaignId, CampaignMemberStatus, Last, First, Email, Event Name, Event Date
+9. Re-order the fields of “merge2df” to be:  ContactId, CampaignId, CampaignMemberStatus, Last, First, Email, Event Name, Event Date.  Don’t bother including “NAME” or “HAPPENED_ON__C” in your final output if they exist.
 10. Export your data to “CampaignMemberRecordsToInsert.csv” and have a look.  Does it look like in the “cheat sheet?”
 
 Whew!  That's a lot!
