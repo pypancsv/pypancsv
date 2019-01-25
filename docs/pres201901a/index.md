@@ -16,21 +16,6 @@ This is an online live webcast of a face-to-face training, but I will so my best
 
 _("101" recording [here](https://pypancsv.github.io/pypancsv/HandsOn201810/){:target="_blank"})_
 
----
-
-# "101" recording link
-
-We'll do a quick recap from "101" (see https://pypancsv.github.io/pypancsv/HandsOn201810/).
-
-# "102" material
-
-> 1. Combining spreadsheets on data they share in common (think "VLOOKUP")
-> 2. Looping over every file in a directory, running the same program against each file
-> 3. Selectively editing data in specific cells or deleting specific rows _(if time)_
-> 4. A very basic "pivot" _(if time)_
-
----
-
 ## Table of Contents
 
 1. [Exercise 1:  Make sure you can run Python code](#ex1)
