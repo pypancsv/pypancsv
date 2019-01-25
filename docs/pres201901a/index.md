@@ -545,19 +545,35 @@ sortedconcat_df.to_csv('c:\\example\\concatsortedtables.csv', index=False)
 
 If we ran the above code after reading a spreadsheet into the "`df1`" variable that looked like this...
 
-TO DO:  INSERT TABLE
+Name|DOB|AttendedOrNot
+---|---|---
+Annie Appleton|1950-02-02|Yes
+Berenice Benita|2000-01-01|No
 
 ...and after reading a spreadsheet into the "`df2`" variable that looked like this...
 
-TO DO:  INSERT TABLE
+Name|DOB|AttendedOrNot
+---|---|---
+Annie Appleton|1950-02-02|No
+Christina Cruz|1975|Yes
 
 ...and after reading a spreadsheet into the "`df3`" variable that looked like this:
 
-TO DO:  INSERT TABLE
+Name|DOB|AttendedOrNot
+---|---|---
+Annie Appleton|1950-02-02|No
+Christina Cruz|1975|No
 
 Then the file we saved to, concatsortedtables.csv, looks like this when opened:
 
-TO DO:  INSERT TABLE
+Name|DOB|AttendedOrNot|WhichSheet
+---|---|---|---
+Annie Appleton|1950-02-02|Yes|Event1
+Annie Appleton|1950-02-02|No|Event2
+Annie Appleton|1950-02-02|No|Event3
+Berenice Benita|2000-01-01|No|Event1
+Christina Cruz|1975|Yes|Event2
+Christina Cruz|1975|No|Event3
 
 ---
 
