@@ -375,24 +375,24 @@ We're going to create a file called **CampaignMemberRecordsToInsert.csv** of peo
 | ContactId | CampaignId | CampaignMemberStatus | Last | First | Email | Event Name | Event Date |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 |003X04|701X05|No-Show|Judron|Julianna|jj@example.com|Python for Salesforce 102|2019-01-26|
+|003X05|701X05|No-Show|Judron|Julianna|jj@example.com|Python for Salesforce 102|2019-01-26|
 
 Wow!  Just Julianna?
 
 * What about Adah?  _(Oh, his email address is different in Salesforce.)_
-* And wait, why only the one record for Julianna?  Isn't she duplicated in Salesforce?  _(We'll handle that ... see below.  We're deciding to only mark 1 of her 2 duplicate Contact records as having been at the event, as a business practice.)_
+* Note that we're going to create CampaignMember records on _both_ Julianas in Salesforce.  Maybe we have a tiny data set and we catch this.  Maybe we have a huge data set and we don't, and we catch it later when deduplicating Contacts.  For now, we'll go with the latter.  Deciding how to deal with this issue is more of a business logic problem than a programming problem.
 
 Here are the steps we'll follow to get there:
 
 1. Concatenate the 3 EventBrite sheets vertically ↕ and save it as “eventsdf”
 2. Do an “inner” merge from “eventsdf” to “contactsdf” (“inner” implication:  drops any attendees not yet in Salesforce – we’ll get to them later) matching on the FIRSTNAME, LASTNAME, & EMAIL; save the result as “merge1df”.
-3. Drop any “First+Last+Email” duplicates in “merge1df,” keeping only the 1st one found for a given combo.
-4. Delete columns from “merge1df” so that only the columns of “eventsdf” and “Id” remain; ensure the change persists to “merge1df”.
-5. Rename the “ID” column of “merge1df” to “ContactId”; ensure “merge1df” changes.
-6. Merge “merge1df” against “campaignsdf” on event name & start date; “inner” merge; save the result as “merge2df”.
-7. Rename the “ID” column of “merge2df” to “CampaignId”; ensure “merge2df” changes.
-8. Rename the “Attendance Status” column of “merge2df” to “CampaignMemberStatus”; ensure “merge2df” changes.
-9. Re-order the fields of “merge2df” to be:  ContactId, CampaignId, CampaignMemberStatus, Last, First, Email, Event Name, Event Date.  Don’t bother including “NAME” or “HAPPENED_ON__C” in your final output if they exist.
-10. Export your data to “CampaignMemberRecordsToInsert.csv” and have a look.  Does it look like in the “cheat sheet?”
+3. Delete columns from “merge1df” so that only the columns of “eventsdf” and the “ID” column remain; ensure the change persists to “merge1df”.
+4. Rename the “ID” column of “merge1df” to “ContactId”; ensure “merge1df” changes.
+5. Merge “merge1df” against “campaignsdf” on event name & start date; “inner” merge; save the result as “merge2df”.
+6. Rename the “ID” column of “merge2df” to “CampaignId”; ensure “merge2df” changes.
+7. Rename the “Attendance Status” column of “merge2df” to “CampaignMemberStatus”; ensure “merge2df” changes.
+8. Re-order the fields of “merge2df” to be:  ContactId, CampaignId, CampaignMemberStatus, Last, First, Email, Event Name, Event Date.  Don’t bother including “NAME” or “HAPPENED_ON__C” in your final output if they exist.
+9. Export your data to “CampaignMemberRecordsToInsert.csv” and have a look.  Does it look like in the “cheat sheet?”
 
 Whew!  That's a lot!
 
