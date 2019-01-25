@@ -415,11 +415,24 @@ pandas.Series(uniquenonnullemails_ndarray, name='Emails').to_csv('c:\\example\\u
 
 If we ran the above code after reading a spreadsheet into the "`df`" variable that looked like this:
 
-TO DO:  INSERT TABLE
+|Name|Email|WorkEmail__c|SchoolEmail__c|
+|---|---|---|---|
+|Annie Appleton|aa@example.com|aa@work.com|aa@school.com|
+|Andrew Appleton|aa@example.com|andrew@work.com|andrew@school.com|
+|Berenice Benita|bb@example.com|bb@work.com|bb@school.com|
 
-Then the file we saved to, uniqueemails.csv, looks like this when opened:
+Then the file we saved to, uniqueemails.csv, looks like this when opened _(note that `aa@example.com` only appears once)_:
 
-TO DO:  INSERT TABLE
+|Emails|
+|---|
+|aa@example.com|
+|bb@example.com|
+|aa@work.com|
+|andrew@work.com|
+|bb@work.com|
+|aa@school.com|
+|andrew@school.com|
+|bb@school.com|
 
 > Note that the "`.unique()`" operation, which you can append to any "Series"-typed data, produces output that is _not_ a Pandas Series _(whereas "`.dropna()`," for example, produces another Series as output)_.
 > 
@@ -433,7 +446,7 @@ TO DO:  INSERT TABLE
 ### Example 2:  List all unique e-mail addresses between 2 spreadsheets, whether they be under #1's "`Email`," "`WorkEmail__c`," or "`SchoolEmail__c`" columns, or under #2's "`EMAILADDR`," "`EMAIL2__C`," "`EMAIL3__C`," or "`EMAIL4__C`" columns.
 
 ```python
-concat_series = pandas.concat([df1['Email'], df1['WorkEmail__c'], df1['SchoolEmail__c'], df2['EMAILADDR'], df2['EMAIL2__C', df2['EMAIL3__c'], df2['EMAIL4__C']])
+concat_series = pandas.concat([df1['Email'], df1['WorkEmail__c'], df1['SchoolEmail__c'], df2['EMAILADDR'], df2['EMAIL2__C'], df2['EMAIL3__C'], df2['EMAIL4__C']])
 nonnullemails_series = concat_series.dropna()
 uniquenonnullemails_ndarray = nonnullemails_series.unique()
 pandas.Series(uniquenonnullemails_ndarray, name='Emails').to_csv('c:\\example\\uniqueemails2.csv', index=False, header=True)
@@ -445,15 +458,31 @@ pandas.Series(uniquenonnullemails_ndarray, name='Emails').to_csv('c:\\example\\u
 
 If we ran the above code after reading a spreadsheet into the "`df1`" variable that looked like this...
 
-TO DO:  INSERT TABLE
+|Name|Email|WorkEmail__c|SchoolEmail__c|
+|---|---|---|---|
+|Annie Appleton|aa@example.com|aa@work.com|aa@school.com|
+|Andrew Appleton|aa@example.com|andrew@work.com|andrew@school.com|
+|Berenice Benita|bb@example.com|bb@work.com|bb@school.com|
 
 ...and after reading a spreadsheet into the "`df2`" variable that looked like this:
 
-TO DO:  INSERT TABLE
+|Name|EMAILADDR|EMAIL2__C|EMAIL3__C|EMAIL4__C|
+|---|---|---|---|---|
+|Berenice Benita|bb@example.com|bb@school.com|bb@play.com|bb@example.com|
 
-Then the file we saved to, uniqueemails2.csv, looks like this when opened:
+Then the file we saved to, uniqueemails2.csv, looks like this when opened _(there was just 1 email address in the 2nd spreadsheet that we didn't yet know about)_:
 
-TO DO:  INSERT TABLE
+|Emails|
+|---|
+|aa@example.com|
+|bb@example.com|
+|aa@work.com|
+|andrew@work.com|
+|bb@work.com|
+|aa@school.com|
+|andrew@school.com|
+|bb@school.com|
+|bb@play.com|
 
 ### Example 3:  Spreadsheet 1 has columns "`First`," "`Last`," & "`Email`."<br/>Spreadsheet 2 has columns "`LastName`," "`Em`," & "`FirstName`."<br/>Concatenate appropriately _(e.g. `Em` = `Email`)_ & dedupe _(by all 3 fields together)_.
 
