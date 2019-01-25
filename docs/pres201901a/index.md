@@ -14,6 +14,8 @@ title: "Python for Spreadsheet Manipulation 102 - Hands-On Training for Salesfor
 
 This is an online live webcast of a face-to-face training, but I will so my best to monitor the chat for Q&A from online attendees, particularly during designated Q&A times.
 
+_("101" recording [here](https://pypancsv.github.io/pypancsv/HandsOn201810/){:target="_blank"})_
+
 ---
 
 # "101" recording link
@@ -26,15 +28,6 @@ We'll do a quick recap from "101" (see https://pypancsv.github.io/pypancsv/Hands
 > 2. Looping over every file in a directory, running the same program against each file
 > 3. Selectively editing data in specific cells or deleting specific rows _(if time)_
 > 4. A very basic "pivot" _(if time)_
-
----
-
-# Instructions & Code Snippets You Will Need
-
-## Notes:
-
-* All links you will need start with "https://link.stthomas.edu/**sfpy**..."
-* If the "Repl.it" development environment gives you trouble, try adding "-b" _(a hyphen and a lowercase letter b)_ to the end of the link to see the same thing in a different environment called "Codebunk" _(no guarantee I had time to get them all online in Codebunk, but check ... or just let me know)_
 
 ---
 
@@ -54,8 +47,9 @@ We'll do a quick recap from "101" (see https://pypancsv.github.io/pypancsv/Hands
 6. [Exercise 5:  Add a new "Note" column to our concatenated events roster](#ex6)
 7. [Door Prize Script:  A little pivot](#pivot)
 
-
 ---
+
+# Instructions & Code Snippets You Will Need
 
 <div id='ex1'/>
 
