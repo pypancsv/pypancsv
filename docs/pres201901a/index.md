@@ -882,39 +882,27 @@ Again, whether you're coding in your own "solo" console or helping type into the
 
 If you accidentally closed your work, open the TO DO:  INSERT LINK HERE "starter code" if you want to work alone without anybody typing over you, or [https://link.stthomas.edu/sfpy102collab](https://link.stthomas.edu/sfpy102collab){:target="_blank"} if you'd rather collaborative-code with others (or open both in separate tabs, but keep track of which is which).
 
-You're going to concatenate `merge2df` and `merge4df` into a new DataFrame "`cmdf`" that looks like this:
+You'll COPY the contents of "`eventsdf`" into a new DataFrame called "`notesdf`."  You'll edit "Event Name" in `notesdf` to make it a little easier to skim, and then you'll add a new "`Note`" column to `notesdf` and selectively fill it in so that your output data looks like this:
 
-```
-  ContactId CampaignId CampaignMemberStatus        Last     First           Email                              Event Name  Event Date
-0    003X04     701X05              No-Show      Judron  Julianna  jj@example.com               Python for Salesforce 102  2019-01-26
-1    003X05     701X05              No-Show      Judron  Julianna  jj@example.com               Python for Salesforce 102  2019-01-26
-0    003X61     701X02             Attended     Lilburn    Revkah  rl@example.com               Python for Salesforce 101  2018-10-20
-1    003X62     701X02              No-Show   Southerns    Haskel  hs@example.com               Python for Salesforce 101  2018-10-20
-2    003X63     701X02             Attended  Withinshaw   Ermanno  ew@example.com               Python for Salesforce 101  2018-10-20
-3    003X64     701X03              No-Show   Southerns    Haskel  hs@example.com  Python for Salesforce 101-Office Hours  2018-11-10
-4    003X65     701X05             Attended   Southerns    Haskel  hs@example.com               Python for Salesforce 102  2019-01-26
-5    003X66     701X05            Cancelled     Dimmock      Adah  ad@example.com               Python for Salesforce 102  2019-01-26
-```
-
-And then you're going to add a new "`Note`" column to `cmdf` and fill it in so that your output data looks like this:
-
-ContactId|CampaignId|CampaignMemberStatus|Last|First|Email|Event Name|Event Date|Note
----|---|---|---|---|---|---|---|---
-003X04|701X05|No-Show|Judron|Julianna|jj@example.com|Python for Salesforce 102|2019-01-26|Flag B:  JULIANNA
-003X05|701X05|No-Show|Judron|Julianna|jj@example.com|Python for Salesforce 102|2019-01-26|Flag B:  JULIANNA
-003X61|701X02|Attended|Lilburn|Revkah|rl@example.com|Python for Salesforce 101|2018-10-20||
-003X62|701X02|No-Show|Southerns|Haskel|hs@example.com|Python for Salesforce 101|2018-10-20|Flag A:  2018-10-20
-003X63|701X02|Attended|Withinshaw|Ermanno|ew@example.com|Python for Salesforce 101|2018-10-20||
-003X64|701X03|No-Show|Southerns|Haskel|hs@example.com|Python for Salesforce 101-Office Hours|2018-11-10|Flag B:  HASKEL
-003X65|701X05|Attended|Southerns|Haskel|hs@example.com|Python for Salesforce 102|2019-01-26|Flag B:  HASKEL
-003X66|701X05|Cancelled|Dimmock|Adah|ad@example.com|Python for Salesforce 102|2019-01-26|Flag B:  ADAH
+First|Last|Email|Event Name|Event Date|Attendance Status|Note
+---|---|---|---|---|---|---
+Revkah|Lilburn|rl@example.com|PySF101|2018-10-20|Attended||
+Haskel|Southerns|hs@example.com|PySF101|2018-10-20|No-Show|Flag A:  2018-10-20
+Ermanno|Withinshaw|ew@example.com|PySF101|2018-10-20|Attended||
+Haskel|Southerns|hs@example.com|PySF101-Office Hours|2018-11-10|No-Show|Flag B:  HASKEL
+Julianna|Judron|jj@example.com|PySF102|2019-01-26|No-Show|Flag B:  JULIANNA
+Haskel|Southerns|hs@example.com|PySF102|2019-01-26|Attended|Flag B:  HASKEL
+Adah|Dimmock|ad@example.com|PySF102|2019-01-26|Cancelled|Flag B:  ADAH
 
 Here are the steps we'll follow to get this file:
 
-1. Concatenate “merge2df” & “merge4df” into “cmdf”
-2. Add a new blank column called “Note” to cmdf (add a new column & fill it all the way down as the value None).
-3. Selectively edit the value of Note to say “Flag A:  ” along with the Event Date from that row if the person’s last name starts with a capital S.
-4. Selectively edit the value of Note to say “Flag B:  ” along with an upper-cased version of the person’s first name if they’re on the roster for an event in November 2018 or later.
-5. print(...) or .to_csv(...) your data & have a look.  Does it look like it should?
+1. Make a clean copy of `eventsdf` into a new DataFrame called `notesdf` _(note:  you can't just say `notesdf = eventsdf` ... you have to say `notesdf = eventsdf.copy()`, lest you simultaneously edit the contents of the original `eventsdf`)_.
+2. Overwrite the contents of the “Event Name” column of `notesdf` to replace “`'Python for Salesforce '`” with “`'PySF'`” for better skimmability.  _(Note:  all text-filled “Series” have a `.str.replace(thingToReplace, replaceItWith)` operation.)_
+3. Add a new blank column called “Note” to notesdf (add a new column & fill it all the way down as the value None).
+4. Selectively edit the value of Note to say “Flag A:  ” along with the Event Date from that row **if** the person’s last name starts with a capital S.
+5. Selectively edit the value of Note to say “Flag B:  ” along with an upper-cased version of the person’s first name **if** they’re on the roster for an event in November 2018 or later.
+6. print(...) or .to_csv(...) your data & have a look.  Does it look like it should?
+
+Note that two of Haskel Southerns' 3 notes are "flag B," even though he's eligible for "flag A," having a last name that begins with "S."  **Why do you think that is?**
 
 Again, whether you're coding in your own "solo" console or helping type into the "group" console, we'll solve this one out loud together.  We'll piece things together a little bit at a time, and using "placeholders" for data you intend to build later _(like "`'Hi There'`" as a stand-in for the "Flag A + date" data)_ when you're not sure what a command would be is a great idea, while you test that you got a different part of the code right, just like you would do when building a complicated Excel formula!
