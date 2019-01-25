@@ -50,6 +50,7 @@ We'll do a quick recap from "101" (see https://pypancsv.github.io/pypancsv/Hands
  * [Cheat Sheet:  Concatenation Examples ↕](#concat)
  * [Cheat Sheet:  Merge Examples ↔](#merge)
  * [Door Prize Script:  Event-Attendance-Concatenating Loop ↕](#doorprize-concat)
+5. [Exercise 5:  Make "ContactsToInsert" and "CampaignMembersToInsert" for those not in Salesforce](#ex5)
 
 ---
 
@@ -392,7 +393,7 @@ Here are the steps we'll follow to get there:
 6. Rename the “ID” column of “merge2df” to “CampaignId”; ensure “merge2df” changes.
 7. Rename the “Attendance Status” column of “merge2df” to “CampaignMemberStatus”; ensure “merge2df” changes.
 8. Re-order the fields of “merge2df” to be:  ContactId, CampaignId, CampaignMemberStatus, Last, First, Email, Event Name, Event Date.  Don’t bother including “NAME” or “HAPPENED_ON__C” in your final output if they exist.
-9. Export your data to “CampaignMemberRecordsToInsert.csv” and have a look.  Does it look like in the “cheat sheet?”
+9. Export your data to “CampaignMemberRecordsToInsert.csv” and have a look.  Does it look like it should?
 
 Whew!  That's a lot!
 
@@ -835,3 +836,85 @@ Haskel|Southerns|hs@example.com|Python for Salesforce 101-Office Hours|2018-11-1
 Julianna|Judron|jj@example.com|Python for Salesforce 102|2019-01-26|No-Show|mergehandson_event3.csv
 Revkah|Lilburn|rl@example.com|Python for Salesforce 101|2018-10-20|Attended|mergehandson_event1.csv
 Revkah|Lilburn|rl@example.com|Python for Salesforce 103|2019-12-29|Cancelled|mergehandson_event4.csv
+
+---
+
+<div id='ex5'/>
+
+## Exercise 5:  Make "ContactsToInsert" and "CampaignMembersToInsert" for those not in Salesforce
+
+If you accidentally closed your work, open the TO DO:  INSERT LINK HERE "starter code" if you want to work alone without anybody typing over you, or [https://link.stthomas.edu/sfpy102collab](https://link.stthomas.edu/sfpy102collab){:target="_blank"} if you'd rather collaborative-code with others (or open both in separate tabs, but keep track of which is which).
+
+You're going to pick up with `eventsdf` already existing _(that was the first concatenation you did in the previous exercise)_, and you'll be shooting to create a file called **CampaignMemberRecordsToInsert2.csv** that looks like this:
+
+ContactId|CampaignId|CampaignMemberStatus|Last|First|Email|Event Name|Event Date
+---|---|---|---|---|---|---|---
+003X61|701X02|Attended|Lilburn|Revkah|rl@example.com|Python for Salesforce 101|2018-10-20
+003X62|701X02|No-Show|Southerns|Haskel|hs@example.com|Python for Salesforce 101|2018-10-20
+003X63|701X02|Attended|Withinshaw|Ermanno|ew@example.com|Python for Salesforce 101|2018-10-20
+003X64|701X03|No-Show|Southerns|Haskel|hs@example.com|Python for Salesforce 101-Office Hours|2018-11-10
+003X65|701X05|Attended|Southerns|Haskel|hs@example.com|Python for Salesforce 102|2019-01-26
+003X66|701X05|Cancelled|Dimmock|Adah|ad@example.com|Python for Salesforce 102|2019-01-26
+
+The ContactIds come from a command we're going to do that I wrote to imitate exporting a DataFrame called "`merge3df`" to a file called "`ContactsToInsert.csv`," pushing that file into Salesforce Data Loader as a Contact insertion operation, getting the "success" file back, and re-loading that "success" file back into Python as the new value of "`merge3df`" _(with `merge3df = pandas.read_csv('successBlahBlah.csv')`)_.
+
+Here are the steps we'll follow to get this file:
+
+1. Do a “left” merge from “eventsdf” to “contactsdf” matching on the FIRSTNAME, LASTNAME, & EMAIL; turn on the “indicator=True” flag; save the result as “merge3df”.
+2. Remove from “merge3df” any rows where the value in the “_merge” column is not “left_only”; ensure change persists.  (We do this by building an expression that becomes a “Series” of True/False values with the same “Item Ids” that “merge3df” has as “row IDs,” then putting that expression inside “merge3df = merge3df[…]”)
+3. Run the following command:  `merge3df = doFakeDataLoad(merge3df)`
+4. Delete columns from “merge3df” so that only the columns of “eventsdf” and “ID” remain; ensure the change persists to “merge3df”.  _(Note:  from here on out, we’ve done this before, just merge1->merge3 & merge2->merge4.)_
+5. Rename the “ID” column of “merge3df” to “ContactId”; ensure “merge3df” changes.
+6. Merge “merge3df” against “campaignsdf” on event name & start date; “inner” merge; save the result as “merge4df”.
+7. Rename the “ID” column of “merge4df” to “CampaignId”; ensure “merge4df” changes.
+8. Rename the “Attendance Status” column of “merge4df” to “CampaignMemberStatus”; ensure “merge4df” changes.
+9. Re-order the fields of “merge4df” to be:  ContactId, CampaignId, CampaignMemberStatus, Last, First, Email, Event Name, Event Date.  Don’t bother including “NAME” or “HAPPENED_ON__C” in your final output if they exist.
+10. Export your data to “CampaignMemberRecordsToInsert2.csv” & have a look.  Does it look like it should?
+
+Again, whether you're coding in your own "solo" console or helping type into the "group" console, we'll solve this one out loud together.  The only hard part is really steps 1-3; we can just copy/paste the rest of the code and change "merge1df" to "merge3df" and "merge2df" to "merge4df" and "....csv" to "...2.csv"
+
+
+---
+
+<div id='ex6'/>
+
+## Exercise 6:  Add a new "Note" column to the sheet we made Make "ContactsToInsert" and "CampaignMembersToInsert" for those not in Salesforce
+
+If you accidentally closed your work, open the TO DO:  INSERT LINK HERE "starter code" if you want to work alone without anybody typing over you, or [https://link.stthomas.edu/sfpy102collab](https://link.stthomas.edu/sfpy102collab){:target="_blank"} if you'd rather collaborative-code with others (or open both in separate tabs, but keep track of which is which).
+
+You're going to concatenate `merge2df` and `merge4df` into a new DataFrame "`cmdf`" that looks like this:
+
+```
+  ContactId CampaignId CampaignMemberStatus        Last     First           Email                              Event Name  Event Date
+0    003X04     701X05              No-Show      Judron  Julianna  jj@example.com               Python for Salesforce 102  2019-01-26
+1    003X05     701X05              No-Show      Judron  Julianna  jj@example.com               Python for Salesforce 102  2019-01-26
+0    003X61     701X02             Attended     Lilburn    Revkah  rl@example.com               Python for Salesforce 101  2018-10-20
+1    003X62     701X02              No-Show   Southerns    Haskel  hs@example.com               Python for Salesforce 101  2018-10-20
+2    003X63     701X02             Attended  Withinshaw   Ermanno  ew@example.com               Python for Salesforce 101  2018-10-20
+3    003X64     701X03              No-Show   Southerns    Haskel  hs@example.com  Python for Salesforce 101-Office Hours  2018-11-10
+4    003X65     701X05             Attended   Southerns    Haskel  hs@example.com               Python for Salesforce 102  2019-01-26
+5    003X66     701X05            Cancelled     Dimmock      Adah  ad@example.com               Python for Salesforce 102  2019-01-26
+```
+
+And then you're going to add a new "`Note`" column to `cmdf` and fill it in so that your output data looks like this:
+
+ContactId|CampaignId|CampaignMemberStatus|Last|First|Email|Event Name|Event Date|Note
+---|---|---|---|---|---|---|---|---
+003X04|701X05|No-Show|Judron|Julianna|jj@example.com|Python for Salesforce 102|2019-01-26|Flag B:  JULIANNA
+003X05|701X05|No-Show|Judron|Julianna|jj@example.com|Python for Salesforce 102|2019-01-26|Flag B:  JULIANNA
+003X61|701X02|Attended|Lilburn|Revkah|rl@example.com|Python for Salesforce 101|2018-10-20||
+003X62|701X02|No-Show|Southerns|Haskel|hs@example.com|Python for Salesforce 101|2018-10-20|Flag A:  2018-10-20
+003X63|701X02|Attended|Withinshaw|Ermanno|ew@example.com|Python for Salesforce 101|2018-10-20||
+003X64|701X03|No-Show|Southerns|Haskel|hs@example.com|Python for Salesforce 101-Office Hours|2018-11-10|Flag B:  HASKEL
+003X65|701X05|Attended|Southerns|Haskel|hs@example.com|Python for Salesforce 102|2019-01-26|Flag B:  HASKEL
+003X66|701X05|Cancelled|Dimmock|Adah|ad@example.com|Python for Salesforce 102|2019-01-26|Flag B:  ADAH
+
+Here are the steps we'll follow to get this file:
+
+1. Concatenate “merge2df” & “merge4df” into “cmdf”
+2. Add a new blank column called “Note” to cmdf (add a new column & fill it all the way down as the value None).
+3. Selectively edit the value of Note to say “Flag A:  ” along with the Event Date from that row if the person’s last name starts with a capital S.
+4. Selectively edit the value of Note to say “Flag B:  ” along with an upper-cased version of the person’s first name if they’re on the roster for an event in November 2018 or later.
+5. print(...) or .to_csv(...) your data & have a look.  Does it look like it should?
+
+Again, whether you're coding in your own "solo" console or helping type into the "group" console, we'll solve this one out loud together.  We'll piece things together a little bit at a time, and using "placeholders" for data you intend to build later _(like "`'Hi There'`" as a stand-in for the "Flag A + date" data)_ when you're not sure what a command would be is a great idea, while you test that you got a different part of the code right, just like you would do when building a complicated Excel formula!
