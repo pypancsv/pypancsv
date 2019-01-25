@@ -555,14 +555,13 @@ Berenice Benita|2000-01-01|No
 Name|DOB|AttendedOrNot
 ---|---|---
 Annie Appleton|1950-02-02|No
-Christina Cruz|1975|Yes
+Christina Cruz|1975-03-03|Yes
 
 ...and after reading a spreadsheet into the "`df3`" variable that looked like this:
 
 Name|DOB|AttendedOrNot
 ---|---|---
-Annie Appleton|1950-02-02|No
-Christina Cruz|1975|No
+Christina Cruz|1975-03-03|No
 
 Then the file we saved to, concatsortedtables.csv, looks like this when opened:
 
@@ -570,10 +569,9 @@ Name|DOB|AttendedOrNot|WhichSheet
 ---|---|---|---
 Annie Appleton|1950-02-02|Yes|Event1
 Annie Appleton|1950-02-02|No|Event2
-Annie Appleton|1950-02-02|No|Event3
 Berenice Benita|2000-01-01|No|Event1
-Christina Cruz|1975|Yes|Event2
-Christina Cruz|1975|No|Event3
+Christina Cruz|1975-03-03|Yes|Event2
+Christina Cruz|1975-03-03|No|Event3
 
 ---
 
