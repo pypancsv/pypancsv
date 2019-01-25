@@ -372,7 +372,7 @@ Salesforce Campaign object existing record dump:
 
 We're going to create a file called **CampaignMemberRecordsToInsert.csv** of people we can find in Salesforce already that looks like this:
 
-| ContactId | CampaignId | CampaignMemberStatus | Last Name | First Name | Email | Event Name | Event Date |
+| ContactId | CampaignId | CampaignMemberStatus | Last | First | Email | Event Name | Event Date |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 |003X04|701X05|No-Show|Judron|Julianna|jj@example.com|Python for Salesforce 102|2019-01-26|
 
