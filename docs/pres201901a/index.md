@@ -51,6 +51,9 @@ We'll do a quick recap from "101" (see https://pypancsv.github.io/pypancsv/Hands
  * [Cheat Sheet:  Merge Examples ↔](#merge)
  * [Door Prize Script:  Event-Attendance-Concatenating Loop ↕](#doorprize-concat)
 5. [Exercise 5:  Make "ContactsToInsert" and "CampaignMembersToInsert" for those not in Salesforce](#ex5)
+6. [Exercise 5:  Add a new "Note" column to our concatenated events roster](#ex6)
+7. [Door Prize Script:  A little pivot](#pivot)
+
 
 ---
 
@@ -878,7 +881,7 @@ Again, whether you're coding in your own "solo" console or helping type into the
 
 <div id='ex6'/>
 
-## Exercise 6:  Add a new "Note" column to the sheet we made Make "ContactsToInsert" and "CampaignMembersToInsert" for those not in Salesforce
+## Exercise 6:  Add a new "Note" column to our concatenated events roster
 
 If you accidentally closed your work, open the TO DO:  INSERT LINK HERE "starter code" if you want to work alone without anybody typing over you, or [https://link.stthomas.edu/sfpy102collab](https://link.stthomas.edu/sfpy102collab){:target="_blank"} if you'd rather collaborative-code with others (or open both in separate tabs, but keep track of which is which).
 
