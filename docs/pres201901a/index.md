@@ -866,24 +866,25 @@ If you accidentally closed your work, open the TO DO:  INSERT LINK HERE "starter
 
 You'll COPY the contents of "`eventsdf`" into a new DataFrame called "`notesdf`."  You'll edit "Event Name" in `notesdf` to make it a little easier to skim, and then you'll add a new "`Note`" column to `notesdf` and selectively fill it in so that your output data looks like this:
 
-First|Last|Email|Event Name|Event Date|Attendance Status|Note
----|---|---|---|---|---|---
-Revkah|Lilburn|rl@example.com|PySF101|2018-10-20|Attended||
-Haskel|Southerns|hs@example.com|PySF101|2018-10-20|No-Show|Flag A:  2018-10-20
-Ermanno|Withinshaw|ew@example.com|PySF101|2018-10-20|Attended||
-Haskel|Southerns|hs@example.com|PySF101-Office Hours|2018-11-10|No-Show|Flag B:  HASKEL
-Julianna|Judron|jj@example.com|PySF102|2019-01-26|No-Show|Flag B:  JULIANNA
-Haskel|Southerns|hs@example.com|PySF102|2019-01-26|Attended|Flag B:  HASKEL
-Adah|Dimmock|ad@example.com|PySF102|2019-01-26|Cancelled|Flag B:  ADAH
+First|Last|Event Name|Event Date|Note
+---|---|---|---|---
+Revkah|Lilburn|PySF101|2018-10-20|
+Haskel|Southerns|PySF101|2018-10-20|Flag A:  2018-10-20
+Ermanno|Withinshaw|PySF101|2018-10-20|
+Haskel|Southerns|PySF101-Office Hours|2018-11-10|Flag B:  HASKEL
+Julianna|Judron|PySF102|2019-01-26|Flag B:  JULIANNA
+Haskel|Southerns|PySF102|2019-01-26|Flag B:  HASKEL
+Adah|Dimmock|PySF102|2019-01-26|Flag B:  ADAH
 
 Here are the steps we'll follow to get this file:
 
 1. Make a clean copy of `eventsdf` into a new DataFrame called `notesdf` _(note:  you can't just say `notesdf = eventsdf` ... you have to say `notesdf = eventsdf.copy()`, lest you simultaneously edit the contents of the original `eventsdf`)_.
 2. Overwrite the contents of the “Event Name” column of `notesdf` to replace “`'Python for Salesforce '`” with “`'PySF'`” for better skimmability.  _(Note:  all text-filled “Series” have a `.str.replace(thingToReplace, replaceItWith)` operation.)_
-3. Add a new blank column called “Note” to notesdf (add a new column & fill it all the way down as the value None).
-4. Selectively edit the value of Note to say “Flag A:  ” along with the Event Date from that row **if** the person’s last name starts with a capital S.
-5. Selectively edit the value of Note to say “Flag B:  ” along with an upper-cased version of the person’s first name **if** they’re on the roster for an event in November 2018 or later.
-6. print(...) or .to_csv(...) your data & have a look.  Does it look like it should?
+3. Get rid of the “Email” & “Attendance Status” columns.  They’re just wasting screen space right now.
+4. Add a new blank column called “Note” to notesdf (add a new column & fill it all the way down as the value None).
+5. Selectively edit the value of Note to say “Flag A:  ” along with the Event Date from that row **if** the person’s last name starts with a capital S.
+6. Selectively edit the value of Note to say “Flag B:  ” along with an upper-cased version of the person’s first name **if** they’re on the roster for an event in November 2018 or later.
+7. print(...) or .to_csv(...) your data & have a look.  Does it look like it should?
 
 Note that two of Haskel Southerns' 3 notes are "flag B," even though he's eligible for "flag A," having a last name that begins with "S."  **Why do you think that is?**
 
