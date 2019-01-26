@@ -1000,7 +1000,23 @@ Finally, we write our table out to CSV.
 
 ## Don't peek!  Possible answers for exercises 3, 4, 5, & 6
 
+### 3
+
+```python
+import pandas
+pandas.set_option('expand_frame_repr', False)
+
+df1 = pandas.read_csv('https://raw.githubusercontent.com/pypancsv/pypancsv/master/docs/_data/sample1.csv', dtype=object)
+
+df1['Hello'] = 'Yay Us'
+df1 = df1.rename(columns={'Last':'Last Name','First':'First Name'})
+df1 = df1.drop(columns=['Email'])
+df1 = df1[['Hello', 'Last Name', 'Company', 'First Name', 'Id']]
+print(df1)
+```
+
 ### 4 - 6
+
 ```python
 import pandas
 pandas.set_option('expand_frame_repr', False)
