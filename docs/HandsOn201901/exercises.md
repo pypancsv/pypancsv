@@ -203,7 +203,7 @@ print('-----------DIVIDER LINE------------\r\n')
 
 ## Exercise 3:  Add/Delete/Rename/Reorder Columns Yourself
 
-Open the [https://link.stthomas.edu/sfpy123](https://link.stthomas.edu/sfpy123){:target="_blank"} "starter code."
+Open the [https://link.stthomas.edu/sfpy201901-123](https://link.stthomas.edu/sfpy201901-123){:target="_blank"} "starter code."
 
 If this "starter code" had a `print(df1)` command in it, `df1` would look like this to start:
 
@@ -412,7 +412,7 @@ Output:
 
 ## Exercise 4:  Combine 5 spreadsheets into 1 CampaignMemberRecordsToInsert spreadsheet
 
-Open the [https://link.stthomas.edu/sfpyeventmerge](https://link.stthomas.edu/sfpyeventmerge){:target="_blank"} "starter code" if you want to work alone without anybody typing over you, or [https://link.stthomas.edu/sfpy102collab](https://link.stthomas.edu/sfpy102collab){:target="_blank"} if you'd rather collaborative-code with others (or open both in separate tabs, but keep track of which is which).
+Open the [https://link.stthomas.edu/sfpy201901-eventmerge](https://link.stthomas.edu/sfpy201901-eventmerge){:target="_blank"} "starter code."
 
 Your data looks like this.
 
@@ -937,7 +937,7 @@ Revkah|Lilburn|rl@example.com|Python for Salesforce 103|2019-12-29|Cancelled|mer
 
 ## Exercise 5:  Make "ContactsToInsert" and "CampaignMembersToInsert" for those not in Salesforce
 
-If you accidentally closed your work, open the [https://link.stthomas.edu/sfpyeventmerge2](https://link.stthomas.edu/sfpyeventmerge2){:target="_blank"} "starter code" if you want to work alone without anybody typing over you, or [https://link.stthomas.edu/sfpy102collab](https://link.stthomas.edu/sfpy102collab){:target="_blank"} if you'd rather collaborative-code with others (or open both in separate tabs, but keep track of which is which).
+If you accidentally closed your work, open the [https://link.stthomas.edu/sfpy201901-eventmerge2](https://link.stthomas.edu/sfpy201901-eventmerge2){:target="_blank"} "starter code."
 
 You're going to pick up with `eventsdf` already existing _(that was the first concatenation you did in the previous exercise)_, and you'll be shooting to create a file called **CampaignMemberRecordsToInsert2.csv** that looks like this:
 
@@ -973,7 +973,7 @@ Again, whether you're coding in your own "solo" console or helping type into the
 
 ## Exercise 6:  Add a new "Note" column to our concatenated events roster
 
-If you accidentally closed your work, open the [https://link.stthomas.edu/sfpyeventnotes](https://link.stthomas.edu/sfpyeventnotes){:target="_blank"} "starter code" if you want to work alone without anybody typing over you, or [https://link.stthomas.edu/sfpy102collab](https://link.stthomas.edu/sfpy102collab){:target="_blank"} if you'd rather collaborative-code with others (or open both in separate tabs, but keep track of which is which).
+If you accidentally closed your work, open the [https://link.stthomas.edu/sfpy201901-eventnotes](https://link.stthomas.edu/sfpy201901-eventnotes){:target="_blank"} "starter code."
 
 You'll COPY the contents of "`eventsdf`" into a new DataFrame called "`notesdf`."  You'll edit "Event Name" in `notesdf` to make it a little easier to skim, and then you'll add a new "`Note`" column to `notesdf` and selectively fill it in so that your output data looks like this:
 
