@@ -29,7 +29,7 @@ _("101" recording [here](https://pypancsv.github.io/pypancsv/HandsOn201810/){:ta
  * [Cheat Sheet:  Merge Examples ↔](#merge)
  * [Door Prize Script:  Event-Attendance-Concatenating Loop ↕](#doorprize-concat)
 5. [Exercise 5:  Make "ContactsToInsert" and "CampaignMembersToInsert" for those not in Salesforce](#ex5)
-6. [Exercise 5:  Add a new "Note" column to our concatenated events roster](#ex6)
+6. [Exercise 6:  Add a new "Note" column to our concatenated events roster](#ex6)
 7. [Door Prize Script:  A little pivot](#pivot)
 
 ---
