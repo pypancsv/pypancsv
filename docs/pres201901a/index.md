@@ -855,7 +855,6 @@ Here are the steps we'll follow to get this file:
 
 Again, whether you're coding in your own "solo" console or helping type into the "group" console, we'll solve this one out loud together.  The only hard part is really steps 1-3; we can just copy/paste the rest of the code and change "merge1df" to "merge3df" and "merge2df" to "merge4df" and "....csv" to "...2.csv"
 
-
 ---
 
 <div id='ex6'/>
@@ -889,3 +888,106 @@ Here are the steps we'll follow to get this file:
 Note that two of Haskel Southerns' 3 notes are "flag B," even though he's eligible for "flag A," having a last name that begins with "S."  **Why do you think that is?**
 
 Again, whether you're coding in your own "solo" console or helping type into the "group" console, we'll solve this one out loud together.  We'll piece things together a little bit at a time, and using "placeholders" for data you intend to build later _(like "`'Hi There'`" as a stand-in for the "Flag A + date" data)_ when you're not sure what a command would be is a great idea, while you test that you got a different part of the code right, just like you would do when building a complicated Excel formula!
+
+
+First|Last|Email|Event Name|Event Date|Attendance Status
+---|---|---|---|---|---
+Revkah|Lilburn|rl@example.com|Python for Salesforce 101|2018-10-20|Attended
+Haskel|Southerns|hs@example.com|Python for Salesforce 101|2018-10-20|No-Show
+Ermanno|Withinshaw|ew@example.com|Python for Salesforce 101|2018-10-20|Attended
+Haskel|Southerns|hs@example.com|Python for Salesforce 101-Office Hours|2018-11-10|No-Show
+Julianna|Judron|jj@example.com|Python for Salesforce 102|2019-01-26|No-Show
+Haskel|Southerns|hs@example.com|Python for Salesforce 102|2019-01-26|Attended
+Adah|Dimmock|ad@example.com|Python for Salesforce 102|2019-01-26|Cancelled
+
+---
+
+<div id='pivot'/>
+
+## Door Prize Script:  A little pivot
+
+Here's one more script for you to take home.
+
+I've always been a bit "meh" about statistics and pivottables.
+
+I suppose I lean towards programming, rather than data analysis, because my heart lies with beating a computer into giving "question-askers" the answers they seek ... not coming up with all the great questions.
+
+But many of you are probably the question-askers in your organizations!  So it IS important to be able to summarize data!
+
+And honestly, one thing I love, as a Salesforce admin, about doing pivot tables and aggregations with Python, is incorporating them into scripts I'm writing to automate repetitive, boring work.  Sometimes in Excel I DO make a PivotTable just to copy it back into a new tab without any formatting, tweak it a bit, and keep on editing as if it had always been an ordinary data table.  I definitely do that, too, in Python.
+
+However, the commands and approaches quickly get varied even faster than all that nonsense about a million different meanings to `df[...]`.
+
+If you want to become a pivot table expert for business analytics, you have to check out the blog [Practical Business Python](http://pbpython.com){:target="_blank"}.  I recommend going through the archives and poking around 2014 and early 2015 _(like all blogs, it can get more complicated over time as the author has "covered the easy stuff")_.
+
+But let's do one simple example!
+
+Starting with our trusty concatenated event roster, `eventsdf` ...
+
+---|---|---|---|---|---
+Revkah|Lilburn|rl@example.com|Python for Salesforce 101|2018-10-20|Attended
+Haskel|Southerns|hs@example.com|Python for Salesforce 101|2018-10-20|No-Show
+Ermanno|Withinshaw|ew@example.com|Python for Salesforce 101|2018-10-20|Attended
+Haskel|Southerns|hs@example.com|Python for Salesforce 101-Office Hours|2018-11-10|No-Show
+Julianna|Judron|jj@example.com|Python for Salesforce 102|2019-01-26|No-Show
+Haskel|Southerns|hs@example.com|Python for Salesforce 102|2019-01-26|Attended
+Adah|Dimmock|ad@example.com|Python for Salesforce 102|2019-01-26|Cancelled
+
+...we'll pivot people into a single line _(treating a name+email as a "person")_ apiece and display a bit of attendance information to the right of their name.
+
+With this code:
+
+```python
+import numpy
+import pandas
+evdf1 = pandas.read_csv('https://raw.githubusercontent.com/pypancsv/pypancsv/master/docs/_data/mergehandson_event1.csv')
+evdf2 = pandas.read_csv('https://raw.githubusercontent.com/pypancsv/pypancsv/master/docs/_data/mergehandson_event2.csv')
+evdf3 = pandas.read_csv('https://raw.githubusercontent.com/pypancsv/pypancsv/master/docs/_data/mergehandson_event3.csv')
+eventsdf = pandas.concat([evdf1, evdf2, evdf3])
+
+pivotdf = pandas.pivot_table(eventsdf, index=['First','Last','Email'], columns='Event Date', values='Attendance Status', aggfunc=numpy.min)
+pivotdf = pivotdf.reset_index()
+pivotdf.columns.name = None
+eventDatesOffered = list(eventsdf['Event Date'].unique())
+pivotdf['RSVPed'] = pivotdf[eventDatesOffered].count(axis='columns')
+pivotdf['Came'] = pivotdf[eventDatesOffered].isin(['Attended']).sum(axis='columns')
+pivotdf['Didnt'] = pivotdf[eventDatesOffered].isin(['No-Show','Cancelled']).sum(axis='columns')
+pivotdf.to_csv('outputpivot.csv', index=False)
+```
+
+We'll end up with a CSV file as output that looks like this:
+
+First|Last|Email|2018-10-20|2018-11-10|2019-01-26|RSVPed|Came|Didnt
+---|---|---|---|---|---|---|---|---
+Adah|Dimmock|ad@example.com|||Cancelled|1|0|1
+Ermanno|Withinshaw|ew@example.com|Attended|||1|1|0
+Haskel|Southerns|hs@example.com|No-Show|No-Show|Attended|3|1|2
+Julianna|Judron|jj@example.com|||No-Show|1|0|1
+Revkah|Lilburn|rl@example.com|Attended|||1|1|0
+
+We often need to import a 2nd "module" _(extension to Python commands)_ called "numpy" when doing pivots, so that we can refer to certain ... well ... pieces of that "module" that pivots work better with.
+
+When we call the `pandas.pivot_table(...)` command, we specify that we want to process `eventsdf`, that we want the "which data to use as a "single row" to be first+last+email, that we want to set up as many new columns to the right of that as there are unique values in `eventsdf`'s "`Event Date`" column, and that at the intersection of a given person and a given date, we want to put the "minimum" _(earliest-in-the-alphabet)_ value found among all rows of `eventsdf` that had that person and that event date.
+
+_(In our `eventsdf` data, we never have more than 1 RSVP per person.  Picking a "minimum" function or a "maximum" function on such data is always a neat trick when you're forced to "aggregate" your data down to a single value, and yet you know it already is a single value.)_
+
+If we were to `print(...)` the output of that command, it'd look pretty hideous, so to get things back to looking like a normal table (this is the part that's like copy-pasting from a PivotTable into a new blank tab and stripping formatting and doing a little tweaking), we run these two commands back-to-back:  `pivotdf = pivotdf.reset_index()` to get the row and column headers back where they belong, and `pivotdf.columns.name = None` to get a weird "`Event Date`" out of the upper-left-hand corner of the table.
+
+Next we're going to take advantage of the fact that we had _just_ taken all unique values found in `eventsdf`'s "`Event Date`" column and turned them into columns of `pivotdf`.
+
+First, we'll manually scan `eventsdf['EventDate']` for its unique values, and we store them into a variable as a list.  We could type them, because there are only 3, but what if this were a much bigger table?  Best to let the computer do it.
+
+Now ... what do you get if you say `someDataFrame[someListOfColumnNames]`?
+
+You get a "sub-table" copy of that DataFrame for those columns that is, in and of itself, also a DataFrame!
+
+That's what the next few lines do in the parts to the right of the `=` that say `pivotdf[eventDatesOffered]`.
+
+* Tacked onto the end of "DataFrame"-typed data, `.count(axis='columns')` produces a "Series", whose item IDs correspond to the DataFrame's row IDs, indicating how many non-null values appear in that row of the DataFrame.
+* Tacked onto the end of "DataFrame"-typed data, .isin(['No-Show','Cancelled']) produces a copy of that DataFrame, only with all the cell values replaced by whether that value is among "No Show"/"Cancelled."<br/>In turn, tacked onto the end of "DataFrame"-typed data that's full of numeric values, `.sum(axis='columns')` produces a "Series", whose item IDs correspond to the DataFrame's row IDs, indicating the sum of the values in that row of the DataFrame (and remember, True = 1; False = 0 ... power of 1!).
+* And of course, putting such "Series"-typed expressions to the right of `pivotdf['NewColumnName'] = ` adds a new column and fills the values down as indicated.
+* Notice that this whole operation didn't actually really have anything to do with "pivoting."  This was normal "table-editing" stuff.  We turned our "pivot" back into a "normal table" a long time ago with `pivotdf = pivotdf.reset_index()`.  This is the kind of "normal" stuff that you might do in Excel _after_ you've copied & pasted your PivotTable back into a "normal worksheet."
+
+Finally, we write our table out to CSV.
+
+## And that's a wrap for class -- thanks for coming!
