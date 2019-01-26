@@ -14,6 +14,8 @@ title: "Python for Spreadsheet Manipulation 102 - Hands-On Training for Salesfor
 
 This is an online live webcast of a face-to-face training, but I will so my best to monitor the chat for Q&A from online attendees, particularly during designated Q&A times.
 
+_(Slides [here](../HandsOn201901/HandsOn201901.pdf){:target="_blank"})_
+
 _("101" recording [here](https://pypancsv.github.io/pypancsv/HandsOn201810/){:target="_blank"})_
 
 ## Table of Contents
