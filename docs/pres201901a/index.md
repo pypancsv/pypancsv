@@ -924,6 +924,7 @@ But let's do one simple example!
 
 Starting with our trusty concatenated event roster, `eventsdf` ...
 
+First|Last|Email|Event Name|Event Date|Attendance Status
 ---|---|---|---|---|---
 Revkah|Lilburn|rl@example.com|Python for Salesforce 101|2018-10-20|Attended
 Haskel|Southerns|hs@example.com|Python for Salesforce 101|2018-10-20|No-Show
