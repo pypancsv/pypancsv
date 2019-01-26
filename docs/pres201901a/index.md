@@ -31,6 +31,7 @@ _("101" recording [here](https://pypancsv.github.io/pypancsv/HandsOn201810/){:ta
 5. [Exercise 5:  Make "ContactsToInsert" and "CampaignMembersToInsert" for those not in Salesforce](#ex5)
 6. [Exercise 6:  Add a new "Note" column to our concatenated events roster](#ex6)
 7. [Door Prize Script:  A little pivot](#pivot)
+8. [DON'T PEEK!  Possible answers to exercises 3-6](#answers)
 
 ---
 
@@ -992,3 +993,61 @@ That's what the next few lines do in the parts to the right of the `=` that say 
 Finally, we write our table out to CSV.
 
 ## And that's a wrap for class -- thanks for coming!
+
+---
+
+<div id='answers'/>
+
+## Don't peek!  Possible answers for exercises 3, 4, 5, & 6
+
+### 4 - 6
+```python
+import pandas
+pandas.set_option('expand_frame_repr', False)
+
+evdf1 = pandas.read_csv('https://raw.githubusercontent.com/pypancsv/pypancsv/master/docs/_data/mergehandson_event1.csv')
+evdf2 = pandas.read_csv('https://raw.githubusercontent.com/pypancsv/pypancsv/master/docs/_data/mergehandson_event2.csv')
+evdf3 = pandas.read_csv('https://raw.githubusercontent.com/pypancsv/pypancsv/master/docs/_data/mergehandson_event3.csv')
+contactsdf = pandas.read_csv('https://raw.githubusercontent.com/pypancsv/pypancsv/master/docs/_data/mergehandson_sf_contacts.csv')
+campaignsdf = pandas.read_csv('https://raw.githubusercontent.com/pypancsv/pypancsv/master/docs/_data/mergehandson_sf_campaigns.csv')
+
+def doFakeDataLoad(dfToFakeInserting):
+    idNos = range(61, 61+len(dfToFakeInserting))
+    dfToFakeInserting['ID'] = ['003X'+str(x) for x in idNos]
+    dfToFakeInserting['STATUS'] = 'Item Created'
+    dfToFakeInserting = dfToFakeInserting[['ID'] + [x for x in dfToFakeInserting if x not in ['ID','STATUS']] + ['STATUS']]
+    return dfToFakeInserting
+
+# ######## EXERCISE 4 #########
+eventsdf = pandas.concat([evdf1, evdf2, evdf3])
+merge1df = eventsdf.merge(contactsdf, how='inner', left_on=['First','Last','Email'], right_on=['FIRSTNAME','LASTNAME','EMAIL'])
+merge1df = merge1df[list(eventsdf.columns) + ['ID']]
+merge1df = merge1df.rename(columns={'ID':'ContactId'})
+merge2df = merge1df.merge(campaignsdf, how='inner', left_on=['Event Name','Event Date'], right_on=['NAME','HAPPENED_ON__C'])
+merge2df = merge2df.rename(columns={'ID':'CampaignId','Attendance Status':'CampaignMemberStatus'})
+merge2df = merge2df[['ContactId', 'CampaignId', 'CampaignMemberStatus', 'Last', 'First', 'Email', 'Event Name', 'Event Date']]
+print(merge2df)
+
+# ######## EXERCISE 5 #########
+merge3df = eventsdf.merge(contactsdf, how='left', left_on=['First','Last','Email'], right_on=['FIRSTNAME','LASTNAME','EMAIL'], indicator=True)
+notInSFSeries = merge3df['_merge']=='left_only'
+merge3df = merge3df[notInSFSeries]
+merge3df = doFakeDataLoad(merge3df)
+merge3df = merge3df[list(eventsdf.columns) + ['ID']]
+merge3df = merge3df.rename(columns={'ID':'ContactId'})
+merge4df = merge3df.merge(campaignsdf, how='inner', left_on=['Event Name','Event Date'], right_on=['NAME','HAPPENED_ON__C'])
+merge4df = merge4df.rename(columns={'ID':'CampaignId','Attendance Status':'CampaignMemberStatus'})
+merge4df = merge4df[['ContactId', 'CampaignId', 'CampaignMemberStatus', 'Last', 'First', 'Email', 'Event Name', 'Event Date']]
+print(merge4df)
+
+# ######## EXERCISE 6 #########
+notesdf = eventsdf.copy()
+notesdf['Event Name'] = notesdf['Event Name'].str.replace('Python for Salesforce ','PySF')
+notesdf = notesdf.drop(columns=['Email','Attendance Status'])
+notesdf['Note'] = None
+conditionAseries = notesdf['Last'].str.startswith('S')
+notesdf['Note'][conditionAseries] = 'Flag A:  ' + notesdf['Event Date']
+conditionBseries = notesdf['Event Date'] > '2018-10-31'
+notesdf['Note'][conditionBseries] = 'Flag B:  ' + notesdf['First'].str.upper()
+print(notesdf)
+```
