@@ -30,7 +30,7 @@ _("101" recording [here](https://pypancsv.github.io/pypancsv/HandsOn201810/){:ta
  * [Door Prize Script:  Event-Attendance-Concatenating Loop ↕](#doorprize-concat)
 5. [Exercise 5:  Make "ContactsToInsert" and "CampaignMembersToInsert" for those not in Salesforce](#ex5)
 6. [Exercise 6:  Add a new "Note" column to our concatenated events roster](#ex6)
-7. [Door Prize Script:  A little pivot](#pivt)
+7. [Door Prize Script:  A little pivot](#pivot)
 
 ---
 
@@ -902,7 +902,7 @@ Adah|Dimmock|ad@example.com|Python for Salesforce 102|2019-01-26|Cancelled
 
 ---
 
-<div id='pivt'/>
+<div id='pivot'/>
 
 ## Door Prize Script:  A little pivot
 
