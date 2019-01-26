@@ -2,7 +2,7 @@
 layout: default
 title: Python for CSV Processing 102 Slides and Video
 summary: Salesforce Saturday Hands-On Training
-image: /pypancsv/images/handsonslidesnip201901.jpg
+image: /pypancsv/images/handsonslidesnip201901.png
 ---
 
 ## Python for Spreadsheet Manipulation 102 - Hands-On Training for Salesforce Admins
@@ -56,7 +56,7 @@ DM me [on Twitter](https://www.twitter.com/KatieKodes){:target="_blank"} if you 
 > 
 > Some are "201810" because I was able to reuse them from an earlier session; others are "201901" for today's new links.
 
-[![Click here for session video](/pypancsv/images/handsonslidesnip201901.jpg)](NULL "Python for Spreadsheet Manipulation 102 - video"){:target="_blank"}
+[![Click here for session video](/pypancsv/images/handsonslidesnip201901.png)](NULL "Python for Spreadsheet Manipulation 102 - video"){:target="_blank"}
 
 [(Click here for session video)](NULL "Python for Spreadsheet Manipulation 102 - video"){:target="_blank"}
 
