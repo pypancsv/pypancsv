@@ -62,6 +62,7 @@ DM me [on Twitter](https://www.twitter.com/KatieKodes){:target="_blank"} if you 
 
 ### Further Resources
 
+* [A real-life example of "vertical concatenation"](https://katiekodes.com/group-status-values/){:target="_blank"} _(using a new command, "`.stack()`," that's very similar to "`pandas.concat()`")_ for Salesforce
 * [Official documentation of Pandas commands](https://pandas.pydata.org/pandas-docs/stable/api.html){:target="_blank"}
   * [Official documentation of Pandas commands available for every "Series"-typed expression](https://pandas.pydata.org/pandas-docs/stable/api.html#series){:target="_blank"}
   * [Official documentation of Pandas commands available for "Series"-typed expressions that contain plaintext cells](https://pandas.pydata.org/pandas-docs/stable/api.html#string-handling){:target="_blank"}
