@@ -56,9 +56,9 @@ DM me [on Twitter](https://www.twitter.com/KatieKodes){:target="_blank"} if you 
 > 
 > Some are "201810" because I was able to reuse them from an earlier session; others are "201901" for today's new links.
 
-[![Click here for session video](/pypancsv/images/handsonslidesnip201901.png)](NULL "Python for Spreadsheet Manipulation 102 - video"){:target="_blank"}
+[![Click here for session video](/pypancsv/images/handsonslidesnip201901.png)](https://www.youtube.com/watch?v=F0k-tizlicA "Python for Spreadsheet Manipulation 102 - video"){:target="_blank"}
 
-[(Click here for session video)](NULL "Python for Spreadsheet Manipulation 102 - video"){:target="_blank"}
+[(Click here for session video)](https://www.youtube.com/watch?v=F0k-tizlicA "Python for Spreadsheet Manipulation 102 - video"){:target="_blank"}
 
 ### Further Resources
 
