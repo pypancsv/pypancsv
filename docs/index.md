@@ -21,8 +21,6 @@ If you're here after watching a presentation, visit [Quick Examples](quickexampl
 
 * [January 2019 2.5-hour "hands-on training, 102" slides, video, and afterthoughts here](HandsOn201901)
 
-* [January 2019 2.5-hour "hands-on training, 102" in-class code here](pres201901a)
-
 * [January 2019 40-minute "demo" slides and code here](Demo201901)
 
 * [October 2018 2.5-hour "hands-on training, 101" slides, video, and afterthoughts here](HandsOn201810)
