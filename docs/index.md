@@ -19,6 +19,8 @@ If you're here after watching a presentation, visit [Quick Examples](quickexampl
 
 ### Slide Links
 
+* **BIENTOT** - vidéo "Python pour administrateurs Salesforce" (en français), février 2019
+
 * [January 2019 2.5-hour "hands-on training, 102" slides, video, and afterthoughts here](HandsOn201901)
 
 * [January 2019 40-minute "demo" slides and code here](Demo201901)
