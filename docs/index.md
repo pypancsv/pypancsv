@@ -19,7 +19,7 @@ If you're here after watching a presentation, visit [Quick Examples](quickexampl
 
 ### Slide Links
 
-* **BIENTOT** - vidéo "Python pour administrateurs Salesforce" (en français), février 2019
+* [Février 2019 - vidéo, diapositives, et exercises de la demonstration "Python pour administrateurs Salesforce" (en français)](https://katiekodes.com/python-pour-administrateurs-salesforce-201902/){:target="_blank"}
 
 * [January 2019 2.5-hour "hands-on training, 102" slides, video, and afterthoughts here](HandsOn201901)
 
