@@ -5,7 +5,7 @@ title: CSV Processing with Python and Pandas
 
 # CSV Processing with Python and Pandas
 
-Welcome!!
+Welcome!
 
 This site is meant to support my evangelization of Python as a "power tool" for CSV-file processing that isn't much harder to learn than writing fancy Excel formulas is -- and certainly simpler to learn than writing Excel VisualBasic macros by hand.
 
